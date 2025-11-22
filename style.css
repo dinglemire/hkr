@@ -318,74 +318,124 @@ h1.part-title {
 /* ... (Keep all your existing CSS) ... */
 
 /* -------------------------------------- */
-/* 6. Map Modal Styling */
+/* 6. Advanced Map Modal Styling */
 /* -------------------------------------- */
 
-/* The Background Overlay (Hidden by default) */
-.modal {
-    display: none; /* Hidden */
-    position: fixed; 
-    z-index: 2000; /* Sit on top of everything */
-    left: 0;
+.map-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: hidden; /* Enable scroll if needed, or hidden for pan */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-    backdrop-filter: blur(5px);
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #050505; /* Deep dark background */
+    z-index: 2000;
+    overflow: hidden; /* Prevent scrolling the page */
 }
 
-/* The Map Image */
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 95%;
-    max-height: 90vh;
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
-    
-    /* Centering */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* The Viewport - Clips the image */
+.map-viewport {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab; /* Hand icon */
 }
 
-/* Close Button (X) */
-.close-modal {
+.map-viewport:active {
+    cursor: grabbing; /* Closed hand when dragging */
+}
+
+/* The Image itself */
+#mapImage {
+    /* Prepare for JS transformations */
+    transform-origin: center center; 
+    transition: transform 0.1s linear; /* Smooth zoom */
+    max-width: none; /* Allow it to be huge */
+    max-height: none;
+    pointer-events: none; /* Prevents image dragging ghost */
+    user-select: none;
+}
+
+/* Back Button (Top Left) */
+.close-map-btn {
     position: absolute;
     top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
+    left: 20px;
+    z-index: 2010;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-    z-index: 2001;
+    font-size: 1rem;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s;
 }
 
-.close-modal:hover,
-.close-modal:focus {
-    color: var(--color-text-accent);
-    text-decoration: none;
-    cursor: pointer;
+.close-map-btn:hover {
+    background-color: var(--color-text-accent);
+    color: #121212;
+    transform: translateY(2px);
 }
 
-/* Caption text */
-#caption {
+/* Zoom Controls (Bottom Center) */
+.map-controls {
     position: absolute;
-    bottom: 15px;
-    width: 100%;
-    text-align: center;
-    color: #ccc;
-    font-size: 0.9rem;
-    pointer-events: none;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2010;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid #444;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
-/* Mobile tweak for map */
+.map-controls button {
+    background: #333;
+    color: #fff;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.map-controls button:hover { background: var(--color-text-accent); color: #000; }
+
+#zoomSlider {
+    width: 150px;
+    accent-color: var(--color-text-accent);
+    cursor: pointer;
+}
+
+#zoomLabel {
+    color: #fff;
+    font-family: monospace;
+    font-size: 1rem;
+    min-width: 45px;
+    text-align: right;
+}
+
+/* Mobile Tweak */
 @media (max-width: 768px) {
-    .modal-content {
-        width: 100%;
-        max-width: 100%;
+    .map-controls {
+        width: 90%;
+        justify-content: space-between;
     }
+    #zoomSlider { width: 100%; }
 }
