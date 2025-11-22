@@ -306,3 +306,42 @@ h3 {
         font-size: 0.95rem;
     }
 }
+
+/* --- Add this to Main Layout --- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensures the header doesn't cover the text when jumping to a part */
+.route-part-section {
+    scroll-margin-top: 100px; /* Adjust this if header is taller */
+    margin-bottom: 80px;      /* Adds breathing room between parts */
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.part-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-text-accent);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Active State for Navigation --- */
+.nav-link.active-nav {
+    background-color: var(--color-text-accent) !important;
+    color: var(--color-background-dark) !important;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Divider Styling */
+.hr-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #444;
+    margin: 16px 0;
+}
