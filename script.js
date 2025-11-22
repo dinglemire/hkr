@@ -1,10 +1,8 @@
-// script.js – Manual Resume Only
-
 let routeData = [];
 const contentArea = document.getElementById('route-content');
 const navigationContainer = document.getElementById('navigation');
 const resetButton = document.getElementById('resetBtn');
-const resumeButton = document.getElementById('resumeBtn'); // Get reference
+const resumeButton = document.getElementById('resumeBtn');
 
 // 1. Load Route Data
 async function loadRouteData() {
@@ -21,16 +19,51 @@ async function loadRouteData() {
         renderNavigation();
         renderFullRoute();
         setupResetButton();
-        setupResumeButton(); // Activate the Resume button
+        setupResumeButton();
+        setupMapModal(); // <--- NEW FUNCTION CALL
         setupScrollSpy();
-
-        // NOTE: Automatic scroll is REMOVED. 
-        // Page will always start at the top.
 
     } catch (error) {
         contentArea.innerHTML = `<h2 style="color:red; text-align:center">Error loading data: ${error.message}</h2>`;
         console.error(error);
     }
+}
+
+// --- NEW: Map Modal Logic ---
+function setupMapModal() {
+    const modal = document.getElementById("mapModal");
+    const btn = document.getElementById("mapBtn"); // The nav button
+    const span = document.getElementsByClassName("close-modal")[0]; // The X button
+
+    if (!btn || !modal) return;
+
+    // Open Modal
+    btn.addEventListener('click', () => {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+    });
+
+    // Close Modal (X button)
+    span.addEventListener('click', () => {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Re-enable scrolling
+    });
+
+    // Close Modal (Click outside image)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    // Close Modal (Escape Key)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && modal.style.display === "block") {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
 }
 
 // 2. Setup "Resume Run" Button
@@ -44,36 +77,25 @@ function setupResumeButton() {
 
 // 3. Logic to find position and scroll
 function restoreProgress() {
-    // Get all checkboxes
     const checkboxes = Array.from(document.querySelectorAll('.checkbox'));
-    
-    // Check if run has started
     const hasAnyProgress = checkboxes.some(cb => cb.checked);
 
     if (!hasAnyProgress) {
-        // Run hasn't started? Just scroll to top.
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
     }
 
-    // Find the first UNCHECKED box
     const firstUnchecked = checkboxes.find(cb => !cb.checked);
 
     if (firstUnchecked) {
-        // Scroll the ROW into view, centered
         const row = document.getElementById(`row-${firstUnchecked.id}`);
         if (row) {
             row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // visual flash effect
             row.style.transition = "background 0.5s";
             row.style.backgroundColor = "rgba(240, 192, 90, 0.2)";
-            setTimeout(() => {
-                row.style.backgroundColor = "transparent";
-            }, 1000);
+            setTimeout(() => { row.style.backgroundColor = "transparent"; }, 1000);
         }
     } else {
-        // Everything checked? Scroll to bottom
         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     }
 }
@@ -98,8 +120,7 @@ function renderNavigation() {
             const targetId = part.id;
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
-                // Fix offset for sticky header on mobile vs desktop
-                const yOffset = window.innerWidth < 1500 ? -160 : -20; 
+                const yOffset = window.innerWidth < 1280 ? -110 : -20; // Adjusted for new sticky height
                 const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({top: y, behavior: 'smooth'});
                 history.pushState(null, '', `#${targetId}`);
@@ -109,8 +130,9 @@ function renderNavigation() {
         dynamicLinksDiv.appendChild(link);
     });
 
-    // Insert links before the Resume button
-    navigationContainer.insertBefore(dynamicLinksDiv, resumeButton);
+    // Ensure buttons stay in order
+    const resumeBtn = document.getElementById('resumeBtn');
+    navigationContainer.insertBefore(dynamicLinksDiv, resumeBtn);
 }
 
 // 5. Render Full Route
@@ -132,7 +154,6 @@ function renderFullRoute() {
                 if (item.type === 'step') {
                     const isChecked = localStorage.getItem(item.id) === 'true';
                     const completedClass = isChecked ? 'completed' : '';
-                    // Add ID to the row div for easier scrolling
                     html += `
                         <div class="checklist-item ${completedClass}" id="row-${item.id}">
                             <input type="checkbox" class="checkbox" id="${item.id}" ${isChecked ? 'checked' : ''}>
