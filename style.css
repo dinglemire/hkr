@@ -1,0 +1,308 @@
+/* -------------------------------------- */
+/* 1. Global Reset and Variables */
+/* -------------------------------------- */
+
+:root {
+    --color-background-dark: #121212;
+    --color-background-mid: #1c1c1c;
+    --color-text-light: #e0e0e0;
+    --color-text-accent: #f0c05a; /* Pale Ore / Geo color */
+    --color-accent-dark: #637b98; /* Misty Deepnest blue */
+    --color-success: #32cd32; /* Lime Green for completion */
+    --color-border: #333333;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------------------- */
+/* 2. Base Styling and Typography */
+/* -------------------------------------- */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 2.25rem;
+    color: var(--color-text-accent);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 0 5px rgba(240, 192, 90, 0.5);
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: var(--color-text-light);
+    border-bottom: 2px solid var(--color-accent-dark);
+    padding-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--color-text-accent);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* -------------------------------------- */
+/* 3. Main Layout */
+/* -------------------------------------- */
+
+#app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+#main-content {
+    padding-top: 80px; /* Space for fixed header */
+}
+
+/* -------------------------------------- */
+/* 4. Header and Navigation */
+/* -------------------------------------- */
+
+#header {
+    background-color: var(--color-background-mid);
+    border-bottom: 1px solid var(--color-border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-md);
+}
+
+#status-display {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-accent);
+}
+
+/* Dropdown/Jump Links */
+#part-selector {
+    padding: var(--spacing-sm);
+    background-color: var(--color-accent-dark);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#part-selector:hover {
+    background-color: #7997b6;
+}
+
+/* -------------------------------------- */
+/* 5. Checklist Styling (Legs and Steps) */
+/* -------------------------------------- */
+
+.leg-section {
+    background-color: var(--color-background-mid);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--color-border);
+}
+
+.leg-section h2 {
+    color: var(--color-text-accent);
+    text-shadow: none;
+    border-bottom: 2px solid var(--color-accent-dark);
+}
+
+/* Checklist Container */
+.checklist {
+    list-style: none;
+}
+
+/* Individual Step Item */
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px dashed var(--color-border);
+    cursor: pointer;
+    transition: background-color 0.15s, opacity 0.3s;
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+}
+
+.checklist-item:hover {
+    background-color: rgba(70, 70, 70, 0.2);
+    border-radius: 4px;
+}
+
+/* Checkbox (Custom/Hidden Input) */
+.checkbox {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    min-width: 24px; /* Fix flex shrinking */
+    border: 2px solid var(--color-text-accent);
+    background-color: var(--color-background-dark);
+    border-radius: 4px;
+    margin-right: var(--spacing-md);
+    position: relative;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+/* Checked State */
+.checkbox:checked {
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+    transform: scale(1.05);
+}
+
+/* Checkmark Visual */
+.checkbox:checked::after {
+    content: '✓';
+    color: var(--color-background-mid);
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+}
+
+/* Description Text */
+.step-description {
+    flex-grow: 1;
+    font-size: 1rem;
+    padding-right: var(--spacing-sm);
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* Completed Step Text Styling */
+.checklist-item.completed .step-description {
+    color: var(--color-accent-dark);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* -------------------------------------- */
+/* 6. Image Gallery (Placeholder Styling) */
+/* -------------------------------------- */
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-md);
+}
+
+.image-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Special Case: High-Resolution Break (hr.png) */
+.image-gallery img[src*="hr.png"] {
+    display: none;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: var(--spacing-sm) 0;
+}
+
+/* -------------------------------------- */
+/* 7. Responsiveness */
+/* -------------------------------------- */
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+    #app-container {
+        padding: var(--spacing-lg);
+    }
+    
+    .header-content {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .image-gallery {
+        /* Allow 2 or 3 images per row */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: grid;
+    }
+
+    /* Show the horizontal rule on desktop */
+    .image-gallery img[src*="hr.png"] {
+        display: block;
+        grid-column: 1 / -1; /* Span across all columns */
+        height: 1px;
+    }
+
+    .leg-section {
+        padding: var(--spacing-xl);
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    #status-display {
+        order: 2;
+    }
+    #part-selector {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+    .checkbox {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+    .step-description {
+        font-size: 0.95rem;
+    }
+}
