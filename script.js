@@ -1,4 +1,4 @@
-// script.js – Final Version: Single Page, Resume Button, Advanced Map
+// script.js – Final Version + Progress Bar
 
 let routeData = [];
 const contentArea = document.getElementById('route-content');
@@ -19,15 +19,18 @@ async function loadRouteData() {
         const data = await response.json();
         routeData = data.route;
         
-        // Render Interface
+        // Render
         renderNavigation();
         renderFullRoute();
         
-        // Setup Logic
+        // Setup
         setupResetButton();
         setupResumeButton();
-        setupMapModal();     // <--- New Advanced Map Logic
+        setupMapModal();
         setupScrollSpy();
+        
+        // Calculate initial progress
+        updateProgressBar(); 
 
     } catch (error) {
         contentArea.innerHTML = `<h2 style="color:red; text-align:center">Error loading data: ${error.message}</h2>`;
@@ -36,16 +39,62 @@ async function loadRouteData() {
 }
 
 // ---------------------------------------------------------
-// 2. ADVANCED MAP MODAL (Pan, Zoom, Save)
+// 2. PROGRESS BAR LOGIC (New Feature)
+// ---------------------------------------------------------
+function updateProgressBar() {
+    const allBoxes = document.querySelectorAll('.checkbox');
+    const checkedBoxes = document.querySelectorAll('.checkbox:checked');
+    
+    const total = allBoxes.length;
+    const checked = checkedBoxes.length;
+    
+    if (total === 0) return;
+
+    // Calculate percentage
+    const percent = Math.round((checked / total) * 100);
+    
+    // Elements
+    const bar = document.getElementById('progressBar');
+    const text = document.getElementById('progressText');
+    
+    if (!bar || !text) return;
+
+    // Update Width and Text
+    bar.style.width = `${percent}%`;
+    text.textContent = `${percent}% Completed`;
+
+    // --- COLOR LOGIC ---
+    // Remove old classes
+    bar.classList.remove('yellow', 'green', 'blue');
+
+    // 1. Check for Blue (100% of Checklist = 112% Game)
+    if (percent === 100) {
+        bar.classList.add('blue');
+        text.textContent = "112% COMPLETE!";
+    } 
+    // 2. Check for Green (The specific 100% Ending Step)
+    else {
+        // The specific step ID for 100% normal ending
+        const endingStep = document.getElementById('l06s12');
+        
+        if (endingStep && endingStep.checked) {
+            bar.classList.add('green');
+        } else {
+            bar.classList.add('yellow');
+        }
+    }
+}
+
+// ---------------------------------------------------------
+// 3. ADVANCED MAP MODAL
 // ---------------------------------------------------------
 function setupMapModal() {
     const modal = document.getElementById("mapModal");
-    const openBtn = document.getElementById("mapBtn");      // Sidebar button
-    const closeBtn = document.getElementById("closeMapBtn"); // Back button
+    const openBtn = document.getElementById("mapBtn");
+    const closeBtn = document.getElementById("closeMapBtn");
     
     const viewport = document.getElementById("mapViewport");
     const img = document.getElementById("mapImage");
-    
     const slider = document.getElementById("zoomSlider");
     const label = document.getElementById("zoomLabel");
     const zoomIn = document.getElementById("zoomInBtn");
@@ -53,129 +102,66 @@ function setupMapModal() {
 
     if (!modal || !img) return;
 
-    // State Variables
-    let scale = 0.5; // Default 50%
-    let pointX = 0;
-    let pointY = 0;
-    let isDragging = false;
-    let startX = 0;
-    let startY = 0;
+    let scale = 0.5, pointX = 0, pointY = 0;
+    let isDragging = false, startX = 0, startY = 0;
 
-    // A. Apply CSS Transforms & Save State
     function updateTransform() {
         img.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
-        
-        // Update Controls
         if (slider) slider.value = scale;
         if (label) label.textContent = Math.round(scale * 100) + "%";
-        
-        // Save to LocalStorage
-        const mapState = { scale, pointX, pointY };
-        localStorage.setItem("hkMapState", JSON.stringify(mapState));
+        localStorage.setItem("hkMapState", JSON.stringify({ scale, pointX, pointY }));
     }
 
-    // B. Load Saved State
     function loadMapState() {
         const saved = localStorage.getItem("hkMapState");
         if (saved) {
             try {
                 const state = JSON.parse(saved);
-                scale = state.scale || 0.5;
-                pointX = state.pointX || 0;
-                pointY = state.pointY || 0;
-            } catch (e) { console.error("Map state parse error", e); }
-        } else {
-            // Defaults if no save found
-            scale = 0.5;
-            pointX = 0;
-            pointY = 0;
+                scale = state.scale || 0.5; pointX = state.pointX || 0; pointY = state.pointY || 0;
+            } catch (e) {}
         }
         updateTransform();
     }
 
-    // C. Open/Close Logic
     if (openBtn) {
         openBtn.addEventListener("click", () => {
             modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // Freeze background scroll
+            document.body.style.overflow = "hidden";
             loadMapState(); 
         });
     }
 
     function closeMap() {
         modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Unfreeze background scroll
+        document.body.style.overflow = "auto";
     }
 
     if (closeBtn) closeBtn.addEventListener("click", closeMap);
-    
-    // Close on Escape Key
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.style.display === "block") closeMap();
-    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.style.display === "block") closeMap(); });
 
-    // D. Panning Logic (Mouse Drag)
     if (viewport) {
         viewport.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            startX = e.clientX - pointX;
-            startY = e.clientY - pointY;
-            viewport.style.cursor = "grabbing";
+            isDragging = true; startX = e.clientX - pointX; startY = e.clientY - pointY; viewport.style.cursor = "grabbing";
         });
-
-        window.addEventListener("mouseup", () => {
-            isDragging = false;
-            if (viewport) viewport.style.cursor = "grab";
-        });
-
+        window.addEventListener("mouseup", () => { isDragging = false; if (viewport) viewport.style.cursor = "grab"; });
         window.addEventListener("mousemove", (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            pointX = e.clientX - startX;
-            pointY = e.clientY - startY;
-            updateTransform();
+            if (!isDragging) return; e.preventDefault();
+            pointX = e.clientX - startX; pointY = e.clientY - startY; updateTransform();
         });
-
-        // E. Zoom Logic (Mouse Wheel)
         viewport.addEventListener("wheel", (e) => {
             e.preventDefault();
             const delta = -Math.sign(e.deltaY);
-            const step = 0.1;
-            
-            let newScale = scale + (delta * step);
-            // Clamp zoom between 0.1x and 3.0x
-            newScale = Math.min(Math.max(0.1, newScale), 3); 
-            
-            scale = newScale;
+            scale = Math.min(Math.max(0.1, scale + (delta * 0.1)), 3);
             updateTransform();
         });
     }
-
-    // F. Zoom Controls (Slider & Buttons)
-    if (slider) {
-        slider.addEventListener("input", (e) => {
-            scale = parseFloat(e.target.value);
-            updateTransform();
-        });
-    }
-
-    if (zoomIn) {
-        zoomIn.addEventListener("click", () => {
-            scale = Math.min(scale + 0.1, 3);
-            updateTransform();
-        });
-    }
-
-    if (zoomOut) {
-        zoomOut.addEventListener("click", () => {
-            scale = Math.max(scale - 0.1, 0.1);
-            updateTransform();
-        });
-    }
+    if (slider) slider.addEventListener("input", (e) => { scale = parseFloat(e.target.value); updateTransform(); });
+    if (zoomIn) zoomIn.addEventListener("click", () => { scale = Math.min(scale + 0.1, 3); updateTransform(); });
+    if (zoomOut) zoomOut.addEventListener("click", () => { scale = Math.max(scale - 0.1, 0.1); updateTransform(); });
 }
 
 // ---------------------------------------------------------
-// 3. RENDER NAVIGATION (Sidebar)
+// 4. NAVIGATION RENDERING
 // ---------------------------------------------------------
 function renderNavigation() {
     if (navigationContainer.querySelector('#dynamic-links')) {
@@ -193,30 +179,23 @@ function renderNavigation() {
         
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = part.id;
-            const targetSection = document.getElementById(targetId);
+            const targetSection = document.getElementById(part.id);
             if (targetSection) {
-                // Adjust for sticky header on mobile/laptops
                 const yOffset = window.innerWidth < 1280 ? -110 : -20; 
                 const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({top: y, behavior: 'smooth'});
-                history.pushState(null, '', `#${targetId}`);
+                history.pushState(null, '', `#${part.id}`);
             }
         });
-        
         dynamicLinksDiv.appendChild(link);
     });
 
-    // Insert links before the Resume button
-    if (resumeButton) {
-        navigationContainer.insertBefore(dynamicLinksDiv, resumeButton);
-    } else {
-        navigationContainer.prepend(dynamicLinksDiv);
-    }
+    if (resumeButton) navigationContainer.insertBefore(dynamicLinksDiv, resumeButton);
+    else navigationContainer.prepend(dynamicLinksDiv);
 }
 
 // ---------------------------------------------------------
-// 4. RENDER FULL ROUTE (Main Content)
+// 5. MAIN ROUTE RENDERING
 // ---------------------------------------------------------
 function renderFullRoute() {
     let html = '';
@@ -231,12 +210,10 @@ function renderFullRoute() {
                     <h3>${leg.title}</h3>
                     <div class="checklist">
             `;
-
             leg.content.forEach(item => {
                 if (item.type === 'step') {
                     const isChecked = localStorage.getItem(item.id) === 'true';
                     const completedClass = isChecked ? 'completed' : '';
-                    // We add ID="row-..." to the DIV so we can scroll to it easily
                     html += `
                         <div class="checklist-item ${completedClass}" id="row-${item.id}">
                             <input type="checkbox" class="checkbox" id="${item.id}" ${isChecked ? 'checked' : ''}>
@@ -244,109 +221,78 @@ function renderFullRoute() {
                         </div>
                     `;
                 } else if (item.type === 'img') {
-                    if (item.src.includes('hr.png')) {
-                        html += `<div class="hr-divider"></div>`;
-                    } else {
-                        html += `
-                            <div class="image-gallery single-image">
-                                <img src="${item.src}" alt="Route reference" loading="lazy">
-                            </div>
-                        `;
-                    }
+                    if (item.src.includes('hr.png')) html += `<div class="hr-divider"></div>`;
+                    else html += `<div class="image-gallery single-image"><img src="${item.src}" alt="Reference" loading="lazy"></div>`;
                 }
             });
-
-            html += `   </div>
-                </div>`;
+            html += `</div></div>`;
         });
-
         html += `</section>`;
     });
 
     contentArea.innerHTML = html;
 
-    // Attach Checkbox Listeners
+    // Checkbox Listeners
     document.querySelectorAll('.checkbox').forEach(cb => {
         cb.addEventListener('change', function () {
             localStorage.setItem(this.id, this.checked);
             this.closest('.checklist-item').classList.toggle('completed', this.checked);
+            // UPDATE PROGRESS BAR ON EVERY CLICK
+            updateProgressBar(); 
         });
     });
 }
 
 // ---------------------------------------------------------
-// 5. RESUME BUTTON LOGIC
+// 6. UTILITIES
 // ---------------------------------------------------------
 function setupResumeButton() {
-    if (resumeButton) {
-        resumeButton.addEventListener('click', () => {
-            restoreProgress();
-        });
-    }
+    if (resumeButton) resumeButton.addEventListener('click', restoreProgress);
 }
 
 function restoreProgress() {
     const checkboxes = Array.from(document.querySelectorAll('.checkbox'));
-    const hasAnyProgress = checkboxes.some(cb => cb.checked);
-
-    if (!hasAnyProgress) {
+    if (!checkboxes.some(cb => cb.checked)) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
     }
-
     const firstUnchecked = checkboxes.find(cb => !cb.checked);
-
     if (firstUnchecked) {
         const row = document.getElementById(`row-${firstUnchecked.id}`);
         if (row) {
             row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Visual Flash
             row.style.transition = "background 0.5s";
             row.style.backgroundColor = "rgba(240, 192, 90, 0.2)";
-            setTimeout(() => {
-                row.style.backgroundColor = "transparent";
-            }, 1000);
+            setTimeout(() => { row.style.backgroundColor = "transparent"; }, 1000);
         }
     } else {
-        // All checked? Scroll to bottom
         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     }
 }
 
-// ---------------------------------------------------------
-// 6. SCROLL SPY (Highlights Sidebar)
-// ---------------------------------------------------------
 function setupScrollSpy() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const id = entry.target.id;
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.setAttribute('aria-current', 'false');
-                    link.classList.remove('active-nav');
+                document.querySelectorAll('.nav-link').forEach(l => {
+                    l.setAttribute('aria-current', 'false');
+                    l.classList.remove('active-nav');
                 });
-                const activeLink = document.querySelector(`a[href="#${id}"]`);
-                if (activeLink) {
-                    activeLink.setAttribute('aria-current', 'page');
-                    activeLink.classList.add('active-nav');
+                const active = document.querySelector(`a[href="#${entry.target.id}"]`);
+                if (active) {
+                    active.setAttribute('aria-current', 'page');
+                    active.classList.add('active-nav');
                 }
             }
         });
     }, { rootMargin: '-20% 0px -70% 0px' });
-
-    document.querySelectorAll('section.route-part-section').forEach(section => {
-        observer.observe(section);
-    });
+    document.querySelectorAll('section.route-part-section').forEach(s => observer.observe(s));
 }
 
-// ---------------------------------------------------------
-// 7. RESET BUTTON
-// ---------------------------------------------------------
 function setupResetButton() {
     if (resetButton) {
         resetButton.addEventListener('click', () => {
-            if (confirm('Reset ALL 112% progress? This cannot be undone!')) {
+            if (confirm('Reset ALL 112% progress?')) {
                 localStorage.clear();
                 location.reload();
             }
@@ -354,5 +300,4 @@ function setupResetButton() {
     }
 }
 
-// Start App
 document.addEventListener('DOMContentLoaded', loadRouteData);
