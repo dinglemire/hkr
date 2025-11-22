@@ -7,13 +7,21 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <main id="route-content">
+
+    <!-- 1. Container for the centered 1200px content -->
+    <div id="app-container">
+        <main id="route-content">
+            <!-- Javascript injects the route here -->
         </main>
+    </div>
     
+    <!-- 2. Navigation Sidebar (Moves to right on Desktop, Top on Mobile) -->
     <nav id="navigation">
         <h3>Navigation</h3>
-        <a href="map.html" target="_blank" class="reset-btn" style="margin-top: 15px; background-color: #5aa9d6; color: #1b2838;">
-            View Interactive Map 🗺️
+        <!-- Javascript injects buttons here -->
+        
+        <a href="map.html" target="_blank" class="map-btn">
+            View Map 🗺️
         </a>
 
         <button id="resetBtn" class="reset-btn">Reset Checklist</button>
