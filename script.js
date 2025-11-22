@@ -11,7 +11,7 @@ const resetButton = document.getElementById('resetBtn');
 async function loadRouteData() {
     try {
         // Use a relative path to the JSON file
-        const response = await fetch('route_data.json');
+        const response = await fetch('./route_data.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
