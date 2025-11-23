@@ -90,32 +90,44 @@ function renderNavigation() {
     }
 }
 
-// 4. Content Render (Checklist)
+// ---------------------------------------------------------
+// 4. RENDER LOGIC (Main Content + Collapsible Feature)
+// ---------------------------------------------------------
 function renderFullRoute() {
     let html = '';
+
     routeData.forEach(part => {
         html += `<section id="${part.id}" class="route-part-section">`;
         html += `<h1 class="part-title">${part.title}</h1>`;
+
         part.legs.forEach(leg => {
-            html += `<div class="leg-section"><h3>${leg.title}</h3><div class="checklist">`;
+            // CHANGED LINE BELOW: Added onclick to toggle 'collapsed' class
+            html += `
+                <div class="leg-section">
+                    <h3 onclick="this.parentElement.classList.toggle('collapsed')">${leg.title}</h3>
+                    <div class="checklist">
+            `;
+            
             leg.content.forEach(item => {
                 if (item.type === 'step') {
                     const isChecked = localStorage.getItem(item.id) === 'true';
+                    const completedClass = isChecked ? 'completed' : '';
                     html += `
-                        <div class="checklist-item ${isChecked ? 'completed' : ''}" id="row-${item.id}">
+                        <div class="checklist-item ${completedClass}" id="row-${item.id}">
                             <input type="checkbox" class="checkbox" id="${item.id}" ${isChecked ? 'checked' : ''}>
                             <span class="step-description">${item.text}</span>
                         </div>
                     `;
                 } else if (item.type === 'img') {
                     if (item.src.includes('hr.png')) html += `<div class="hr-divider"></div>`;
-                    else html += `<div class="image-gallery"><img src="${item.src}" loading="lazy"></div>`;
+                    else html += `<div class="image-gallery single-image"><img src="${item.src}" alt="Reference" loading="lazy"></div>`;
                 }
             });
             html += `</div></div>`;
         });
         html += `</section>`;
     });
+
     contentArea.innerHTML = html;
 }
 
