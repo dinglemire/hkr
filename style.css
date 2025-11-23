@@ -2,52 +2,52 @@
 /* 1. Global Variables & Themes */
 /* -------------------------------------- */
 :root {
-    /* --- DEFAULT THEME (The Abyss - Your Original) --- */
+    /* --- DEFAULT THEME (Abyss) --- */
     --color-bg-main: #121212;
     --color-bg-card: #1c1c1c;
     --color-bg-nav: #1c1c1c;
     --color-text-main: #e0e0e0;
     --color-text-muted: #aaaaaa;
-    --color-accent: #f0c05a;       /* Gold */
-    --color-link: #f0c05a;
+    --color-accent: #f0c05a;       /* Gold Headers */
+    --color-checkbox: #32cd32;     /* Green Checks */
     --color-border: #333333;
-    --color-success: #32cd32;      /* Green */
-    --color-btn-map: #637b98;      /* Blue-Grey */
+    --color-btn-map: #637b98;
     --color-hover-bg: rgba(255,255,255,0.05);
     --color-nav-link: #252525;
     --nav-width: 220px;
+    --font-main: 'Inter', sans-serif;
 }
 
-/* --- THEME: STEAM GUIDE (Dark Blue/Grey) --- */
+/* --- THEME: STEAM GUIDE (Exact Replica Style) --- */
 body.theme-steam {
-    --color-bg-main: #000000;
-    --color-bg-card: #16202d;      /* Steam Blue-Grey */
+    --color-bg-main: #000000;      /* Deep Black background */
+    --color-bg-card: #000000;      /* Transparent/Black cards */
     --color-bg-nav: #1b2838;       /* Steam Header Blue */
-    --color-text-main: #acb2b8;    /* Steam Text Grey */
+    --color-text-main: #acb2b8;    /* Steam Grey Text */
     --color-text-muted: #70757a;
-    --color-accent: #66c0f4;       /* Steam Bright Blue */
-    --color-link: #ffffff;
-    --color-border: #3c434d;
-    --color-success: #66c0f4;      /* Use Blue for success */
+    --color-accent: #66c0f4;       /* Steam Blue Headers */
+    --color-checkbox: #66c0f4;     /* Blue Checks */
+    --color-border: #3c434d;       /* Subtle borders */
     --color-btn-map: #2a475e;
-    --color-hover-bg: rgba(102, 192, 244, 0.1);
-    --color-nav-link: #101822;
+    --color-hover-bg: #16202d;
+    --color-nav-link: #1b2838;
+    --font-main: Arial, Helvetica, sans-serif; /* Steam Font */
 }
 
-/* --- THEME: CORNIFER (Light Paper/Sepia) --- */
+/* --- THEME: CORNIFER (Paper) --- */
 body.theme-paper {
-    --color-bg-main: #e6dfcc;      /* Parchment */
-    --color-bg-card: #f4f0e6;      /* Lighter Paper */
-    --color-bg-nav: #dcd0b3;       /* Darker Paper */
-    --color-text-main: #3b3228;    /* Ink Brown */
+    --color-bg-main: #e6dfcc;
+    --color-bg-card: #f4f0e6;
+    --color-bg-nav: #dcd0b3;
+    --color-text-main: #3b3228;
     --color-text-muted: #6b5d4f;
-    --color-accent: #8f3f3f;       /* Red Marker */
-    --color-link: #2c5d63;         /* Teal Ink */
+    --color-accent: #8f3f3f;       /* Red Headers */
+    --color-checkbox: #d32f2f;     /* Red Checks */
     --color-border: #c2b59b;
-    --color-success: #4caf50;
     --color-btn-map: #5d7275;
     --color-hover-bg: rgba(0,0,0,0.05);
     --color-nav-link: #e6dfcc;
+    --font-main: 'Georgia', serif;
 }
 
 *, *::before, *::after {
@@ -59,55 +59,49 @@ body.theme-paper {
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-main);
     background-color: var(--color-bg-main);
     color: var(--color-text-main);
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
-}
-/* --- COMPLETED STATE FIX --- */
-/* When the item has class 'completed', change text color and line-through */
-.checklist-item.completed .step-description {
-    color: #666 !important; /* Force grey color */
-    text-decoration: line-through !important; /* Force strikethrough */
-    opacity: 0.7;
+    transition: background 0.3s, color 0.3s;
 }
 
-/* Make sure the checkbox stays visible */
-.checklist-item.completed .checkbox {
-    opacity: 0.5;
-}
 /* -------------------------------------- */
 /* 2. Layout */
 /* -------------------------------------- */
-
-
 #app-container {
-    max-width: 1200px;
+    max-width: 1000px; /* Slightly narrower like Steam guides */
     margin: 0 auto;
     padding: 40px 260px 100px 20px;
-    position: relative;
-    transition: padding 0.3s;
 }
 
 .route-part-section {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     scroll-margin-top: 20px;
-    border-top: 1px solid #2a2a2a; /* Keep subtle */
-    padding-top: 20px;
 }
 
-h1.part-title {
-    color: var(--color-link);
+/* Steam Theme Specific: Headers with lines */
+body.theme-steam .part-title {
+    text-align: left;
+    border-bottom: 1px solid #363c44;
+    padding-bottom: 10px;
+    color: #66c0f4;
+    text-transform: none;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+}
+
+body:not(.theme-steam) h1.part-title {
+    color: var(--color-accent);
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 15px;
 }
 
 /* -------------------------------------- */
-/* 3. Navigation */
+/* 3. Navigation (Desktop Default) */
 /* -------------------------------------- */
 #navigation {
     position: fixed;
@@ -117,287 +111,254 @@ h1.part-title {
     width: var(--nav-width);
     background-color: var(--color-bg-nav);
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid var(--color-border);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     z-index: 1000;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transition: background-color 0.3s, border-color 0.3s;
 }
 
 #navigation h3 {
     text-align: center;
-    margin-bottom: 5px;
     color: var(--color-text-main);
-    font-size: 1.1rem;
     border-bottom: 1px solid var(--color-border);
     padding-bottom: 10px;
-}
-
-/* Theme Dropdown */
-.theme-select {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    background-color: var(--color-bg-main);
-    color: var(--color-text-main);
-    border: 1px solid var(--color-border);
-    cursor: pointer;
-    font-size: 0.9rem;
     margin-bottom: 5px;
 }
 
+/* Links */
 #dynamic-links {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
 }
 
 .nav-link {
     display: block;
-    padding: 10px 15px;
+    padding: 8px 12px;
     background-color: var(--color-nav-link);
     color: var(--color-text-muted);
     text-decoration: none;
-    border-radius: 6px;
-    transition: all 0.2s;
+    border-radius: 4px;
     text-align: center;
-    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
 }
-
 .nav-link:hover {
     background-color: var(--color-border);
     color: var(--color-text-main);
-    transform: translateX(-5px);
 }
-
 .nav-link.active-nav {
     background-color: var(--color-accent);
-    color: var(--color-bg-main); /* Contrast text */
+    color: var(--color-bg-main);
     font-weight: bold;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* Buttons */
+/* Actions */
+.nav-actions { display: flex; flex-direction: column; gap: 5px; }
+
 .resume-btn, .map-btn, .reset-btn {
     width: 100%;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: 800;
+    font-weight: bold;
     text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
     border: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+}
+.resume-btn { background-color: #32cd32; color: #121212; }
+.map-btn { background-color: var(--color-btn-map); color: #fff; }
+.reset-btn { background-color: #d9534f; color: white; }
+
+/* -------------------------------------- */
+/* 4. Content Cards */
+/* -------------------------------------- */
+.leg-section {
+    background-color: var(--color-bg-card);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
 }
 
-.resume-btn {
-    margin-top: 15px;
-    background-color: var(--color-success);
-    color: #121212;
-}
-.resume-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
-
-.map-btn {
-    margin-top: 5px;
-    background-color: var(--color-btn-map);
-    color: #fff;
-}
-.map-btn:hover { filter: brightness(1.1); }
-
-.reset-btn {
-    margin-top: 5px;
-    background-color: #d9534f;
-    color: white;
-}
-.reset-btn:hover { background-color: #c9302c; }
-
-/* --- Theme Switcher Icons --- */
-.theme-switcher {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.leg-section h3 {
+    color: var(--color-accent);
     margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--color-border);
+    font-size: 1.3rem;
 }
 
-.theme-btn {
-    background-color: var(--color-bg-main);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-main);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; /* Circular buttons */
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
+.checklist-item {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--color-border);
+}
+.checklist-item:hover { background-color: var(--color-hover-bg); }
+
+/* CHECKBOX COLORING logic */
+.checkbox {
+    width: 18px; height: 18px; min-width: 18px;
+    margin-right: 12px; margin-top: 4px;
+    cursor: pointer;
+    accent-color: var(--color-checkbox); /* HERE IS THE COLOR MAGIC */
 }
 
-.theme-btn:hover {
-    transform: scale(1.1);
-    border-color: var(--color-accent);
-    background-color: var(--color-hover-bg);
+.step-description { flex: 1; }
+
+.checklist-item.completed .step-description {
+    color: #555 !important;
+    text-decoration: line-through !important;
+    opacity: 0.6;
 }
 
-/* The Active/Selected Button State */
-.theme-btn.active {
-    background-color: var(--color-accent);
-    color: var(--color-bg-main); /* Contrast text against accent */
-    border-color: var(--color-accent);
-    box-shadow: 0 0 10px var(--color-accent);
-    transform: scale(1.1);
-}
+.image-gallery img { max-width: 100%; border-radius: 4px; margin-top: 10px; }
+.hr-divider { height: 1px; background: var(--color-border); margin: 20px 0; }
 
 /* -------------------------------------- */
-/* 5. RESPONSIVE LOGIC (Optimized) */
+/* 5. Theme Icons & Progress */
 /* -------------------------------------- */
-
-/* -------------------------------------- */
-/* 5. RESPONSIVE LOGIC (Mobile & Tablet) */
-/* -------------------------------------- */
-
-/* Laptop/Tablet/Mobile Mode */
-@media (max-width: 1280px) {
-    #app-container {
-        /* Add padding to top so content isn't hidden behind nav */
-        padding: 200px 15px 40px 15px; 
-    }
-
-    /* Anchor scrolling offset */
-    .route-part-section { scroll-margin-top: 210px; }
-
-    #navigation {
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: auto;
-        transform: none;
-        width: 100%;
-        height: auto;
-        
-        /* Layout: Stack vertical */
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        
-        padding: 10px;
-        border-radius: 0;
-        border: none;
-        border-bottom: 2px solid var(--color-accent);
-        background-color: var(--color-bg-nav);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    }
-
-    /* Hide the big "Navigation" title on mobile */
-    #navigation h3 { display: none; }
-
-    /* --- 1. PARTS GRID (Part 1 - Part 6) --- */
-    #dynamic-links {
-        display: grid;
-        /* Force exactly 3 columns. If text is long, it shrinks. */
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 5px;
-        width: 100%;
-    }
-
-    .nav-link {
-        padding: 8px 2px; /* Less padding to fit text */
-        font-size: 0.75rem; /* Smaller font */
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-align: center;
-        width: 100%;
-        margin: 0;
-    }
-
-    /* --- 2. ACTION BUTTONS (Resume, Map, Reset) --- */
-    .nav-actions {
-        display: flex;
-        flex-direction: row; /* Force row */
-        justify-content: space-between;
-        gap: 5px;
-        width: 100%;
-    }
-
-    .resume-btn, .map-btn, .reset-btn {
-        flex: 1; /* All buttons take equal width */
-        width: auto; /* Override 100% width */
-        margin: 0;
-        padding: 8px 4px;
-        font-size: 0.75rem; /* Smaller text to fit "Reset" */
-        white-space: nowrap;
-    }
-
-    /* --- 3. PROGRESS BAR --- */
-    .progress-container {
-        width: 100%;
-        height: 10px;
-        margin-top: 2px;
-    }
-    #progressText { font-size: 0.65rem; line-height: 10px; }
-
-    /* --- 4. THEMES (At Bottom) --- */
-    .theme-switcher {
-        margin: 0;
-        padding: 0;
-        border: none;
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    .theme-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 1rem;
-        background-color: rgba(0,0,0,0.3); /* Darker bg for visibility */
-    }
-}
-
-/* -------------------------------------- */
-/* 7. Progress Bar & Theme Switcher Desktop Defaults */
-/* -------------------------------------- */
-.progress-container {
-    margin-top: 10px; width: 100%; height: 20px;
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 6px; overflow: hidden; position: relative;
-    border: 1px solid var(--color-border);
-}
-.progress-fill { height: 100%; width: 0%; transition: width 0.4s ease; }
-.progress-fill.yellow { background-color: var(--color-accent); }
-.progress-fill.green  { background-color: var(--color-success); }
-.progress-fill.blue   { background-color: #4db8ff; }
-#progressText {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem; font-weight: bold; color: #fff;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8); pointer-events: none;
-}
-
-/* Theme Switcher Desktop Styles */
 .theme-switcher {
     display: flex; justify-content: center; gap: 10px;
-    margin-top: 15px; padding-top: 10px;
-    border-top: 1px solid var(--color-border);
+    margin-bottom: 10px;
 }
 .theme-btn {
-    background-color: var(--color-bg-main);
+    background: var(--color-bg-main);
     border: 1px solid var(--color-border);
     color: var(--color-text-main);
     width: 36px; height: 36px;
     border-radius: 50%; font-size: 1.1rem;
-    cursor: pointer; transition: all 0.2s ease;
-    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
-.theme-btn:hover { transform: scale(1.1); border-color: var(--color-accent); background-color: var(--color-hover-bg); }
 .theme-btn.active {
-    background-color: var(--color-accent); color: var(--color-bg-main);
-    border-color: var(--color-accent); box-shadow: 0 0 8px var(--color-accent);
-    transform: scale(1.1);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 5px var(--color-accent);
+}
+
+.progress-container {
+    width: 100%; height: 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 4px; position: relative;
+    border: 1px solid var(--color-border);
+}
+.progress-fill { height: 100%; width: 0%; transition: width 0.4s; background: var(--color-checkbox); }
+#progressText {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; color: #fff; text-shadow: 0 1px 2px #000;
+}
+
+/* -------------------------------------- */
+/* 6. MOBILE NAVIGATION (Fixed) */
+/* -------------------------------------- */
+@media (max-width: 1280px) {
+    #app-container {
+        padding: 170px 15px 40px 15px; /* Push content down */
+    }
+    
+    .route-part-section { scroll-margin-top: 180px; }
+
+    #navigation {
+        /* Force Full Width & Top Position */
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: auto;
+        width: 100%;
+        height: auto;
+        transform: none;
+        
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        border-radius: 0;
+        border: none;
+        border-bottom: 2px solid var(--color-accent);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        z-index: 5000; /* High z-index */
+    }
+
+    #navigation h3 { display: none; }
+
+    /* Theme Icons Row */
+    .theme-switcher { margin: 0 0 5px 0; }
+    .theme-btn { width: 30px; height: 30px; font-size: 0.9rem; }
+
+    /* Links Grid (3 columns) */
+    #dynamic-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        width: 100%;
+    }
+    .nav-link {
+        padding: 6px 2px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    /* Buttons Row */
+    .nav-actions {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 5px;
+        gap: 5px;
+    }
+    .resume-btn, .map-btn, .reset-btn {
+        flex: 1; margin: 0; padding: 6px; font-size: 0.75rem;
+    }
+
+    .progress-container { margin-top: 5px; height: 12px; }
+    #progressText { font-size: 0.65rem; line-height: 12px; }
+}
+
+/* -------------------------------------- */
+/* 7. MAP MODAL (Fix for "End of Website") */
+/* -------------------------------------- */
+.map-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* FIXED is crucial */
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #050505;
+    z-index: 9999; /* Higher than everything */
+    overflow: hidden;
+}
+
+.map-viewport {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    cursor: grab;
+    touch-action: none; /* Mobile Drag Fix */
+}
+.map-viewport:active { cursor: grabbing; }
+
+#mapImage {
+    transform-origin: center center;
+    transition: transform 0.1s linear;
+    max-width: none;
+    pointer-events: none;
+}
+
+.close-map-btn {
+    position: absolute; top: 15px; left: 15px;
+    background: rgba(0,0,0,0.8); color: #fff;
+    border: 1px solid #555; padding: 8px 16px;
+    border-radius: 20px; z-index: 10000;
+}
+
+.map-controls {
+    position: absolute; bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(20,20,20,0.9);
+    padding: 8px 15px; border-radius: 30px;
+    display: flex; gap: 10px; align-items: center;
+    border: 1px solid #555; z-index: 10000;
+}
+.map-controls button {
+    background: #333; color: #fff; border: none;
+    width: 28px; height: 28px; border-radius: 50%;
 }
