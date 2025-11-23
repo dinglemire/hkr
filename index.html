@@ -19,25 +19,33 @@
     <nav id="navigation">
         <h3>Navigation</h3>
 
-        <!-- NEW: Theme Selector -->
-        <select id="themeSelect" class="theme-select" aria-label="Change Theme">
-            <option value="theme-default">Theme: Default (Abyss)</option>
-            <option value="theme-steam">Theme: Steam Guide</option>
-            <option value="theme-paper">Theme: Cornifer (Light)</option>
-        </select>
+        <!-- NEW: Icon Theme Switcher -->
+        <div class="theme-switcher">
+            <button class="theme-btn" data-theme="theme-default" title="Abyss (Default)">
+                🌑
+            </button>
+            <button class="theme-btn" data-theme="theme-steam" title="Steam Guide Style">
+                🎮
+            </button>
+            <button class="theme-btn" data-theme="theme-paper" title="Cornifer (Light)">
+                📜
+            </button>
+        </div>
         <!-- END NEW -->
 
         <!-- JS injects Part links here -->
+        <div id="dynamic-links"></div> <!-- (Optional: Placeholder for JS) -->
         
-        <button id="resumeBtn" class="resume-btn">
-            Resume Run ⏩
-        </button>
-
-        <!-- CHANGED: Now a button, not a link -->
-        <button id="mapBtn" class="map-btn">
-            View Map 🗺️
-        </button>
-
+        <button id="resumeBtn" class="resume-btn">Resume Run ⏩</button>
+        <button id="mapBtn" class="map-btn">View Map 🗺️</button>
+        <button id="resetBtn" class="reset-btn">Reset Checklist</button>
+        
+        <div class="progress-container" title="Checklist Progress">
+            <div id="progressBar" class="progress-fill yellow"></div>
+            <span id="progressText">0%</span>
+        </div>
+    </nav>
+        
         <button id="resetBtn" class="reset-btn">Reset Checklist</button>
         <!-- NEW: Progress Bar -->
         <div class="progress-container" title="Checklist Progress">
