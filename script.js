@@ -384,4 +384,32 @@ function setupResetButton() {
     }
 }
 
+// ---------------------------------------------------------
+// 7. THEME MANAGER
+// ---------------------------------------------------------
+function setupTheme() {
+    const themeSelect = document.getElementById('themeSelect');
+    if (!themeSelect) return;
+
+    // 1. Load Saved Theme
+    const savedTheme = localStorage.getItem('hkTheme') || 'theme-default';
+    
+    // 2. Apply to Body
+    document.body.className = savedTheme;
+    
+    // 3. Update Dropdown Value
+    themeSelect.value = savedTheme;
+
+    // 4. Listen for Changes
+    themeSelect.addEventListener('change', (e) => {
+        const newTheme = e.target.value;
+        
+        // Apply
+        document.body.className = newTheme;
+        
+        // Save
+        localStorage.setItem('hkTheme', newTheme);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', loadRouteData);
