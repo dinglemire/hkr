@@ -28,10 +28,10 @@ async function loadRouteData() {
         
         // Render UI
         renderNavigation();
-        renderFullRoute();
+        renderFullRoute(); // <--- This function must exist below!
         
         // Setup Interactive Components
-        setupGlobalEventListeners(); // Optimized Event Delegation
+        setupGlobalEventListeners();
         setupResetButton();
         setupResumeButton();
         setupMapModal();
@@ -47,7 +47,7 @@ async function loadRouteData() {
 }
 
 // ---------------------------------------------------------
-// 7. THEME MANAGER (Icon Version)
+// 2. THEME MANAGER
 // ---------------------------------------------------------
 function setupTheme() {
     const themeButtons = document.querySelectorAll('.theme-btn');
@@ -66,13 +66,9 @@ function setupTheme() {
 
     // Helper Function
     function applyTheme(themeName) {
-        // A. Set Body Class
         document.body.className = themeName;
-        
-        // B. Save to Storage
         localStorage.setItem('hkTheme', themeName);
 
-        // C. Update Active Button State
         themeButtons.forEach(btn => {
             if (btn.getAttribute('data-theme') === themeName) {
                 btn.classList.add('active');
@@ -84,10 +80,10 @@ function setupTheme() {
 }
 
 // ---------------------------------------------------------
-// 3. RENDER LOGIC (Fixed for new HTML structure)
+// 3. RENDER LOGIC (Navigation)
 // ---------------------------------------------------------
 function renderNavigation() {
-    // 1. Remove existing links if they exist (to prevent duplicates)
+    // 1. Remove existing links
     const existingLinks = document.getElementById('dynamic-links');
     if (existingLinks) existingLinks.remove();
 
@@ -115,23 +111,59 @@ function renderNavigation() {
         dynamicLinksDiv.appendChild(link);
     });
 
-    // 4. Insert into DOM (THE FIX IS HERE)
-    // We insert before the "nav-actions" div, not the resume button
+    // 4. Insert into DOM (Fixed for new HTML structure)
     const actionsContainer = document.querySelector('.nav-actions');
     
-    if (actionsContainer) {
+    if (actionsContainer && actionsContainer.parentNode === navigationContainer) {
         navigationContainer.insertBefore(dynamicLinksDiv, actionsContainer);
     } else {
-        // Fallback if HTML structure is different
         navigationContainer.prepend(dynamicLinksDiv);
     }
 }
 
 // ---------------------------------------------------------
-// 4. EVENT DELEGATION (Performance Optimization)
+// 4. RENDER LOGIC (Main Route Content)
+// ---------------------------------------------------------
+function renderFullRoute() {
+    let html = '';
+
+    routeData.forEach(part => {
+        html += `<section id="${part.id}" class="route-part-section">`;
+        html += `<h1 class="part-title">${part.title}</h1>`;
+
+        part.legs.forEach(leg => {
+            html += `
+                <div class="leg-section">
+                    <h3>${leg.title}</h3>
+                    <div class="checklist">
+            `;
+            leg.content.forEach(item => {
+                if (item.type === 'step') {
+                    const isChecked = localStorage.getItem(item.id) === 'true';
+                    const completedClass = isChecked ? 'completed' : '';
+                    html += `
+                        <div class="checklist-item ${completedClass}" id="row-${item.id}">
+                            <input type="checkbox" class="checkbox" id="${item.id}" ${isChecked ? 'checked' : ''}>
+                            <span class="step-description">${item.text}</span>
+                        </div>
+                    `;
+                } else if (item.type === 'img') {
+                    if (item.src.includes('hr.png')) html += `<div class="hr-divider"></div>`;
+                    else html += `<div class="image-gallery single-image"><img src="${item.src}" alt="Reference" loading="lazy"></div>`;
+                }
+            });
+            html += `</div></div>`;
+        });
+        html += `</section>`;
+    });
+
+    contentArea.innerHTML = html;
+}
+
+// ---------------------------------------------------------
+// 5. EVENT DELEGATION & PROGRESS
 // ---------------------------------------------------------
 function setupGlobalEventListeners() {
-    // Instead of adding 100+ listeners, we add ONE to the container
     contentArea.addEventListener('change', (e) => {
         if (e.target.classList.contains('checkbox')) {
             const checkbox = e.target;
@@ -149,9 +181,6 @@ function setupGlobalEventListeners() {
     });
 }
 
-// ---------------------------------------------------------
-// 5. PROGRESS BAR
-// ---------------------------------------------------------
 function updateProgressBar() {
     const allBoxes = document.querySelectorAll('.checkbox');
     const checkedBoxes = document.querySelectorAll('.checkbox:checked');
@@ -172,7 +201,6 @@ function updateProgressBar() {
         progressBar.classList.add('blue');
         progressText.textContent = "112% COMPLETE!";
     } else {
-        // Check specifically for 100% ending step
         const endingStep = document.getElementById('l06s12');
         if (endingStep && endingStep.checked) {
             progressBar.classList.add('green');
@@ -183,7 +211,7 @@ function updateProgressBar() {
 }
 
 // ---------------------------------------------------------
-// 6. MAP MODAL (Optimized for Mobile)
+// 6. MAP MODAL
 // ---------------------------------------------------------
 function setupMapModal() {
     const modal = document.getElementById("mapModal");
@@ -214,7 +242,6 @@ function setupMapModal() {
         img.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
         if (slider) slider.value = scale;
         if (label) label.textContent = Math.round(scale * 100) + "%";
-        // Note: We removed localStorage saving from here for performance
     }
 
     function saveMapState() {
@@ -251,14 +278,14 @@ function setupMapModal() {
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.style.display === "block") closeMap(); });
 
     if (viewport) {
-        // --- MOUSE ---
+        // MOUSE
         viewport.addEventListener("mousedown", (e) => {
             e.preventDefault(); isDragging = true; 
             startX = e.clientX - pointX; startY = e.clientY - pointY; 
             viewport.style.cursor = "grabbing";
         });
         window.addEventListener("mouseup", () => { 
-            if(isDragging) { isDragging = false; saveMapState(); } // Save on release
+            if(isDragging) { isDragging = false; saveMapState(); }
             if (viewport) viewport.style.cursor = "grab"; 
         });
         window.addEventListener("mousemove", (e) => {
@@ -267,12 +294,12 @@ function setupMapModal() {
             updateTransform();
         });
 
-        // --- TOUCH ---
+        // TOUCH
         viewport.addEventListener("touchstart", (e) => {
-            if (e.touches.length === 2) { // Pinch
+            if (e.touches.length === 2) { 
                 e.preventDefault(); isDragging = false;
                 startPinchDist = getDistance(e.touches); startScale = scale;
-            } else if (e.touches.length === 1) { // Drag
+            } else if (e.touches.length === 1) {
                 isDragging = true;
                 startX = e.touches[0].clientX - pointX; startY = e.touches[0].clientY - pointY;
             }
@@ -282,35 +309,33 @@ function setupMapModal() {
             if (e.touches.length < 2) startPinchDist = 0;
             if (e.touches.length === 0 && isDragging) { 
                 isDragging = false; 
-                saveMapState(); // Save on release
+                saveMapState();
             }
         });
 
         window.addEventListener("touchmove", (e) => {
-            if (e.touches.length === 2 && startPinchDist > 0) { // Pinching
+            if (e.touches.length === 2 && startPinchDist > 0) {
                 e.preventDefault();
                 const zoomFactor = getDistance(e.touches) / startPinchDist;
                 scale = startScale * zoomFactor;
                 updateTransform();
-            } else if (isDragging && e.touches.length === 1) { // Dragging
+            } else if (isDragging && e.touches.length === 1) {
                 e.preventDefault(); 
                 pointX = e.touches[0].clientX - startX; pointY = e.touches[0].clientY - startY;
                 updateTransform();
             }
         }, { passive: false });
 
-        // --- WHEEL ---
+        // WHEEL
         viewport.addEventListener("wheel", (e) => {
             e.preventDefault();
             scale = Math.min(Math.max(0.1, scale + (-Math.sign(e.deltaY) * 0.1)), 3);
             updateTransform();
-            // Debounce saving map state could be added here, but wheel is less frequent than drag
             clearTimeout(window.mapSaveTimeout);
             window.mapSaveTimeout = setTimeout(saveMapState, 500);
         });
     }
 
-    // Controls
     if (slider) slider.addEventListener("input", (e) => { scale = parseFloat(e.target.value); updateTransform(); saveMapState(); });
     if (zoomIn) zoomIn.addEventListener("click", () => { scale = Math.min(scale + 0.1, 3); updateTransform(); saveMapState(); });
     if (zoomOut) zoomOut.addEventListener("click", () => { scale = Math.max(scale - 0.1, 0.1); updateTransform(); saveMapState(); });
