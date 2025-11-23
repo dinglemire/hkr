@@ -1,50 +1,53 @@
 /* -------------------------------------- */
-/* 1. Global Reset and Variables */
+/* 1. Global Variables & Themes */
 /* -------------------------------------- */
 :root {
-    /* --- DEFAULT THEME (The Abyss - Original) --- */
+    /* --- DEFAULT THEME (The Abyss - Your Original) --- */
     --color-bg-main: #121212;
     --color-bg-card: #1c1c1c;
     --color-bg-nav: #1c1c1c;
     --color-text-main: #e0e0e0;
     --color-text-muted: #aaaaaa;
-    --color-accent: #f0c05a;       /* Hollow Knight Gold */
+    --color-accent: #f0c05a;       /* Gold */
     --color-link: #f0c05a;
     --color-border: #333333;
-    --color-success: #32cd32;
-    --color-btn-map: #637b98;
+    --color-success: #32cd32;      /* Green */
+    --color-btn-map: #637b98;      /* Blue-Grey */
     --color-hover-bg: rgba(255,255,255,0.05);
+    --color-nav-link: #252525;
     --nav-width: 220px;
 }
 
-/* --- THEME: STEAM GUIDE (Dark Grey & Blue) --- */
+/* --- THEME: STEAM GUIDE (Dark Blue/Grey) --- */
 body.theme-steam {
-    --color-bg-main: #000000;      /* Steam Guides use black outer bg */
-    --color-bg-card: #16202d;      /* Deep Blue-Grey for content */
+    --color-bg-main: #000000;
+    --color-bg-card: #16202d;      /* Steam Blue-Grey */
     --color-bg-nav: #1b2838;       /* Steam Header Blue */
-    --color-text-main: #acb2b8;    /* Classic Steam Text Grey */
+    --color-text-main: #acb2b8;    /* Steam Text Grey */
     --color-text-muted: #70757a;
     --color-accent: #66c0f4;       /* Steam Bright Blue */
-    --color-link: #ffffff;         /* Headers often white in guides */
+    --color-link: #ffffff;
     --color-border: #3c434d;
-    --color-success: #66c0f4;      /* Use blue for success too */
+    --color-success: #66c0f4;      /* Use Blue for success */
     --color-btn-map: #2a475e;
     --color-hover-bg: rgba(102, 192, 244, 0.1);
+    --color-nav-link: #101822;
 }
 
-/* --- THEME: CORNIFER (Light/Paper Style) --- */
+/* --- THEME: CORNIFER (Light Paper/Sepia) --- */
 body.theme-paper {
-    --color-bg-main: #e6dfcc;      /* Parchment color */
-    --color-bg-card: #f4f0e6;      /* Lighter paper */
-    --color-bg-nav: #dcd0b3;
-    --color-text-main: #3b3228;    /* Dark Ink Brown */
+    --color-bg-main: #e6dfcc;      /* Parchment */
+    --color-bg-card: #f4f0e6;      /* Lighter Paper */
+    --color-bg-nav: #dcd0b3;       /* Darker Paper */
+    --color-text-main: #3b3228;    /* Ink Brown */
     --color-text-muted: #6b5d4f;
-    --color-accent: #8f3f3f;       /* Red Marker color */
-    --color-link: #2c5d63;         /* Teal ink */
+    --color-accent: #8f3f3f;       /* Red Marker */
+    --color-link: #2c5d63;         /* Teal Ink */
     --color-border: #c2b59b;
     --color-success: #4caf50;
     --color-btn-map: #5d7275;
     --color-hover-bg: rgba(0,0,0,0.05);
+    --color-nav-link: #e6dfcc;
 }
 
 *, *::before, *::after {
@@ -55,106 +58,34 @@ body.theme-paper {
 
 html { scroll-behavior: smooth; }
 
-/* Apply variables */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--color-bg-main);
     color: var(--color-text-main);
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s; /* Smooth theme switch */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- Styles using the new variable names --- */
-
-/* Headings */
-h1.part-title { color: var(--color-link); }
-.leg-section h3 { 
-    color: var(--color-accent); 
-    border-bottom: 1px solid var(--color-border); 
-}
-
-/* Navigation & Cards */
-#navigation {
-    background-color: var(--color-bg-nav);
-    border: 1px solid var(--color-border);
-}
-
-.leg-section {
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-}
-
-.checklist-item { border-bottom: 1px dashed var(--color-border); }
-.checklist-item:hover { background-color: var(--color-hover-bg); }
-.checklist-item.completed .step-description { color: var(--color-text-muted); }
-
-/* Checkbox Color */
-.checkbox { accent-color: var(--color-success); }
-
-/* Nav Links */
-.nav-link {
-    background-color: rgba(0,0,0,0.2); /* Transparent dark */
-    color: var(--color-text-muted);
-}
-/* Paper theme specific override for nav links readability */
-body.theme-paper .nav-link { background-color: rgba(0,0,0,0.05); }
-
-.nav-link:hover {
-    background-color: var(--color-border);
-    color: var(--color-text-main);
-}
-.nav-link.active-nav {
-    background-color: var(--color-accent);
-    color: var(--color-bg-main); /* Contrast text on accent */
-}
-
-/* Buttons */
-.map-btn { background-color: var(--color-btn-map); }
-
-/* NEW: Theme Select Style */
-.theme-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    background-color: var(--color-bg-main);
-    color: var(--color-text-main);
-    border: 1px solid var(--color-border);
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-/* Mobile Nav Tweak for Dropdown */
-@media (max-width: 1280px) {
-    .theme-select {
-        width: auto;
-        margin-bottom: 0;
-        padding: 6px;
-    }
-}
 /* -------------------------------------- */
-/* 2. Layout - The Centered Box */
+/* 2. Layout */
 /* -------------------------------------- */
-
 #app-container {
     max-width: 1200px;
     margin: 0 auto;
-    /* Default padding for Desktop (Sidebar mode) */
-    padding: 40px 260px 100px 20px; /* Right padding reserves space for sidebar */
+    padding: 40px 260px 100px 20px;
     position: relative;
     transition: padding 0.3s;
 }
 
-/* Sections generated by JS */
 .route-part-section {
     margin-bottom: 60px;
     scroll-margin-top: 20px;
-    border-top: 1px solid #2a2a2a;
+    border-top: 1px solid #2a2a2a; /* Keep subtle */
     padding-top: 20px;
 }
 
 h1.part-title {
-    color: var(--color-text-accent);
+    color: var(--color-link);
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 30px;
@@ -163,16 +94,15 @@ h1.part-title {
 }
 
 /* -------------------------------------- */
-/* 3. Navigation - Sidebar Mode (Default) */
+/* 3. Navigation */
 /* -------------------------------------- */
-
 #navigation {
     position: fixed;
     right: 30px;
     top: 50%;
     transform: translateY(-50%);
     width: var(--nav-width);
-    background-color: var(--color-background-mid);
+    background-color: var(--color-bg-nav);
     padding: 20px;
     border-radius: 12px;
     border: 1px solid var(--color-border);
@@ -181,15 +111,29 @@ h1.part-title {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 #navigation h3 {
     text-align: center;
     margin-bottom: 5px;
-    color: #fff;
+    color: var(--color-text-main);
     font-size: 1.1rem;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 10px;
+}
+
+/* Theme Dropdown */
+.theme-select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
 }
 
 #dynamic-links {
@@ -201,8 +145,8 @@ h1.part-title {
 .nav-link {
     display: block;
     padding: 10px 15px;
-    background-color: #252525;
-    color: #aaa;
+    background-color: var(--color-nav-link);
+    color: var(--color-text-muted);
     text-decoration: none;
     border-radius: 6px;
     transition: all 0.2s;
@@ -211,20 +155,20 @@ h1.part-title {
 }
 
 .nav-link:hover {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color-border);
+    color: var(--color-text-main);
     transform: translateX(-5px);
 }
 
 .nav-link.active-nav {
-    background-color: var(--color-text-accent);
-    color: var(--color-background-dark);
+    background-color: var(--color-accent);
+    color: var(--color-bg-main); /* Contrast text */
     font-weight: bold;
     transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(240, 192, 90, 0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* Buttons Sidebar Style */
+/* Buttons */
 .resume-btn, .map-btn, .reset-btn {
     width: 100%;
     padding: 10px;
@@ -243,14 +187,14 @@ h1.part-title {
     background-color: var(--color-success);
     color: #121212;
 }
-.resume-btn:hover { transform: translateY(-2px); background-color: #2eb82e; }
+.resume-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
 .map-btn {
     margin-top: 5px;
-    background-color: var(--color-accent-dark);
+    background-color: var(--color-btn-map);
     color: #fff;
 }
-.map-btn:hover { background-color: #7aa3cc; }
+.map-btn:hover { filter: brightness(1.1); }
 
 .reset-btn {
     margin-top: 5px;
@@ -259,22 +203,21 @@ h1.part-title {
 }
 .reset-btn:hover { background-color: #c9302c; }
 
-
 /* -------------------------------------- */
 /* 4. Content Styling */
 /* -------------------------------------- */
-
 .leg-section {
-    background-color: var(--color-background-mid);
+    background-color: var(--color-bg-card);
     padding: 25px;
     border-radius: 8px;
     margin-bottom: 30px;
     border: 1px solid var(--color-border);
+    transition: background-color 0.3s;
 }
 
 .leg-section h3 {
-    color: var(--color-text-accent);
-    border-bottom: 1px solid #444;
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
@@ -283,12 +226,16 @@ h1.part-title {
     display: flex;
     align-items: flex-start;
     padding: 10px;
-    border-bottom: 1px dashed #333;
+    border-bottom: 1px dashed var(--color-border);
     transition: background 0.2s;
 }
 .checklist-item:last-child { border-bottom: none; }
-.checklist-item:hover { background-color: rgba(255,255,255,0.05); }
-.checklist-item.completed .step-description { color: #666; text-decoration: line-through; }
+.checklist-item:hover { background-color: var(--color-hover-bg); }
+
+.checklist-item.completed .step-description {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+}
 
 .checkbox {
     width: 20px;
@@ -301,300 +248,131 @@ h1.part-title {
 }
 
 .step-description { flex: 1; font-size: 1rem; }
-
 .image-gallery { margin-top: 15px; }
 .image-gallery img { max-width: 100%; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.5); }
-.hr-divider { height: 1px; background: #333; margin: 20px 0; }
-
+.hr-divider { height: 1px; background: var(--color-border); margin: 20px 0; }
 
 /* -------------------------------------- */
 /* 5. RESPONSIVE LOGIC */
 /* -------------------------------------- */
-
-/* 
-   Phase 1: Compact Top Bar (Laptops & Tablets) 
-   Trigger: Below 1280px (Standard Laptop Width)
-*/
 @media (max-width: 1280px) {
+    #app-container { padding: 80px 20px 40px 20px; }
+    .route-part-section { scroll-margin-top: 90px; }
 
-    /* 1. Adjust Main Container */
-    #app-container {
-        max-width: 100%;
-        /* Remove sidebar spacing, add Top padding for sticky header */
-        padding: 80px 20px 40px 20px; 
-    }
-
-    /* 2. Adjust Scroll Offset for Anchor Links */
-    .route-part-section {
-        scroll-margin-top: 90px; 
-    }
-
-    /* 3. Transform Sidebar to Horizontal Top Bar */
     #navigation {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: auto;
+        top: 0; left: 0; right: 0; bottom: auto;
         transform: none;
         width: 100%;
         height: auto;
-        
-        flex-direction: row; /* Horizontal Layout */
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap; /* Allow wrapping only if strictly necessary */
-        gap: 10px;
-
-        padding: 8px 15px; /* Slim padding */
+        flex-wrap: wrap;
+        padding: 8px 15px;
         border-radius: 0;
         border: none;
-        border-bottom: 1px solid var(--color-text-accent);
-        background-color: rgba(28, 28, 28, 0.98); /* Nearly opaque */
+        border-bottom: 1px solid var(--color-accent);
+        background-color: var(--color-bg-nav);
     }
 
-    /* 4. Hide Title to save space */
     #navigation h3 { display: none; }
+    
+    /* Dropdown tweak for top bar */
+    .theme-select { width: auto; margin-bottom: 0; padding: 5px; }
 
-    /* 5. Horizontal Links Container */
-    #dynamic-links {
-        flex-direction: row;
-        gap: 5px;
-    }
-
-    /* 6. Compact Button Styles */
-    .nav-link {
-        padding: 6px 12px;
-        font-size: 0.85rem;
-        width: auto; /* Auto width */
-        display: inline-block;
-    }
+    #dynamic-links { flexDirection: row; gap: 5px; }
+    
+    .nav-link { padding: 6px 12px; font-size: 0.85rem; width: auto; display: inline-block; }
     .nav-link:hover { transform: none; }
 
-    .resume-btn, .map-btn, .reset-btn {
-        width: auto; /* Auto width */
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        margin: 0; /* Remove margin-top */
-        display: inline-block;
-    }
+    .resume-btn, .map-btn, .reset-btn { width: auto; padding: 6px 12px; font-size: 0.8rem; margin: 0; display: inline-block; }
 }
 
-/* 
-   Phase 2: Mobile Phones 
-   Trigger: Below 850px (Tablets/Phones)
-   Logic: The horizontal menu will get too crowded, so we allow wrapping
-*/
 @media (max-width: 850px) {
-    
-    #app-container {
-        padding-top: 160px; /* Increase top padding because header will be taller */
-    }
-
-    .route-part-section {
-        scroll-margin-top: 170px;
-    }
-
-    #navigation {
-        justify-content: center;
-        padding: 10px;
-    }
-
-    #dynamic-links {
-        justify-content: center;
-        flex-wrap: wrap; /* Allow links to form 2 rows */
-    }
-
-    .nav-link {
-        flex-grow: 1; /* Make touch targets bigger */
-        text-align: center;
-        min-width: 60px;
-    }
-
-    .resume-btn {
-        width: 100%; /* Make Resume big and easy to hit */
-        order: -1; /* Put it at the top of the menu! */
-        margin-bottom: 5px;
-    }
+    #app-container { padding-top: 160px; }
+    .route-part-section { scroll-margin-top: 170px; }
+    #navigation { justify-content: center; padding: 10px; }
+    #dynamic-links { justify-content: center; flex-wrap: wrap; }
+    .nav-link { flex-grow: 1; text-align: center; min-width: 60px; }
+    .resume-btn { width: 100%; order: -1; margin-bottom: 5px; }
+    .theme-select { width: 100%; margin-bottom: 5px; text-align: center; }
 }
 
-
-/* ... (Keep all your existing CSS) ... */
-
 /* -------------------------------------- */
-/* 6. Advanced Map Modal Styling */
+/* 6. Advanced Map Modal & Progress Bar */
 /* -------------------------------------- */
-
 .map-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #050505; /* Deep dark background */
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #050505;
     z-index: 2000;
-    overflow: hidden; /* Prevent scrolling the page */
+    overflow: hidden;
 }
 
-/* Update this class in your style.css */
 .map-viewport {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: grab;
-    
-    /* NEW: This is crucial for mobile smoothness */
-    touch-action: none; 
+    touch-action: none; /* VITAL FOR MOBILE */
 }
+.map-viewport:active { cursor: grabbing; }
 
-.map-viewport:active {
-    cursor: grabbing; /* Closed hand when dragging */
-}
-
-/* The Image itself */
 #mapImage {
-    /* Prepare for JS transformations */
     transform-origin: center center; 
-    transition: transform 0.1s linear; /* Smooth zoom */
-    max-width: none; /* Allow it to be huge */
-    max-height: none;
-    pointer-events: none; /* Prevents image dragging ghost */
-    user-select: none;
+    transition: transform 0.1s linear;
+    max-width: none; max-height: none;
+    pointer-events: none; user-select: none;
 }
 
-/* Back Button (Top Left) */
 .close-map-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 2010;
+    position: absolute; top: 20px; left: 20px; z-index: 2010;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     border: 1px solid #444;
-    padding: 10px 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1rem;
-    backdrop-filter: blur(4px);
-    transition: all 0.2s;
+    padding: 10px 20px; border-radius: 30px;
+    cursor: pointer; font-weight: bold;
+    backdrop-filter: blur(4px); transition: all 0.2s;
 }
+.close-map-btn:hover { background-color: var(--color-accent); color: #121212; }
 
-.close-map-btn:hover {
-    background-color: var(--color-text-accent);
-    color: #121212;
-    transform: translateY(2px);
-}
-
-/* Zoom Controls (Bottom Center) */
 .map-controls {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2010;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    position: absolute; bottom: 30px; left: 50%;
+    transform: translateX(-50%); z-index: 2010;
+    display: flex; align-items: center; gap: 15px;
     background-color: rgba(20, 20, 20, 0.9);
-    padding: 10px 20px;
-    border-radius: 50px;
+    padding: 10px 20px; border-radius: 50px;
     border: 1px solid #444;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
-
 .map-controls button {
-    background: #333;
-    color: #fff;
-    border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
+    background: #333; color: #fff; border: none;
+    width: 30px; height: 30px; border-radius: 50%;
+    font-size: 1.2rem; cursor: pointer;
 }
-
-.map-controls button:hover { background: var(--color-text-accent); color: #000; }
-
-#zoomSlider {
-    width: 150px;
-    accent-color: var(--color-text-accent);
-    cursor: pointer;
-}
-
-#zoomLabel {
-    color: #fff;
-    font-family: monospace;
-    font-size: 1rem;
-    min-width: 45px;
-    text-align: right;
-}
-
-/* Mobile Tweak */
-@media (max-width: 768px) {
-    .map-controls {
-        width: 90%;
-        justify-content: space-between;
-    }
-    #zoomSlider { width: 100%; }
-}
-
-
-/* -------------------------------------- */
-/* 7. Progress Bar Styling */
-/* -------------------------------------- */
+.map-controls button:hover { background: var(--color-accent); color: #000; }
+#zoomSlider { width: 150px; accent-color: var(--color-accent); cursor: pointer; }
+#zoomLabel { color: #fff; font-family: monospace; min-width: 45px; text-align: right; }
 
 .progress-container {
-    margin-top: 15px;
-    width: 100%;
-    height: 24px;
-    background-color: #252525;
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid #444;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    margin-top: 15px; width: 100%; height: 24px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 6px; overflow: hidden; position: relative;
+    border: 1px solid var(--color-border);
 }
-
-.progress-fill {
-    height: 100%;
-    width: 0%; /* JS will change this */
-    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s;
-}
-
-/* Color States */
-.progress-fill.yellow { background-color: var(--color-text-accent); } /* Standard */
-.progress-fill.green  { background-color: var(--color-success); }     /* 100% Ending unlocked */
-.progress-fill.blue   { background-color: #4db8ff; }                  /* 112% True Completion */
-
+.progress-fill { height: 100%; width: 0%; transition: width 0.4s ease, background-color 0.4s; }
+.progress-fill.yellow { background-color: var(--color-accent); }
+.progress-fill.green  { background-color: var(--color-success); }
+.progress-fill.blue   { background-color: #4db8ff; }
 #progressText {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-    pointer-events: none; /* Let clicks pass through */
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: bold; color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8); pointer-events: none;
 }
-
-/* Mobile Tweak: Ensure it takes full width row */
 @media (max-width: 1280px) {
-    .progress-container {
-        order: 99; /* Force to bottom/end */
-        margin-top: 5px;
-        flex-basis: 100%; /* Make it take a full row in the top bar */
-    }
+    .progress-container { order: 99; margin-top: 5px; flex-basis: 100%; }
 }
