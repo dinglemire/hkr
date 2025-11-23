@@ -1,14 +1,21 @@
-// script.js – Final Version + Progress Bar
+// script.js – Final Version: 112% Route + Themes + Mobile Map Fix
 
 let routeData = [];
 const contentArea = document.getElementById('route-content');
 const navigationContainer = document.getElementById('navigation');
 const resetButton = document.getElementById('resetBtn');
 const resumeButton = document.getElementById('resumeBtn');
+const progressBar = document.getElementById('progressBar');
+const progressText = document.getElementById('progressText');
 
 // ---------------------------------------------------------
 // 1. INITIALIZATION
 // ---------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    setupTheme(); // Run immediate theme setup
+    loadRouteData();
+});
+
 async function loadRouteData() {
     const jsonPath = './route_data.json';
 
@@ -19,17 +26,18 @@ async function loadRouteData() {
         const data = await response.json();
         routeData = data.route;
         
-        // Render
+        // Render UI
         renderNavigation();
         renderFullRoute();
         
-        // Setup
+        // Setup Interactive Components
+        setupGlobalEventListeners(); // Optimized Event Delegation
         setupResetButton();
         setupResumeButton();
         setupMapModal();
         setupScrollSpy();
         
-        // Calculate initial progress
+        // Initial Calc
         updateProgressBar(); 
 
     } catch (error) {
@@ -39,60 +47,162 @@ async function loadRouteData() {
 }
 
 // ---------------------------------------------------------
-// 2. PROGRESS BAR LOGIC (New Feature)
+// 2. THEME MANAGER
+// ---------------------------------------------------------
+function setupTheme() {
+    const themeSelect = document.getElementById('themeSelect');
+    if (!themeSelect) return;
+
+    // 1. Load Saved Theme
+    const savedTheme = localStorage.getItem('hkTheme') || 'theme-default';
+    
+    // 2. Apply to Body
+    document.body.className = savedTheme;
+    
+    // 3. Sync Dropdown
+    themeSelect.value = savedTheme;
+
+    // 4. Listen for Changes
+    themeSelect.addEventListener('change', (e) => {
+        const newTheme = e.target.value;
+        document.body.className = newTheme;
+        localStorage.setItem('hkTheme', newTheme);
+    });
+}
+
+// ---------------------------------------------------------
+// 3. RENDER LOGIC
+// ---------------------------------------------------------
+function renderNavigation() {
+    const existingLinks = navigationContainer.querySelector('#dynamic-links');
+    if (existingLinks) existingLinks.remove();
+
+    const dynamicLinksDiv = document.createElement('div');
+    dynamicLinksDiv.id = 'dynamic-links';
+
+    routeData.forEach(part => {
+        const link = document.createElement('a');
+        link.href = `#${part.id}`;
+        link.textContent = part.title.split(':')[0].trim();
+        link.classList.add('nav-link');
+        
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetSection = document.getElementById(part.id);
+            if (targetSection) {
+                // Mobile offset adjustment
+                const yOffset = window.innerWidth < 1280 ? -110 : -20; 
+                const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+                history.pushState(null, '', `#${part.id}`);
+            }
+        });
+        dynamicLinksDiv.appendChild(link);
+    });
+
+    if (resumeButton) navigationContainer.insertBefore(dynamicLinksDiv, resumeButton);
+    else navigationContainer.prepend(dynamicLinksDiv);
+}
+
+function renderFullRoute() {
+    let html = '';
+
+    routeData.forEach(part => {
+        html += `<section id="${part.id}" class="route-part-section">`;
+        html += `<h1 class="part-title">${part.title}</h1>`;
+
+        part.legs.forEach(leg => {
+            html += `
+                <div class="leg-section">
+                    <h3>${leg.title}</h3>
+                    <div class="checklist">
+            `;
+            leg.content.forEach(item => {
+                if (item.type === 'step') {
+                    // Check localStorage directly during render string generation
+                    const isChecked = localStorage.getItem(item.id) === 'true';
+                    const completedClass = isChecked ? 'completed' : '';
+                    html += `
+                        <div class="checklist-item ${completedClass}" id="row-${item.id}">
+                            <input type="checkbox" class="checkbox" id="${item.id}" ${isChecked ? 'checked' : ''}>
+                            <span class="step-description">${item.text}</span>
+                        </div>
+                    `;
+                } else if (item.type === 'img') {
+                    if (item.src.includes('hr.png')) html += `<div class="hr-divider"></div>`;
+                    else html += `<div class="image-gallery single-image"><img src="${item.src}" alt="Reference" loading="lazy"></div>`;
+                }
+            });
+            html += `</div></div>`;
+        });
+        html += `</section>`;
+    });
+
+    contentArea.innerHTML = html;
+}
+
+// ---------------------------------------------------------
+// 4. EVENT DELEGATION (Performance Optimization)
+// ---------------------------------------------------------
+function setupGlobalEventListeners() {
+    // Instead of adding 100+ listeners, we add ONE to the container
+    contentArea.addEventListener('change', (e) => {
+        if (e.target.classList.contains('checkbox')) {
+            const checkbox = e.target;
+            const row = checkbox.closest('.checklist-item');
+            
+            // Save state
+            localStorage.setItem(checkbox.id, checkbox.checked);
+            
+            // Visual update
+            if (checkbox.checked) row.classList.add('completed');
+            else row.classList.remove('completed');
+            
+            updateProgressBar();
+        }
+    });
+}
+
+// ---------------------------------------------------------
+// 5. PROGRESS BAR
 // ---------------------------------------------------------
 function updateProgressBar() {
     const allBoxes = document.querySelectorAll('.checkbox');
     const checkedBoxes = document.querySelectorAll('.checkbox:checked');
     
-    const total = allBoxes.length;
-    const checked = checkedBoxes.length;
+    if (allBoxes.length === 0) return;
+
+    const percent = Math.round((checkedBoxes.length / allBoxes.length) * 100);
     
-    if (total === 0) return;
+    if (!progressBar || !progressText) return;
 
-    // Calculate percentage
-    const percent = Math.round((checked / total) * 100);
-    
-    // Elements
-    const bar = document.getElementById('progressBar');
-    const text = document.getElementById('progressText');
-    
-    if (!bar || !text) return;
+    progressBar.style.width = `${percent}%`;
+    progressText.textContent = `${percent}% Completed`;
 
-    // Update Width and Text
-    bar.style.width = `${percent}%`;
-    text.textContent = `${percent}% Completed`;
+    // Color Logic
+    progressBar.classList.remove('yellow', 'green', 'blue');
 
-    // --- COLOR LOGIC ---
-    // Remove old classes
-    bar.classList.remove('yellow', 'green', 'blue');
-
-    // 1. Check for Blue (100% of Checklist = 112% Game)
     if (percent === 100) {
-        bar.classList.add('blue');
-        text.textContent = "112% COMPLETE!";
-    } 
-    // 2. Check for Green (The specific 100% Ending Step)
-    else {
-        // The specific step ID for 100% normal ending
+        progressBar.classList.add('blue');
+        progressText.textContent = "112% COMPLETE!";
+    } else {
+        // Check specifically for 100% ending step
         const endingStep = document.getElementById('l06s12');
-        
         if (endingStep && endingStep.checked) {
-            bar.classList.add('green');
+            progressBar.classList.add('green');
         } else {
-            bar.classList.add('yellow');
+            progressBar.classList.add('yellow');
         }
     }
 }
 
 // ---------------------------------------------------------
-// 3. ADVANCED MAP MODAL (Mobile Drag + Pinch Zoom)
+// 6. MAP MODAL (Optimized for Mobile)
 // ---------------------------------------------------------
 function setupMapModal() {
     const modal = document.getElementById("mapModal");
     const openBtn = document.getElementById("mapBtn");
     const closeBtn = document.getElementById("closeMapBtn");
-    
     const viewport = document.getElementById("mapViewport");
     const img = document.getElementById("mapImage");
     const slider = document.getElementById("zoomSlider");
@@ -103,15 +213,9 @@ function setupMapModal() {
     if (!modal || !img) return;
 
     let scale = 0.5, pointX = 0, pointY = 0;
-    
-    // Drag Variables
     let isDragging = false, startX = 0, startY = 0;
+    let startPinchDist = 0, startScale = 0;
 
-    // Pinch Zoom Variables
-    let startPinchDist = 0;
-    let startScale = 0;
-
-    // Helper: Calculate distance between two fingers
     function getDistance(touches) {
         return Math.hypot(
             touches[0].pageX - touches[1].pageX,
@@ -120,13 +224,14 @@ function setupMapModal() {
     }
 
     function updateTransform() {
-        // Prevent scale from going out of bounds (0.1x to 3x)
         scale = Math.min(Math.max(0.1, scale), 3);
-        
         img.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
-        
         if (slider) slider.value = scale;
         if (label) label.textContent = Math.round(scale * 100) + "%";
+        // Note: We removed localStorage saving from here for performance
+    }
+
+    function saveMapState() {
         localStorage.setItem("hkMapState", JSON.stringify({ scale, pointX, pointY }));
     }
 
@@ -160,213 +265,96 @@ function setupMapModal() {
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.style.display === "block") closeMap(); });
 
     if (viewport) {
-        // --- MOUSE EVENTS (Desktop) ---
+        // --- MOUSE ---
         viewport.addEventListener("mousedown", (e) => {
-            e.preventDefault();
-            isDragging = true; 
-            startX = e.clientX - pointX; 
-            startY = e.clientY - pointY; 
+            e.preventDefault(); isDragging = true; 
+            startX = e.clientX - pointX; startY = e.clientY - pointY; 
             viewport.style.cursor = "grabbing";
         });
-
         window.addEventListener("mouseup", () => { 
-            isDragging = false; 
+            if(isDragging) { isDragging = false; saveMapState(); } // Save on release
             if (viewport) viewport.style.cursor = "grab"; 
         });
-
         window.addEventListener("mousemove", (e) => {
-            if (!isDragging) return; 
-            e.preventDefault();
-            pointX = e.clientX - startX; 
-            pointY = e.clientY - startY; 
+            if (!isDragging) return; e.preventDefault();
+            pointX = e.clientX - startX; pointY = e.clientY - startY; 
             updateTransform();
         });
 
-        // --- TOUCH EVENTS (Mobile Drag & Pinch) ---
+        // --- TOUCH ---
         viewport.addEventListener("touchstart", (e) => {
-            // CASE 1: Two fingers = Pinch Zoom Start
-            if (e.touches.length === 2) {
-                e.preventDefault(); // Stop browser zoom
-                isDragging = false; // Disable drag while pinching
-                startPinchDist = getDistance(e.touches);
-                startScale = scale;
-            }
-            // CASE 2: One finger = Drag Start
-            else if (e.touches.length === 1) {
+            if (e.touches.length === 2) { // Pinch
+                e.preventDefault(); isDragging = false;
+                startPinchDist = getDistance(e.touches); startScale = scale;
+            } else if (e.touches.length === 1) { // Drag
                 isDragging = true;
-                startX = e.touches[0].clientX - pointX;
-                startY = e.touches[0].clientY - pointY;
+                startX = e.touches[0].clientX - pointX; startY = e.touches[0].clientY - pointY;
             }
         }, { passive: false });
 
         window.addEventListener("touchend", (e) => {
-            // If lifting fingers, reset logic
-            if (e.touches.length < 2) {
-                startPinchDist = 0;
-            }
-            if (e.touches.length === 0) {
-                isDragging = false;
+            if (e.touches.length < 2) startPinchDist = 0;
+            if (e.touches.length === 0 && isDragging) { 
+                isDragging = false; 
+                saveMapState(); // Save on release
             }
         });
 
         window.addEventListener("touchmove", (e) => {
-            // CASE 1: Two fingers = Pinch Zooming
-            if (e.touches.length === 2 && startPinchDist > 0) {
+            if (e.touches.length === 2 && startPinchDist > 0) { // Pinching
                 e.preventDefault();
-                const currentDist = getDistance(e.touches);
-                const zoomFactor = currentDist / startPinchDist;
-                
-                // Apply new scale based on the pinch ratio
+                const zoomFactor = getDistance(e.touches) / startPinchDist;
                 scale = startScale * zoomFactor;
                 updateTransform();
-            }
-            // CASE 2: One finger = Dragging
-            else if (isDragging && e.touches.length === 1) {
+            } else if (isDragging && e.touches.length === 1) { // Dragging
                 e.preventDefault(); 
-                pointX = e.touches[0].clientX - startX;
-                pointY = e.touches[0].clientY - startY;
+                pointX = e.touches[0].clientX - startX; pointY = e.touches[0].clientY - startY;
                 updateTransform();
             }
         }, { passive: false });
 
-        // --- DESKTOP WHEEL ZOOM ---
+        // --- WHEEL ---
         viewport.addEventListener("wheel", (e) => {
             e.preventDefault();
-            const delta = -Math.sign(e.deltaY);
-            scale = Math.min(Math.max(0.1, scale + (delta * 0.1)), 3);
+            scale = Math.min(Math.max(0.1, scale + (-Math.sign(e.deltaY) * 0.1)), 3);
             updateTransform();
+            // Debounce saving map state could be added here, but wheel is less frequent than drag
+            clearTimeout(window.mapSaveTimeout);
+            window.mapSaveTimeout = setTimeout(saveMapState, 500);
         });
     }
 
-    // Manual Controls
-    if (slider) slider.addEventListener("input", (e) => { scale = parseFloat(e.target.value); updateTransform(); });
-    if (zoomIn) zoomIn.addEventListener("click", () => { scale = Math.min(scale + 0.1, 3); updateTransform(); });
-    if (zoomOut) zoomOut.addEventListener("click", () => { scale = Math.max(scale - 0.1, 0.1); updateTransform(); });
+    // Controls
+    if (slider) slider.addEventListener("input", (e) => { scale = parseFloat(e.target.value); updateTransform(); saveMapState(); });
+    if (zoomIn) zoomIn.addEventListener("click", () => { scale = Math.min(scale + 0.1, 3); updateTransform(); saveMapState(); });
+    if (zoomOut) zoomOut.addEventListener("click", () => { scale = Math.max(scale - 0.1, 0.1); updateTransform(); saveMapState(); });
 }
 
 // ---------------------------------------------------------
-// 4. NAVIGATION RENDERING
-// ---------------------------------------------------------
-function renderNavigation() {
-    if (navigationContainer.querySelector('#dynamic-links')) {
-        navigationContainer.querySelector('#dynamic-links').remove();
-    }
-
-    const dynamicLinksDiv = document.createElement('div');
-    dynamicLinksDiv.id = 'dynamic-links';
-
-    routeData.forEach(part => {
-        const link = document.createElement('a');
-        link.href = `#${part.id}`;
-        link.textContent = part.title.split(':')[0].trim();
-        link.classList.add('nav-link');
-        
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetSection = document.getElementById(part.id);
-            if (targetSection) {
-                const yOffset = window.innerWidth < 1280 ? -110 : -20; 
-                const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({top: y, behavior: 'smooth'});
-                history.pushState(null, '', `#${part.id}`);
-            }
-        });
-        dynamicLinksDiv.appendChild(link);
-    });
-
-    if (resumeButton) navigationContainer.insertBefore(dynamicLinksDiv, resumeButton);
-    else navigationContainer.prepend(dynamicLinksDiv);
-}
-
-// ---------------------------------------------------------
-// 5. MAIN ROUTE RENDERING
-// ---------------------------------------------------------
-function renderFullRoute() {
-    let html = '';
-
-    routeData.forEach(part => {
-        html += `<section id="${part.id}" class="route-part-section">`;
-        html += `<h1 class="part-title">${part.title}</h1>`;
-
-        part.legs.forEach(leg => {
-            html += `
-                <div class="leg-section">
-                    <h3>${leg.title}</h3>
-                    <div class="checklist">
-            `;
-            leg.content.forEach(item => {
-                if (item.type === 'step') {
-                    const isChecked = localStorage.getItem(item.id) === 'true';
-                    const completedClass = isChecked ? 'completed' : '';
-                    html += `
-                        <div class="checklist-item ${completedClass}" id="row-${item.id}">
-                            <input type="checkbox" class="checkbox" id="${item.id}" ${isChecked ? 'checked' : ''}>
-                            <span class="step-description">${item.text}</span>
-                        </div>
-                    `;
-                } else if (item.type === 'img') {
-                    if (item.src.includes('hr.png')) html += `<div class="hr-divider"></div>`;
-                    else html += `<div class="image-gallery single-image"><img src="${item.src}" alt="Reference" loading="lazy"></div>`;
-                }
-            });
-            html += `</div></div>`;
-        });
-        html += `</section>`;
-    });
-
-    contentArea.innerHTML = html;
-
-    // Checkbox Listeners
-    document.querySelectorAll('.checkbox').forEach(cb => {
-        cb.addEventListener('change', function () {
-            localStorage.setItem(this.id, this.checked);
-            this.closest('.checklist-item').classList.toggle('completed', this.checked);
-            // UPDATE PROGRESS BAR ON EVERY CLICK
-            updateProgressBar(); 
-        });
-    });
-}
-
-// ---------------------------------------------------------
-// 6. UTILITIES
+// 7. UTILITIES
 // ---------------------------------------------------------
 function setupResumeButton() {
-    if (resumeButton) resumeButton.addEventListener('click', restoreProgress);
-}
-
-function restoreProgress() {
-    const checkboxes = Array.from(document.querySelectorAll('.checkbox'));
-    if (!checkboxes.some(cb => cb.checked)) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-    }
-    const firstUnchecked = checkboxes.find(cb => !cb.checked);
-    if (firstUnchecked) {
-        const row = document.getElementById(`row-${firstUnchecked.id}`);
-        if (row) {
+    if (resumeButton) resumeButton.addEventListener('click', () => {
+        const firstUnchecked = document.querySelector('.checkbox:not(:checked)');
+        if (firstUnchecked) {
+            const row = firstUnchecked.closest('.checklist-item');
             row.scrollIntoView({ behavior: 'smooth', block: 'center' });
             row.style.transition = "background 0.5s";
-            row.style.backgroundColor = "rgba(240, 192, 90, 0.2)";
+            row.style.backgroundColor = "rgba(240, 192, 90, 0.3)";
             setTimeout(() => { row.style.backgroundColor = "transparent"; }, 1000);
+        } else {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
-    } else {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
+    });
 }
 
 function setupScrollSpy() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                document.querySelectorAll('.nav-link').forEach(l => {
-                    l.setAttribute('aria-current', 'false');
-                    l.classList.remove('active-nav');
-                });
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-nav'));
                 const active = document.querySelector(`a[href="#${entry.target.id}"]`);
-                if (active) {
-                    active.setAttribute('aria-current', 'page');
-                    active.classList.add('active-nav');
-                }
+                if (active) active.classList.add('active-nav');
             }
         });
     }, { rootMargin: '-20% 0px -70% 0px' });
@@ -383,33 +371,3 @@ function setupResetButton() {
         });
     }
 }
-
-// ---------------------------------------------------------
-// 7. THEME MANAGER
-// ---------------------------------------------------------
-function setupTheme() {
-    const themeSelect = document.getElementById('themeSelect');
-    if (!themeSelect) return;
-
-    // 1. Load Saved Theme
-    const savedTheme = localStorage.getItem('hkTheme') || 'theme-default';
-    
-    // 2. Apply to Body
-    document.body.className = savedTheme;
-    
-    // 3. Update Dropdown Value
-    themeSelect.value = savedTheme;
-
-    // 4. Listen for Changes
-    themeSelect.addEventListener('change', (e) => {
-        const newTheme = e.target.value;
-        
-        // Apply
-        document.body.className = newTheme;
-        
-        // Save
-        localStorage.setItem('hkTheme', newTheme);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', loadRouteData);
