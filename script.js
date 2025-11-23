@@ -84,15 +84,18 @@ function setupTheme() {
 }
 
 // ---------------------------------------------------------
-// 3. RENDER LOGIC
+// 3. RENDER LOGIC (Fixed for new HTML structure)
 // ---------------------------------------------------------
 function renderNavigation() {
-    const existingLinks = navigationContainer.querySelector('#dynamic-links');
+    // 1. Remove existing links if they exist (to prevent duplicates)
+    const existingLinks = document.getElementById('dynamic-links');
     if (existingLinks) existingLinks.remove();
 
+    // 2. Create the container
     const dynamicLinksDiv = document.createElement('div');
     dynamicLinksDiv.id = 'dynamic-links';
 
+    // 3. Generate Links
     routeData.forEach(part => {
         const link = document.createElement('a');
         link.href = `#${part.id}`;
@@ -103,7 +106,6 @@ function renderNavigation() {
             e.preventDefault();
             const targetSection = document.getElementById(part.id);
             if (targetSection) {
-                // Mobile offset adjustment
                 const yOffset = window.innerWidth < 1280 ? -110 : -20; 
                 const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({top: y, behavior: 'smooth'});
@@ -113,45 +115,16 @@ function renderNavigation() {
         dynamicLinksDiv.appendChild(link);
     });
 
-    if (resumeButton) navigationContainer.insertBefore(dynamicLinksDiv, resumeButton);
-    else navigationContainer.prepend(dynamicLinksDiv);
-}
-
-function renderFullRoute() {
-    let html = '';
-
-    routeData.forEach(part => {
-        html += `<section id="${part.id}" class="route-part-section">`;
-        html += `<h1 class="part-title">${part.title}</h1>`;
-
-        part.legs.forEach(leg => {
-            html += `
-                <div class="leg-section">
-                    <h3>${leg.title}</h3>
-                    <div class="checklist">
-            `;
-            leg.content.forEach(item => {
-                if (item.type === 'step') {
-                    // Check localStorage directly during render string generation
-                    const isChecked = localStorage.getItem(item.id) === 'true';
-                    const completedClass = isChecked ? 'completed' : '';
-                    html += `
-                        <div class="checklist-item ${completedClass}" id="row-${item.id}">
-                            <input type="checkbox" class="checkbox" id="${item.id}" ${isChecked ? 'checked' : ''}>
-                            <span class="step-description">${item.text}</span>
-                        </div>
-                    `;
-                } else if (item.type === 'img') {
-                    if (item.src.includes('hr.png')) html += `<div class="hr-divider"></div>`;
-                    else html += `<div class="image-gallery single-image"><img src="${item.src}" alt="Reference" loading="lazy"></div>`;
-                }
-            });
-            html += `</div></div>`;
-        });
-        html += `</section>`;
-    });
-
-    contentArea.innerHTML = html;
+    // 4. Insert into DOM (THE FIX IS HERE)
+    // We insert before the "nav-actions" div, not the resume button
+    const actionsContainer = document.querySelector('.nav-actions');
+    
+    if (actionsContainer) {
+        navigationContainer.insertBefore(dynamicLinksDiv, actionsContainer);
+    } else {
+        // Fallback if HTML structure is different
+        navigationContainer.prepend(dynamicLinksDiv);
+    }
 }
 
 // ---------------------------------------------------------
