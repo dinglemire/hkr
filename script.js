@@ -1,4 +1,4 @@
-// script.js – Final Version: 112% Route + Themes + Mobile Map Fix
+// script.js – Final Version: 112% Route + Themes + Mobile Map Fix + Mobile Nav Layout
 
 let routeData = [];
 const contentArea = document.getElementById('route-content');
@@ -28,10 +28,10 @@ async function loadRouteData() {
         
         // Render UI
         renderNavigation();
-        renderFullRoute(); // <--- This function must exist below!
+        renderFullRoute();
         
         // Setup Interactive Components
-        setupGlobalEventListeners();
+        setupGlobalEventListeners(); // Handles checkboxes & strikethrough
         setupResetButton();
         setupResumeButton();
         setupMapModal();
@@ -47,7 +47,7 @@ async function loadRouteData() {
 }
 
 // ---------------------------------------------------------
-// 2. THEME MANAGER
+// 2. THEME MANAGER (Icon Version)
 // ---------------------------------------------------------
 function setupTheme() {
     const themeButtons = document.querySelectorAll('.theme-btn');
@@ -80,18 +80,15 @@ function setupTheme() {
 }
 
 // ---------------------------------------------------------
-// 3. RENDER LOGIC (Navigation)
+// 3. RENDER LOGIC (Navigation - Fixed for .nav-actions)
 // ---------------------------------------------------------
 function renderNavigation() {
-    // 1. Remove existing links
     const existingLinks = document.getElementById('dynamic-links');
     if (existingLinks) existingLinks.remove();
 
-    // 2. Create the container
     const dynamicLinksDiv = document.createElement('div');
     dynamicLinksDiv.id = 'dynamic-links';
 
-    // 3. Generate Links
     routeData.forEach(part => {
         const link = document.createElement('a');
         link.href = `#${part.id}`;
@@ -102,6 +99,7 @@ function renderNavigation() {
             e.preventDefault();
             const targetSection = document.getElementById(part.id);
             if (targetSection) {
+                // Mobile offset adjustment
                 const yOffset = window.innerWidth < 1280 ? -110 : -20; 
                 const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({top: y, behavior: 'smooth'});
@@ -111,7 +109,7 @@ function renderNavigation() {
         dynamicLinksDiv.appendChild(link);
     });
 
-    // 4. Insert into DOM (Fixed for new HTML structure)
+    // FIX: Insert before the actions container, NOT the button itself
     const actionsContainer = document.querySelector('.nav-actions');
     
     if (actionsContainer && actionsContainer.parentNode === navigationContainer) {
@@ -122,7 +120,7 @@ function renderNavigation() {
 }
 
 // ---------------------------------------------------------
-// 4. RENDER LOGIC (Main Route Content)
+// 4. RENDER LOGIC (Main Content + Strikethrough Logic)
 // ---------------------------------------------------------
 function renderFullRoute() {
     let html = '';
@@ -140,6 +138,7 @@ function renderFullRoute() {
             leg.content.forEach(item => {
                 if (item.type === 'step') {
                     const isChecked = localStorage.getItem(item.id) === 'true';
+                    // This adds the class on load
                     const completedClass = isChecked ? 'completed' : '';
                     html += `
                         <div class="checklist-item ${completedClass}" id="row-${item.id}">
@@ -161,7 +160,7 @@ function renderFullRoute() {
 }
 
 // ---------------------------------------------------------
-// 5. EVENT DELEGATION & PROGRESS
+// 5. EVENT DELEGATION (Checkbox Clicks)
 // ---------------------------------------------------------
 function setupGlobalEventListeners() {
     contentArea.addEventListener('change', (e) => {
@@ -169,18 +168,25 @@ function setupGlobalEventListeners() {
             const checkbox = e.target;
             const row = checkbox.closest('.checklist-item');
             
-            // Save state
+            // 1. Save state
             localStorage.setItem(checkbox.id, checkbox.checked);
             
-            // Visual update
-            if (checkbox.checked) row.classList.add('completed');
-            else row.classList.remove('completed');
+            // 2. Visual update (Toggle Strikethrough)
+            if (checkbox.checked) {
+                row.classList.add('completed');
+            } else {
+                row.classList.remove('completed');
+            }
             
+            // 3. Update Bar
             updateProgressBar();
         }
     });
 }
 
+// ---------------------------------------------------------
+// 6. PROGRESS BAR
+// ---------------------------------------------------------
 function updateProgressBar() {
     const allBoxes = document.querySelectorAll('.checkbox');
     const checkedBoxes = document.querySelectorAll('.checkbox:checked');
@@ -211,7 +217,7 @@ function updateProgressBar() {
 }
 
 // ---------------------------------------------------------
-// 6. MAP MODAL
+// 7. MAP MODAL (Touch & Pinch Zoom)
 // ---------------------------------------------------------
 function setupMapModal() {
     const modal = document.getElementById("mapModal");
@@ -294,7 +300,7 @@ function setupMapModal() {
             updateTransform();
         });
 
-        // TOUCH
+        // TOUCH (Pinch & Drag)
         viewport.addEventListener("touchstart", (e) => {
             if (e.touches.length === 2) { 
                 e.preventDefault(); isDragging = false;
@@ -342,7 +348,7 @@ function setupMapModal() {
 }
 
 // ---------------------------------------------------------
-// 7. UTILITIES
+// 8. UTILITIES
 // ---------------------------------------------------------
 function setupResumeButton() {
     if (resumeButton) resumeButton.addEventListener('click', () => {
