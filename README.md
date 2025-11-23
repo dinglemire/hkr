@@ -1,6 +1,6 @@
 # Hollow Knight 112% Interactive Route
 
-### 🔴 [**Click here to use the Interactive Checklist**](https://enpaulius.github.io/hkr/)
+### 🔴 [**Click here to use the Interactive Checklist**](https://dinglemire.github.io/hkr/)
 
 This is an interactive, mobile-friendly web application designed to track progress through the 112% completion run of **Hollow Knight**. It serves as a digital companion and backup for the original text guide.
 
