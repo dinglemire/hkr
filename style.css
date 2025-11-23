@@ -2,14 +2,49 @@
 /* 1. Global Reset and Variables */
 /* -------------------------------------- */
 :root {
-    --color-background-dark: #121212;
-    --color-background-mid: #1c1c1c;
-    --color-text-light: #e0e0e0;
-    --color-text-accent: #f0c05a;
-    --color-accent-dark: #637b98;
-    --color-success: #32cd32;
+    /* --- DEFAULT THEME (The Abyss - Original) --- */
+    --color-bg-main: #121212;
+    --color-bg-card: #1c1c1c;
+    --color-bg-nav: #1c1c1c;
+    --color-text-main: #e0e0e0;
+    --color-text-muted: #aaaaaa;
+    --color-accent: #f0c05a;       /* Hollow Knight Gold */
+    --color-link: #f0c05a;
     --color-border: #333333;
+    --color-success: #32cd32;
+    --color-btn-map: #637b98;
+    --color-hover-bg: rgba(255,255,255,0.05);
     --nav-width: 220px;
+}
+
+/* --- THEME: STEAM GUIDE (Dark Grey & Blue) --- */
+body.theme-steam {
+    --color-bg-main: #000000;      /* Steam Guides use black outer bg */
+    --color-bg-card: #16202d;      /* Deep Blue-Grey for content */
+    --color-bg-nav: #1b2838;       /* Steam Header Blue */
+    --color-text-main: #acb2b8;    /* Classic Steam Text Grey */
+    --color-text-muted: #70757a;
+    --color-accent: #66c0f4;       /* Steam Bright Blue */
+    --color-link: #ffffff;         /* Headers often white in guides */
+    --color-border: #3c434d;
+    --color-success: #66c0f4;      /* Use blue for success too */
+    --color-btn-map: #2a475e;
+    --color-hover-bg: rgba(102, 192, 244, 0.1);
+}
+
+/* --- THEME: CORNIFER (Light/Paper Style) --- */
+body.theme-paper {
+    --color-bg-main: #e6dfcc;      /* Parchment color */
+    --color-bg-card: #f4f0e6;      /* Lighter paper */
+    --color-bg-nav: #dcd0b3;
+    --color-text-main: #3b3228;    /* Dark Ink Brown */
+    --color-text-muted: #6b5d4f;
+    --color-accent: #8f3f3f;       /* Red Marker color */
+    --color-link: #2c5d63;         /* Teal ink */
+    --color-border: #c2b59b;
+    --color-success: #4caf50;
+    --color-btn-map: #5d7275;
+    --color-hover-bg: rgba(0,0,0,0.05);
 }
 
 *, *::before, *::after {
@@ -18,17 +53,85 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
+/* Apply variables */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--color-background-dark);
-    color: var(--color-text-light);
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s; /* Smooth theme switch */
 }
 
+/* --- Styles using the new variable names --- */
+
+/* Headings */
+h1.part-title { color: var(--color-link); }
+.leg-section h3 { 
+    color: var(--color-accent); 
+    border-bottom: 1px solid var(--color-border); 
+}
+
+/* Navigation & Cards */
+#navigation {
+    background-color: var(--color-bg-nav);
+    border: 1px solid var(--color-border);
+}
+
+.leg-section {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+}
+
+.checklist-item { border-bottom: 1px dashed var(--color-border); }
+.checklist-item:hover { background-color: var(--color-hover-bg); }
+.checklist-item.completed .step-description { color: var(--color-text-muted); }
+
+/* Checkbox Color */
+.checkbox { accent-color: var(--color-success); }
+
+/* Nav Links */
+.nav-link {
+    background-color: rgba(0,0,0,0.2); /* Transparent dark */
+    color: var(--color-text-muted);
+}
+/* Paper theme specific override for nav links readability */
+body.theme-paper .nav-link { background-color: rgba(0,0,0,0.05); }
+
+.nav-link:hover {
+    background-color: var(--color-border);
+    color: var(--color-text-main);
+}
+.nav-link.active-nav {
+    background-color: var(--color-accent);
+    color: var(--color-bg-main); /* Contrast text on accent */
+}
+
+/* Buttons */
+.map-btn { background-color: var(--color-btn-map); }
+
+/* NEW: Theme Select Style */
+.theme-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Mobile Nav Tweak for Dropdown */
+@media (max-width: 1280px) {
+    .theme-select {
+        width: auto;
+        margin-bottom: 0;
+        padding: 6px;
+    }
+}
 /* -------------------------------------- */
 /* 2. Layout - The Centered Box */
 /* -------------------------------------- */
