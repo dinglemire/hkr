@@ -86,7 +86,7 @@ function updateProgressBar() {
 }
 
 // ---------------------------------------------------------
-// 3. ADVANCED MAP MODAL (Updated for Mobile Touch)
+// 3. ADVANCED MAP MODAL (Mobile Drag + Pinch Zoom)
 // ---------------------------------------------------------
 function setupMapModal() {
     const modal = document.getElementById("mapModal");
@@ -103,10 +103,28 @@ function setupMapModal() {
     if (!modal || !img) return;
 
     let scale = 0.5, pointX = 0, pointY = 0;
+    
+    // Drag Variables
     let isDragging = false, startX = 0, startY = 0;
 
+    // Pinch Zoom Variables
+    let startPinchDist = 0;
+    let startScale = 0;
+
+    // Helper: Calculate distance between two fingers
+    function getDistance(touches) {
+        return Math.hypot(
+            touches[0].pageX - touches[1].pageX,
+            touches[0].pageY - touches[1].pageY
+        );
+    }
+
     function updateTransform() {
+        // Prevent scale from going out of bounds (0.1x to 3x)
+        scale = Math.min(Math.max(0.1, scale), 3);
+        
         img.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        
         if (slider) slider.value = scale;
         if (label) label.textContent = Math.round(scale * 100) + "%";
         localStorage.setItem("hkMapState", JSON.stringify({ scale, pointX, pointY }));
@@ -128,14 +146,14 @@ function setupMapModal() {
     if (openBtn) {
         openBtn.addEventListener("click", () => {
             modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // Stop background scrolling
+            document.body.style.overflow = "hidden"; 
             loadMapState(); 
         });
     }
 
     function closeMap() {
         modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Restore background scrolling
+        document.body.style.overflow = "auto"; 
     }
 
     if (closeBtn) closeBtn.addEventListener("click", closeMap);
@@ -164,30 +182,54 @@ function setupMapModal() {
             updateTransform();
         });
 
-        // --- TOUCH EVENTS (Mobile) ---
+        // --- TOUCH EVENTS (Mobile Drag & Pinch) ---
         viewport.addEventListener("touchstart", (e) => {
-            // Use the first finger that touched the screen
-            if (e.touches.length === 1) {
+            // CASE 1: Two fingers = Pinch Zoom Start
+            if (e.touches.length === 2) {
+                e.preventDefault(); // Stop browser zoom
+                isDragging = false; // Disable drag while pinching
+                startPinchDist = getDistance(e.touches);
+                startScale = scale;
+            }
+            // CASE 2: One finger = Drag Start
+            else if (e.touches.length === 1) {
                 isDragging = true;
                 startX = e.touches[0].clientX - pointX;
                 startY = e.touches[0].clientY - pointY;
             }
         }, { passive: false });
 
-        window.addEventListener("touchend", () => {
-            isDragging = false;
+        window.addEventListener("touchend", (e) => {
+            // If lifting fingers, reset logic
+            if (e.touches.length < 2) {
+                startPinchDist = 0;
+            }
+            if (e.touches.length === 0) {
+                isDragging = false;
+            }
         });
 
         window.addEventListener("touchmove", (e) => {
-            if (!isDragging) return;
-            // Prevent the default behavior (scrolling the webpage)
-            e.preventDefault(); 
-            pointX = e.touches[0].clientX - startX;
-            pointY = e.touches[0].clientY - startY;
-            updateTransform();
+            // CASE 1: Two fingers = Pinch Zooming
+            if (e.touches.length === 2 && startPinchDist > 0) {
+                e.preventDefault();
+                const currentDist = getDistance(e.touches);
+                const zoomFactor = currentDist / startPinchDist;
+                
+                // Apply new scale based on the pinch ratio
+                scale = startScale * zoomFactor;
+                updateTransform();
+            }
+            // CASE 2: One finger = Dragging
+            else if (isDragging && e.touches.length === 1) {
+                e.preventDefault(); 
+                pointX = e.touches[0].clientX - startX;
+                pointY = e.touches[0].clientY - startY;
+                updateTransform();
+            }
         }, { passive: false });
 
-        // --- ZOOM WHEEL ---
+        // --- DESKTOP WHEEL ZOOM ---
         viewport.addEventListener("wheel", (e) => {
             e.preventDefault();
             const delta = -Math.sign(e.deltaY);
@@ -196,7 +238,7 @@ function setupMapModal() {
         });
     }
 
-    // Zoom Controls
+    // Manual Controls
     if (slider) slider.addEventListener("input", (e) => { scale = parseFloat(e.target.value); updateTransform(); });
     if (zoomIn) zoomIn.addEventListener("click", () => { scale = Math.min(scale + 0.1, 3); updateTransform(); });
     if (zoomOut) zoomOut.addEventListener("click", () => { scale = Math.max(scale - 0.1, 0.1); updateTransform(); });
