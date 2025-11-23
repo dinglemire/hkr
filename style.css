@@ -98,7 +98,7 @@ body:not(.theme-steam) h1.part-title {
     padding-bottom: 10px; margin-bottom: 5px;
 }
 
-/* TOP ICONS - TRANSPARENT FIX */
+/* TOP ICONS */
 .top-icons {
     display: flex; justify-content: space-between; 
     gap: 5px; margin-bottom: 5px;
@@ -106,8 +106,8 @@ body:not(.theme-steam) h1.part-title {
 
 .icon-btn {
     flex: 1;
-    background: transparent; /* Removed black background */
-    border: 1px solid transparent; /* Removed default border */
+    background: transparent;
+    border: 1px solid transparent;
     color: var(--color-text-main);
     height: 36px; border-radius: 6px;
     font-size: 1.3rem; cursor: pointer;
@@ -180,6 +180,20 @@ body:not(.theme-steam) h1.part-title {
 .leg-section.collapsed .checklist { display: none; }
 .leg-section.collapsed h3::after { transform: translateY(-50%) rotate(-90deg); }
 
+/* DESKTOP OVERRIDE: Disable manual collapsing, but allow Eye toggle */
+@media (min-width: 1281px) {
+    .leg-section h3 { 
+        pointer-events: none; /* Disable clicking */
+        cursor: default; 
+        padding-right: 0; 
+    }
+    .leg-section h3::after { 
+        display: none; /* Hide arrow on desktop */
+    }
+    /* Note: We DO NOT force display:block here anymore. 
+       This allows the Eye toggle to add .collapsed class and hide items if user wants. */
+}
+
 .checklist-item {
     display: flex; padding: 8px 0;
     border-bottom: 1px dashed var(--color-border);
@@ -227,7 +241,7 @@ body:not(.theme-steam) h1.part-title {
     #navigation h3 { display: none; }
 
     .top-icons { margin-bottom: 5px; }
-    .icon-btn { height: 32px; font-size: 1.2rem; } /* Slightly bigger icons */
+    .icon-btn { height: 32px; font-size: 1.2rem; }
 
     #dynamic-links {
         display: grid; grid-template-columns: repeat(3, 1fr);
