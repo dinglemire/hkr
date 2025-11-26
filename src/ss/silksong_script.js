@@ -182,7 +182,10 @@ function renderFullRoute() {
                 } else if (item.type === 'img') {
                     if (item.src.includes('hr.png')) html += `<div class="hr-divider"></div>`;
                     else html += `<div class="image-gallery"><img src="${item.src}" loading="lazy"></div>`;
-                }
+                
+                } else if (item.type === 'note') {
+    html += `<div style="padding:10px; color:#aaa;">${item.text}</div>`;
+}
             });
             html += `</div></div>`;
         });
