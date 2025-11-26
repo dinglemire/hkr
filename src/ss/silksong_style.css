@@ -20,31 +20,31 @@
     --font-main: 'Inter', sans-serif;
 }
 
-/* --- THEME: LIGHT (Silk/White) --- */
-body.theme-light {
-    --color-bg-main: #f5f5f5;
-    --color-bg-card: #ffffff;
-    --color-bg-nav: #ffffff;
-    --color-text-main: #333333;
-    --color-text-muted: #666666;
-    --color-accent: #d93030;       /* Darker Red */
-    --color-checkbox: #d93030;
-    --color-highlight: rgba(217, 48, 48, 0.1);
-    --color-border: #dddddd;
-    --color-hover-bg: #fff0f0;
-    --color-nav-link: #f9f9f9;
-    --color-nav-border: #cccccc;
+/* --- THEME: STEAM (OLED Friendly) --- */
+body.theme-steam {
+    --color-bg-main: #000000;       /* True Black for OLED */
+    --color-bg-card: #0b0b0b;       /* Almost Black */
+    --color-bg-nav: #1b2838;        /* Steam Navy Blue */
+    --color-text-main: #c6d4df;     /* Steam Light Blue/Grey */
+    --color-text-muted: #6d7880;
+    --color-accent: #66c0f4;        /* Steam Bright Blue */
+    --color-checkbox: #66c0f4;
+    --color-highlight: rgba(102, 192, 244, 0.15);
+    --color-border: #3c434d;
+    --color-btn-map: #66c0f4;
+    --color-hover-bg: #16202d;
+    --color-nav-link: #1b2838;
+    --color-nav-border: #58636e;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-    font-family: var(--font-main);
-    background-color: var(--color-bg-main);
-    color: var(--color-text-main);
-    line-height: 1.6;
-    transition: background 0.3s, color 0.3s;
+/* Optional: Change font for Steam theme to look authentic */
+body.theme-steam h1.part-title {
+    color: #66c0f4;
+    text-shadow: none;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    text-align: left; /* Steam guides usually left align */
+    padding-left: 10px;
 }
 
 /* -------------------------------------- */
