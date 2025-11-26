@@ -453,13 +453,13 @@
         {
           "title": "Leg 30 - Whiteward",
           "content": [
-            { "type": "step", "id": "ss_l03s44", "text": "1. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l03s45", "text": "2. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l03s46", "text": "3. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l03s47", "text": "4. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l03s48", "text": "5. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l03s49", "text": "6. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l03s50", "text": "7. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l03s44", "text": "1. Travell Back to Bellway Station and use Ventrica to Choral Chambers → Garmond and Zaza encounter → Rescue Jubliana → Use White Key to enter Whiteward" },
+            { "type": "step", "id": "ss_l03s45", "text": "2. Get Choral Commandment → Climb to the top floor, summon the elevator, then quickly slide back down the hole to intermedium level, wait for the elevator to pass and drop down to get Spool Fragment [10/18]" },
+            { "type": "step", "id": "ss_l03s46", "text": "3. Get Whiteward map (70 Rosaries)" },
+            { "type": "step", "id": "ss_l03s47", "text": "4. Injector bend [28/51]" },
+            { "type": "step", "id": "ss_l03s48", "text": "5. Get Surgeons Key" },
+            { "type": "step", "id": "ss_l03s49", "text": "6. Drop down to Underworks and buy Architects Key and Silkshot [29/51] (if not adquired at Mount Fey or Forge Daugther) (130+110=240 Rosaries and 1 craftmetal) → Enter Chapel of the Architect and get Architects Crest [4/6]" },
+            { "type": "step", "id": "ss_l03s50", "text": "7. Use Ventrica Station to the First Shrine" },
             { "type": "img", "src": "src/ss/photos/37.png" }
           ]
         }
@@ -471,9 +471,117 @@
       "title": "Act 2 (Part 3)",
       "legs": [
         {
-          "title": "Leg 01 - [INSERT TITLE HERE]",
+          "title": "Leg 31 - Memorium",
           "content": [
-            { "type": "step", "id": "ss_a2p3_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+            { "type": "step", "id": "ss_l04s1", "text": "1. Green Prince encounter at Cogworks Dancers arena" },
+            { "type": "step", "id": "ss_l04s2", "text": "2. Solve puzzle Cogheart Piece → Collect Memorium Map (70 Rosaries)" },
+            { "type": "step", "id": "ss_l04s3", "text": "3. (optional) get Mossberry → Open path to the bench → Get Memory Locket [14/20]" },
+            { "type": "step", "id": "ss_l04s4", "text": "4. Break floor for shortcut → Unlock Ventrica Station (80 Rosaries)" },
+            { "type": "step", "id": "ss_l04s5", "text": "5. Get Materium and break wall for Voltvessels [30/51]" },
+            { "type": "img", "src": "src/ss/photos/38.png" },
+            { "type": "step", "id": "ss_l04s6", "text": "1. Free Chonky Lost Flea and fight it [25/30]" },
+            { "type": "step", "id": "ss_l04s7", "text": "2. Get Spool Fragment [11/18]" },
+            { "type": "step", "id": "ss_l04s8", "text": "3. Return to the map room and reach the hidden path to the Putrified ducts the behind breakable wall" },
+            { "type": "img", "src": "src/ss/photos/39.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 32 - Putrified Ducts",
+          "content": [
+            { "type": "step", "id": "ss_l04s9", "text": "1. Unlock bench and Putrified Docks (60 + 80 Rosaries)" },
+            { "type": "step", "id": "ss_l04s10", "text": "2. Get Putrified Ducts Map" },
+            { "type": "step", "id": "ss_l04s11", "text": "3. Get key of the Apostate → Talk to Huntress for Broodfeast Wish*" },
+            { "type": "step", "id": "ss_l04s12", "text": "4. Play needolin on the tablet → Get craftmetal [6/8]" },
+            { "type": "step", "id": "ss_l04s13", "text": "5. Get Wreath of Purity [31/51]" },
+            { "type": "step", "id": "ss_l04s14", "text": "6. Speak to Vog [26/30] then he will move to the caravan" },
+            { "type": "step", "id": "ss_l04s15", "text": "7. Go to Bilewater Bellway Station" },
+            { "type": "img", "src": "src/ss/photos/40.png" },
+            {
+  "type": "note",
+  "text": "*For Broodfeast Wish you need to kill enemies using certain tools:<br>• <b>Seared Organs</b>: Flintslate, Pimpillo, Voltvessels<br>• <b>Shredded Organs</b>: Conchcutter, Sawtooth Circlet<br>• <b>Skewered Organs</b>: Longpin, Sting Shard"
+}
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 31 - Memorium",
+          "content": [
+            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
+            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 31 - Memorium",
+          "content": [
+            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
+            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 31 - Memorium",
+          "content": [
+            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
+            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 31 - Memorium",
+          "content": [
+            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
+            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 31 - Memorium",
+          "content": [
+            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
+            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
+            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         }
       ]
