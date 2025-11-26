@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadRouteData() {
     // CHANGED: Point to Silksong JSON
-    const jsonPath = 'src/silksong_data.json'; 
+    const jsonPath = 'src/ss/silksong_data.json'; 
 
     try {
         const response = await fetch(jsonPath, { cache: "no-cache" });
