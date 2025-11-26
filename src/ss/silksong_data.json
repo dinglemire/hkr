@@ -19,7 +19,7 @@
           "content": [
             { "type": "step", "id": "ss_l01s4", "text": "1. [Optional] Sherma encounter" },
             { "type": "step", "id": "ss_l01s5", "text": "2. Continue through the room for Skull Brute Arena Battle" },
-            { "type": "step", "id": "ss_l01s6", "text": "3. Hit the lever to unlock the door to Bone Bottom → Unlock the bench [30 Rosaries] " },
+            { "type": "step", "id": "ss_l01s6", "text": "3. Hit the lever to unlock the door to Bone Bottom → Unlock the bench [30 Rosaries]" },
             { "type": "step", "id": "ss_l01s7", "text": "4. Collect Shard Pendant [1/51]" },
             { "type": "step", "id": "ss_l01s8", "text": "5. Hit the two levers in the long room for shortcuts → Buy Quill and Compass [2/51] from Shakra (50+70=120 Rosaries)" },
             { "type": "step", "id": "ss_l01s9", "text": "6. Unlock trapdoor at Mosshome and collect the Choral Commandment → Obtain Silkspear Skill [1/6]" },
@@ -29,7 +29,7 @@
             { "type": "step", "id": "ss_l01s12", "text": "1. Use Silkspear to free Bell Beast and defeat it for Silk Heart [1/3]; Unlock Marrow Bellway" },
             { "type": "step", "id": "ss_l01s13", "text": "2. Ring the First Bell" },
             { "type": "step", "id": "ss_l01s14", "text": "3. Open trapdoor → Get the Craftmetal [1/8] Behind glowing orb secret door" },
-            { "type": "step", "id": "ss_l01s15", "text": "4. Break the door and collect Straight pin [4/51], Grindle encounter " },
+            { "type": "step", "id": "ss_l01s15", "text": "4. Break the door and collect Straight pin [4/51], Grindle encounter" },
             { "type": "step", "id": "ss_l01s16", "text": "5. Activate the elevator for shortcut → Enter Deep Docks" },
             { "type": "img", "src": "src/ss/photos/3.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
@@ -63,7 +63,7 @@
             { "type": "step", "id": "ss_l01s31", "text": "5. Seamstress encounter; Accept Flexile Spines wish" },
             { "type": "img", "src": "src/ss/photos/6.png" },
             { "type": "step", "id": "ss_l01s32", "text": "1. Break fallen spikes from Honker enemies in the room at the right (they respawn after reentering the room) → Collect Bone scroll → Return to Seamstress and obtain Drifter's Cloak as reward" },
-            { "type": "step", "id": "ss_l01s33", "text": "2. Use Drifter's Cloak to reack upper left room; explode glowing orb to reveal Mask shard [1/20]" },
+            { "type": "step", "id": "ss_l01s33", "text": "2. Use Drifter's Cloak to reach upper left room; explode glowing orb to reveal Mask shard [1/20]" },
             { "type": "step", "id": "ss_l01s34", "text": "3. Fourth Chorus boss fight" },
             { "type": "step", "id": "ss_l01s35", "text": "4. Use Drifter's Cloak to ascend the room; Sherma 2nd encounter (don't enter Mort's shop, we'll come back later)" },
             { "type": "step", "id": "ss_l01s36", "text": "5. Hit the lever to open the platform, keep ascending until you reach Greymoor" },
@@ -86,7 +86,7 @@
             { "type": "step", "id": "ss_l01s45", "text": "2. Go to the bottom left room and get Memory Locket [1/20]" },
             { "type": "step", "id": "ss_l01s46", "text": "3. Garmond and Gaza encounter" },
             { "type": "step", "id": "ss_l01s47", "text": "4. Proceed to next room and enter the Chapel of the reaper, get Reaper Crest [1/6] after arena battle" },
-            { "type": "step", "id": "ss_l01s48", "text": "5. Hit the lever to unlock the shortcut to Halfway Home; Garmond and Gaza's second encounter (Note: Garmond only appears after discovering Moorwing and reloading the area or dying to the boss. (Optional) Garmond can be asked for assistance in the fight)" },
+            { "type": "step", "id": "ss_l01s48", "text": "5. Hit the lever to unlock the shortcut to Halfway Home; Garmond and Gaza's second encounter (Note: Garmond only appears after discovering Moorwing and reloading the area or dying to the boss)" },
             { "type": "step", "id": "ss_l01s49", "text": "6. Break the rope for shortcut → Proceed to Moorwing boss fight" },
             { "type": "step", "id": "ss_l01s50", "text": "7. Enter Bellheart and unlock the Bellway Station (60 Rosaries)" },
             { "type": "img", "src": "src/ss/photos/9.png" },
@@ -106,11 +106,11 @@
             { "type": "step", "id": "ss_l01s58", "text": "8. Pogo the flower to reach the first Pollip heart [1/6] → Take the elevator and rest at the bench" },
             { "type": "img", "src": "src/ss/photos/10.png" },
             { "type": "step", "id": "ss_l01s59", "text": "1. Sister splinter boss fight" },
-            { "type": "step", "id": "ss_l01s60", "text": "2. get Pollip Heart [2/6] at the left side of the room → Obtain Cling grip [2/6]" },
-            { "type": "step", "id": "ss_l01s61", "text": "3. Collect Pollip Heart [3/6] at top of the room → Break wall to acces te upper part of Bellheart → Free the Lost Flea [6/30] at the top part of the first room" },
+            { "type": "step", "id": "ss_l01s60", "text": "2. Get Pollip Heart [2/6] at the left side of the room → Obtain Cling grip [2/6]" },
+            { "type": "step", "id": "ss_l01s61", "text": "3. Collect Pollip Heart [3/6] at top of the room → Break wall to access the upper part of Bellheart → Free the Lost Flea [6/30] at the top part of the first room" },
             { "type": "step", "id": "ss_l01s62", "text": "4. Break the wall and return to Shellwood to pick the Pollip Heart [4/6] behind breakable roots → Pick the Pollip Heart [5/6] in the room to the right of the bench room → Pick the last Pollip Heart [6/6] → Return to Greyroot to turn in the Pollip Hearts to obtain Pollip Pouch [9/51]" },
             { "type": "step", "id": "ss_l01s63", "text": "5. Ring the Bell and rest at the bench" },
-            { "type": "step", "id": "ss_l01s64", "text": "6. Go to the left until you reach the vertical section in Mosslands " },
+            { "type": "step", "id": "ss_l01s64", "text": "6. Go to the left until you reach the vertical section in Mosslands" },
             { "type": "img", "src": "src/ss/photos/11.png" }
           ]
         }
@@ -171,7 +171,7 @@
             { "type": "step", "id": "ss_l02s25", "text": "7. Buy the Hunter's March map from Shakra (70 Rosaries)" },
             { "type": "step", "id": "ss_l02s26", "text": "8. Pick up Memory Locket [4/20]" },
             { "type": "step", "id": "ss_l02s27", "text": "9. Enter Chapel of the Beast and obtain Crest of the Beast [3/6] after Salvage Beastfly boss fight" },
-            { "type": "step", "id": "ss_l02s28", "text": "10. Buy Sting Shard and Crafting kit Upgrade [1/4] from Forge Daugther (140 Rosaries+ craftmetal, 180 Rosaries)" },
+            { "type": "step", "id": "ss_l02s28", "text": "10. Buy Sting Shard and Crafting kit Upgrade [1/4] from Forge Daughter (140 Rosaries+ craftmetal, 180 Rosaries)" },
             { "type": "step", "id": "ss_l02s29", "text": "11. Go to the Deep Docks Bellway station and travel to Shellwood" },
             { "type": "img", "src": "src/ss/photos/15.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
@@ -188,7 +188,7 @@
             { "type": "step", "id": "ss_l02s34", "text": "3. Climb the wall and enter the next room, pick up Rune Harp, complete the platforming challenge to get Mask shard [6/20]" },
             { "type": "step", "id": "ss_l02s35", "text": "4. Reach the room with a Spool Fragment [3/18]" },
             { "type": "step", "id": "ss_l02s36", "text": "5. Rest at the bench and use 4 Memory Lockets, open the breakable walls and talk to Eva to get the first upgrade for Hunter's Crest and the Vesticrest for an extra Yellow tool" },
-            { "type": "step", "id": "ss_l02s37", "text": "6. Go to Beone Bottom Bellway Station and travel to Shellwood Station" },
+            { "type": "step", "id": "ss_l02s37", "text": "6. Go to Bone Bottom Bellway Station and travel to Shellwood Station" },
             { "type": "img", "src": "src/ss/photos/17.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -202,7 +202,8 @@
             { "type": "step", "id": "ss_l02s41", "text": "4. Unlock Blasted steps Bellway and bench (60+40 Rosaries), (optional) Sherma encounter after reloading area" },
             { "type": "step", "id": "ss_l02s42", "text": "5. Descend to reach secret area with Craftmetal [4/8]" },
             { "type": "step", "id": "ss_l02s43", "text": "6. Use the Needolin at the Grand Gate and fight the Last Judge → Enter the Citadel and begin Act 2 (Note: The first part of The Citadel is really scarce in rosaries, make sure you have about 300-400 rosaries saved up. It's better to have them saved in rosary strings just in case)" },
-            { "type": "img", "src": "src/ss/photos/18.png" }
+            { "type": "img", "src": "src/ss/photos/18.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         }
       ]
@@ -214,27 +215,27 @@
         {
           "title": "Leg 13 - Underworks",
           "content": [
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s2", "text": "2. Hit the bottom of the platforms to reach Spool Fragment at the top [4/18]" },
-            { "type": "step", "id": "ss_l02s3", "text": "3. Use the elevator, drop down and reach the Underworks, pay 15 rosaries for single use bench" },
-            { "type": "step", "id": "ss_l02s4", "text": "4. Collect Underwoks Map and (optional) Bone scroll behind a breakable wall" },
-            { "type": "step", "id": "ss_l02s5", "text": "5. (optional) Loam encounter and rosary farming spot, Unlock Vermania Station (80 Rosaries)" },
-            { "type": "step", "id": "ss_l02s6", "text": "6. Spool fragment [5/18] after Arena Battle" },
-            { "type": "step", "id": "ss_l02s7", "text": "7. Get bench (15 Rosaries for single use), go to the top of the room and find passage to Memory Locket [6/20]" },
-            { "type": "step", "id": "ss_l02s8", "text": "8. Complete Arena Battle → Hit lever to gain acces to lower section → Collect Delvers Drill charm [13/51]" },
-            { "type": "step", "id": "ss_l02s9", "text": "9. Acces Choral Chambers" },
+            { "type": "step", "id": "ss_l03s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
+            { "type": "step", "id": "ss_l03s2", "text": "2. Hit the bottom of the platforms to reach Spool Fragment at the top [4/18]" },
+            { "type": "step", "id": "ss_l03s3", "text": "3. Use the elevator, drop down and reach the Underworks, pay 15 rosaries for single use bench" },
+            { "type": "step", "id": "ss_l03s4", "text": "4. Collect Underwoks Map and (optional) Bone scroll behind a breakable wall" },
+            { "type": "step", "id": "ss_l03s5", "text": "5. (optional) Loam encounter and rosary farming spot, Unlock Vermania Station (80 Rosaries)" },
+            { "type": "step", "id": "ss_l03s6", "text": "6. Spool fragment [5/18] after Arena Battle" },
+            { "type": "step", "id": "ss_l03s7", "text": "7. Get bench (15 Rosaries for single use), go to the top of the room and find passage to Memory Locket [6/20]" },
+            { "type": "step", "id": "ss_l03s8", "text": "8. Complete Arena Battle → Hit lever to gain access to lower section → Collect Delvers Drill charm [13/51]" },
+            { "type": "step", "id": "ss_l03s9", "text": "9. Access Choral Chambers" },
             { "type": "img", "src": "src/ss/photos/19.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 14 - Choral chambers",
+          "title": "Leg 14 - Choral Chambers",
           "content": [
-            { "type": "step", "id": "ss_l02s10", "text": "1. Unlock shortcut to Grand Gate → Unlock path → Buy Choral Chambers map (70 Rosaries)" },
-            { "type": "step", "id": "ss_l02s11", "text": "2. Lace encounter → Open door to unlock shortcut → Unlock Grand Bellway station and Ventrica station (80 + 80 Rosaries)" },
-            { "type": "step", "id": "ss_l02s12", "text": "3. Enter First Shrine and ring the bell" },
-            { "type": "step", "id": "ss_l02s13", "text": "4. Grab White Key at right part of Songclave → Unlock Songclave Ventrica Station (80 Rosaries)" },
-            { "type": "step", "id": "ss_l02s14", "text": "5. Open door for shortcut → Fight Cogwork dancers" },
+            { "type": "step", "id": "ss_l03s10", "text": "1. Unlock shortcut to Grand Gate → Unlock path → Buy Choral Chambers map (70 Rosaries)" },
+            { "type": "step", "id": "ss_l03s11", "text": "2. Lace encounter → Open door to unlock shortcut → Unlock Grand Bellway station and Ventrica station (80 + 80 Rosaries)" },
+            { "type": "step", "id": "ss_l03s12", "text": "3. Enter First Shrine and ring the bell" },
+            { "type": "step", "id": "ss_l03s13", "text": "4. Grab White Key at right part of Songclave → Unlock Songclave Ventrica Station (80 Rosaries)" },
+            { "type": "step", "id": "ss_l03s14", "text": "5. Open door for shortcut → Fight Cogwork dancers" },
             { "type": "img", "src": "src/ss/photos/20.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -242,15 +243,15 @@
         {
           "title": "Leg 15 - Whispering Vaults",
           "content": [
-            { "type": "step", "id": "ss_l02s15", "text": "1. Enter the room with a bench→ Collectthe Cogwork Core map at the room above the bench" },
-            { "type": "step", "id": "ss_l02s16", "text": "2. Open the two doors in the room for shortcuts → Complete Arena Battle → Open shortcut to Songclave" },
-            { "type": "step", "id": "ss_l02s17", "text": "3. Collect Psalm Cylinder → Unlock Bench at the top of the room→ Vaultkeeper Cardinus encounter" },
-            { "type": "step", "id": "ss_l02s18", "text": "4. Break ceiling to open path to Mask Shard [7/20]" },
-            { "type": "step", "id": "ss_l02s19", "text": "5. Collect Cogheart piece [1/3]" },
-            { "type": "step", "id": "ss_l02s20", "text": "6. Use the moving blocks to reach Lost Flea [10/30]" },
-            { "type": "step", "id": "ss_l02s21", "text": "7. Collect Pale Oil" },
-            { "type": "step", "id": "ss_l02s22", "text": "8. Open shortcut to stage" },
-            { "type": "step", "id": "ss_l02s23", "text": "9. Travel to Bellheart and talk to Pinmaster Plinney to complete Pinmaster's Oil wish, upgrade needle → Get wishes from billboard →Travel to Greymoor Bellway Station" },
+            { "type": "step", "id": "ss_l03s15", "text": "1. Enter the room with a bench→ Collect the Cogwork Core map at the room above the bench" },
+            { "type": "step", "id": "ss_l03s16", "text": "2. Open the two doors in the room for shortcuts → Complete Arena Battle → Open shortcut to Songclave" },
+            { "type": "step", "id": "ss_l03s17", "text": "3. Collect Psalm Cylinder → Unlock Bench at the top of the room→ Vaultkeeper Cardinus encounter" },
+            { "type": "step", "id": "ss_l03s18", "text": "4. Break ceiling to open path to Mask Shard [7/20]" },
+            { "type": "step", "id": "ss_l03s19", "text": "5. Collect Cogheart piece [1/3]" },
+            { "type": "step", "id": "ss_l03s20", "text": "6. Use the moving blocks to reach Lost Flea [10/30]" },
+            { "type": "step", "id": "ss_l03s21", "text": "7. Collect Pale Oil" },
+            { "type": "step", "id": "ss_l03s22", "text": "8. Open shortcut to stage" },
+            { "type": "step", "id": "ss_l03s23", "text": "9. Travel to Bellheart and talk to Pinmaster Plinney to complete Pinmaster's Oil wish, upgrade needle → Get wishes from billboard →Travel to Greymoor Bellway Station" },
             { "type": "img", "src": "src/ss/photos/21.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -258,27 +259,27 @@
         {
           "title": "Leg 16 - Greymoor",
           "content": [
-            { "type": "step", "id": "ss_l02s24", "text": "1. Rest at Halfway home --> Get Spool fragment [6/18] → break two walls for shortcut to Sinner's road; Quit out to return to Halfway home" },
-            { "type": "step", "id": "ss_l02s25", "text": "2. At Halfway Home, farm the craws on the ceiling to complete Crawbug Clearing wish and obtain Tool Pounch Update [2/4]; talk to Nuu and complete bugs of Pharloom (if possible) for Crafting Kit Upgrade [2/4] " },
-            { "type": "step", "id": "ss_l02s26", "text": "3. Rescue Lost Flee [11/30" },
-            { "type": "step", "id": "ss_l02s27", "text": "4. Use craftmetal to obtain Pimpillo [14/51]" },
-            { "type": "step", "id": "ss_l02s28", "text": "5. Rescue Kratt [12/30]" },
-            { "type": "step", "id": "ss_l02s29", "text": "6. Enter Sinner's road" },
+            { "type": "step", "id": "ss_l03s24", "text": "1. Rest at Halfway home --> Get Spool fragment [6/18] → break two walls for shortcut to Sinner's road; Quit out to return to Halfway home" },
+            { "type": "step", "id": "ss_l03s25", "text": "2. At Halfway Home, farm the craws on the ceiling to complete Crawbug Clearing wish and obtain Tool Pouch Update [2/4]; talk to Nuu and complete bugs of Pharloom (if possible) for Crafting Kit Upgrade [2/4] " },
+            { "type": "step", "id": "ss_l03s26", "text": "3. Rescue Lost Flea [11/30]" },
+            { "type": "step", "id": "ss_l03s27", "text": "4. Use craftmetal to obtain Pimpillo [14/51]" },
+            { "type": "step", "id": "ss_l03s28", "text": "5. Rescue Kratt [12/30]" },
+            { "type": "step", "id": "ss_l03s29", "text": "6. Enter Sinner's road" },
             { "type": "img", "src": "src/ss/photos/22.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 17 - Sinner's road",
+          "title": "Leg 17 - Sinner's Road",
           "content": [
-            { "type": "step", "id": "ss_l02s30", "text": "1. Use Simple Key to rescue Green Prince" },
-            { "type": "step", "id": "ss_l02s31", "text": "2. Talk to Crull and Benjin and get Roach Guts wish" },
-            { "type": "step", "id": "ss_l02s32", "text": "3. Rescue Pill to complete Missing Brother wish" },
-            { "type": "step", "id": "ss_l02s33", "text": "4. Unlock shortcut to the bench → Buy map from Shaka (90 Rosaries) → Do platform challenge to repair the bench" },
-            { "type": "step", "id": "ss_l02s34", "text": "5. Breakable wall for shortcut to Bilewater → Unlock a bench after defeating two Muckroaches; Styx encounter" },
-            { "type": "step", "id": "ss_l02s35", "text": "6. Rescue Lost Flea [13/30]" },
-            { "type": "step", "id": "ss_l02s36", "text": "7. Get Simple Key after defeating a roachkeeper" },
-            { "type": "step", "id": "ss_l02s37", "text": "8. Breakable wall to open the path to Bilewater " },
+            { "type": "step", "id": "ss_l03s30", "text": "1. Use Simple Key to rescue Green Prince" },
+            { "type": "step", "id": "ss_l03s31", "text": "2. Talk to Crull and Benjin and get Roach Guts wish" },
+            { "type": "step", "id": "ss_l03s32", "text": "3. Rescue Pill to complete Missing Brother wish" },
+            { "type": "step", "id": "ss_l03s33", "text": "4. Unlock shortcut to the bench → Buy map from Shaka (90 Rosaries) → Do platform challenge to repair the bench" },
+            { "type": "step", "id": "ss_l03s34", "text": "5. Breakable wall for shortcut to Bilewater → Unlock a bench after defeating two Muckroaches; Styx encounter" },
+            { "type": "step", "id": "ss_l03s35", "text": "6. Rescue Lost Flea [13/30]" },
+            { "type": "step", "id": "ss_l03s36", "text": "7. Get Simple Key after defeating a roachkeeper" },
+            { "type": "step", "id": "ss_l03s37", "text": "8. Breakable wall to open the path to Bilewater " },
             { "type": "img", "src": "src/ss/photos/23.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -286,12 +287,12 @@
         {
           "title": "Leg 18 - Bilewater",
           "content": [
-            { "type": "step", "id": "ss_l02s38", "text": "1. Enter room after nnedolin door and interact with the tablet at the end to unlock exit →Get Ruined Tool [15/51]" },
-            { "type": "step", "id": "ss_l02s39", "text": "2. Break wall and rescue Lost Flea [14/30]" },
-            { "type": "step", "id": "ss_l02s40", "text": "3. Unlock bench and Bilewater Bellway Station (60 + 80 Rosaries)" },
-            { "type": "step", "id": "ss_l02s41", "text": "4. Enter The Mist (the order of rooms is random, play the needolin on butterflies groups and they will guide you to the correct exit. At the end of The Mist Area, you will arrive at Exhaust Organ) → Inside the Exhaust Organ, there is a room with a silk refill spindle. Go left from there to rescue Lost Flea [15/30]" },
-            { "type": "step", "id": "ss_l02s42", "text": "5. Defeat the Phantom to obtain Cross Stitch skill [3/6]" },
-            { "type": "step", "id": "ss_l02s43", "text": "6. Jump onto the elevator and enter the Grand Bellway → Get Memory Locket [7/20] behind breakable wall before dropping to Bellway station" },
+            { "type": "step", "id": "ss_l03s38", "text": "1. Enter room after needolin door and interact with the tablet at the end to unlock exit →Get Ruined Tool [15/51]" },
+            { "type": "step", "id": "ss_l03s39", "text": "2. Break wall and rescue Lost Flea [14/30]" },
+            { "type": "step", "id": "ss_l03s40", "text": "3. Unlock bench and Bilewater Bellway Station (60 + 80 Rosaries)" },
+            { "type": "step", "id": "ss_l03s41", "text": "4. Enter The Mist (the order of rooms is random, play the needolin on butterflies groups and they will guide you to the correct exit. At the end of The Mist Area, you will arrive at Exhaust Organ) → Inside the Exhaust Organ, there is a room with a silk refill spindle. Go left from there to rescue Lost Flea [15/30]" },
+            { "type": "step", "id": "ss_l03s42", "text": "5. Defeat the Phantom to obtain Cross Stitch skill [3/6]" },
+            { "type": "step", "id": "ss_l03s43", "text": "6. Jump onto the elevator and enter the Grand Bellway → Get Memory Locket [7/20] behind breakable wall before dropping to Bellway station" },
             { "type": "img", "src": "src/ss/photos/24.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -299,12 +300,12 @@
         {
           "title": "Leg 19 - Underworks",
           "content": [
-            { "type": "step", "id": "ss_l02s44", "text": "1. Defeat Trobbio and obtain Claw Mirror [16/51]" },
-            { "type": "step", "id": "ss_l02s45", "text": "2. Enter the Underworks and obtain the Spool Fragment [7/18] behind the breakable wall" },
-            { "type": "step", "id": "ss_l02s46", "text": "3. Rest at the bench (Note: equip Magma Bell for easier time) → Rescue the Lost Flea [16/30]" },
-            { "type": "step", "id": "ss_l02s47", "text": "4. Obtain Craftmetal [5/8]" },
-            { "type": "step", "id": "ss_l02s48", "text": "5. Obtain Clawline [4/6]" },
-            { "type": "step", "id": "ss_l02s49", "text": "6. Complete arena battle to open shortcut to Twelfth Architect → Go to Whispering Vaults" },
+            { "type": "step", "id": "ss_l03s44", "text": "1. Defeat Trobbio and obtain Claw Mirror [16/51]" },
+            { "type": "step", "id": "ss_l03s45", "text": "2. Enter the Underworks and obtain the Spool Fragment [7/18] behind the breakable wall" },
+            { "type": "step", "id": "ss_l03s46", "text": "3. Rest at the bench (Note: equip Magma Bell for easier time) → Rescue the Lost Flea [16/30]" },
+            { "type": "step", "id": "ss_l03s47", "text": "4. Obtain Craftmetal [5/8]" },
+            { "type": "step", "id": "ss_l03s48", "text": "5. Obtain Clawline [4/6]" },
+            { "type": "step", "id": "ss_l03s49", "text": "6. Complete arena battle to open shortcut to Twelfth Architect → Go to Whispering Vaults" },
             { "type": "img", "src": "src/ss/photos/25.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -312,10 +313,10 @@
         {
           "title": "Leg 20 - Whispering Vaults",
           "content": [
-            { "type": "step", "id": "ss_l02s50", "text": "1. (optional) Play Needolin to interact with Pious Isamor" },
-            { "type": "step", "id": "ss_l02s51", "text": "2. Obtain Sacred Cylinder" },
-            { "type": "step", "id": "ss_l02s52", "text": "3. Talk to Cardinius to learn Vaultkeeper's Melody [1/3]" },
-            { "type": "step", "id": "ss_l02s53", "text": "4. Go to Songclave to collect wishes from the notice board" },
+            { "type": "step", "id": "ss_l03s50", "text": "1. (optional) Play Needolin to interact with Pious Isamor" },
+            { "type": "step", "id": "ss_l03s51", "text": "2. Obtain Sacred Cylinder" },
+            { "type": "step", "id": "ss_l03s52", "text": "3. Talk to Cardinius to learn Vaultkeeper's Melody [1/3]" },
+            { "type": "step", "id": "ss_l03s53", "text": "4. Go to Songclave to collect wishes from the notice board" },
             { "type": "img", "src": "src/ss/photos/26.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -323,15 +324,15 @@
         {
           "title": "Leg 21 - Choral Chambers",
           "content": [
-            { "type": "step", "id": "ss_l02s54", "text": "1. Mask shard [8/20] in Cogwork Core" },
-            { "type": "step", "id": "ss_l02s55", "text": "2. Speak to Loyal Mergwin to receive Great Taste of Pharloom wish" },
-            { "type": "step", "id": "ss_l02s56", "text": "3. Activate fan to rescue Lost Flea [17/30]" },
-            { "type": "step", "id": "ss_l02s57", "text": "4. Rescue another Flea [18/30] at the end of platforming challenge" },
-            { "type": "step", "id": "ss_l02s58", "text": "5. Obtain Cogheart piece after bell puzzle" },
-            { "type": "step", "id": "ss_l02s59", "text": "6. Save Grindle from the Reeds" },
-            { "type": "step", "id": "ss_l02s60", "text": "7. Enter the spa for Sherma encounter" },
-            { "type": "step", "id": "ss_l02s61", "text": "8. Open shortcut to right room → Arena battle → Unlock Choral chambers Ventrica Station (80 Rosaries)" },
-            { "type": "step", "id": "ss_l02s62", "text": "9. (optional) reload the area for Green Prince encounter → Enter the Slab" },
+            { "type": "step", "id": "ss_l03s54", "text": "1. Mask shard [8/20] in Cogwork Core" },
+            { "type": "step", "id": "ss_l03s55", "text": "2. Speak to Loyal Mergwin to receive Great Taste of Pharloom wish" },
+            { "type": "step", "id": "ss_l03s56", "text": "3. Activate fan to rescue Lost Flea [17/30]" },
+            { "type": "step", "id": "ss_l03s57", "text": "4. Rescue another Flea [18/30] at the end of platforming challenge" },
+            { "type": "step", "id": "ss_l03s58", "text": "5. Obtain Cogheart piece after bell puzzle" },
+            { "type": "step", "id": "ss_l03s59", "text": "6. Save Grindle from the Reeds" },
+            { "type": "step", "id": "ss_l03s60", "text": "7. Enter the spa for Sherma encounter" },
+            { "type": "step", "id": "ss_l03s61", "text": "8. Open shortcut to right room → Arena battle → Unlock Choral chambers Ventrica Station (80 Rosaries)" },
+            { "type": "step", "id": "ss_l03s62", "text": "9. (optional) reload the area for Green Prince encounter → Enter the Slab" },
             { "type": "img", "src": "src/ss/photos/27.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -339,47 +340,47 @@
         {
           "title": "Leg 22 - Mount Fey",
           "content": [
-            { "type": "step", "id": "ss_l02s63", "text": "1. Enter and unlock the bench and the Slab Bellway station" },
-            { "type": "step", "id": "ss_l02s64", "text": "2. Enter Mount Fay and buy the map from Shaka (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s65", "text": "3. Unlock the bench (60 rosaries) → Get Memory Crystal [17/51] after platforming" },
-            { "type": "step", "id": "ss_l02s66", "text": "4. Climb the wall and rescue Lost Flea [19/30] in secret room" },
-            { "type": "step", "id": "ss_l02s67", "text": "5. Get the bench → keep ascending and obtain Faydown Cloak [4/6] at the top of the mountain" },
-            { "type": "step", "id": "ss_l02s68", "text": "6. Find the bench; (optional) Obtain Silkshot repairing the broken tool (Note: there are three locations to repair the broken tool: At this location, Silkshot (Hornet) is crafted, there's also Silkshot(Forge Daughter) and Silkshot (Twelfth Architect). Everyone is a little different, look up which version is preferred)" },
-            { "type": "step", "id": "ss_l02s69", "text": "7. (optional) Mask Maker encounter" },
-            { "type": "step", "id": "ss_l02s70", "text": "8. DON'T REST AT BENCH → Get Mask Shard [9/20] and quit out to return at the top of the mountain for a safer return." },
-            { "type": "step", "id": "ss_l02s71", "text": "9. Rescue Lost Flea [20/30] above the Slab Bellway Station Bench → Travel to Bone Bottom" },
+            { "type": "step", "id": "ss_l03s63", "text": "1. Enter and unlock the bench and the Slab Bellway station" },
+            { "type": "step", "id": "ss_l03s64", "text": "2. Enter Mount Fay and buy the map from Shaka (40 Rosaries)" },
+            { "type": "step", "id": "ss_l03s65", "text": "3. Unlock the bench (60 rosaries) → Get Memory Crystal [17/51] after platforming" },
+            { "type": "step", "id": "ss_l03s66", "text": "4. Climb the wall and rescue Lost Flea [19/30] in secret room" },
+            { "type": "step", "id": "ss_l03s67", "text": "5. Get the bench → keep ascending and obtain Faydown Cloak [4/6] at the top of the mountain" },
+            { "type": "step", "id": "ss_l03s68", "text": "6. Find the bench; (optional) Obtain Silkshot repairing the broken tool (Note: there are three locations to repair the broken tool: At this location, Silkshot (Hornet) is crafted, there's also Silkshot(Forge Daughter) and Silkshot (Twelfth Architect). Everyone is a little different, look up which version is preferred)" },
+            { "type": "step", "id": "ss_l03s69", "text": "7. (optional) Mask Maker encounter" },
+            { "type": "step", "id": "ss_l03s70", "text": "8. DON'T REST AT BENCH → Get Mask Shard [9/20] and quit out to return at the top of the mountain for a safer return." },
+            { "type": "step", "id": "ss_l03s71", "text": "9. Rescue Lost Flea [20/30] above the Slab Bellway Station Bench → Travel to Bone Bottom" },
             { "type": "img", "src": "src/ss/photos/28.png" }
           ]
         }
-              ]
+      ]
     },
     {
-      "id": "part3",
+      "id": "part4",
       "title": "Act 2 (Part 2)",
       "legs": [
         {
           "title": "Leg 23 - Wormways",
           "content": [
-            { "type": "step", "id": "ss_l03s1", "text": "1. Donate 440 Shell Shards to complete Icon of Hope wish, make sure that all Bone Bottom wishes are completed →Use the elevator to reach Wormways" },
-            { "type": "step", "id": "ss_l03s2", "text": "2. Use a simple key to open the locked door" },
-            { "type": "step", "id": "ss_l03s3", "text": "3. Open Needolin door and obtain Sharpdart skill [4/6]" },
-            { "type": "step", "id": "ss_l03s4", "text": "4. Talk to alchemist Zylotol and accept Alchemist's assistant wish; equip Plasmium Phial at bench" },
-            { "type": "step", "id": "ss_l03s5", "text": "5. Use Plasmium Phial to obtain Plasmium [1/3] → Collect Plasmium [2/3] behind breakable wall → Get Memory Locket [8/20]" },
-            { "type": "step", "id": "ss_l03s6", "text": "6. Collect Plasmium [3/3] → Open shortcut to Bonegrave → Return to Zylotol for Plasmium Phial [18/51]" },
-            { "type": "step", "id": "ss_l03s7", "text": "7. Go to Moss Druid to obtain Moss stew for Great Taste of Pharloom wish, turn in mossberries for rosaries" },
-            { "type": "step", "id": "ss_l03s8", "text": "8. (optional) Go back to Bone Bottom and fight the Skull Tyrant (reload area if it doesn't spawn); travel to Bellway station and buy Spool Fragment [8/18] and Memory Locket [9/20]; Travel to Blasted steps" },
+            { "type": "step", "id": "ss_l04s1", "text": "1. Donate 440 Shell Shards to complete Icon of Hope wish, make sure that all Bone Bottom wishes are completed →Use the elevator to reach Wormways" },
+            { "type": "step", "id": "ss_l04s2", "text": "2. Use a simple key to open the locked door" },
+            { "type": "step", "id": "ss_l04s3", "text": "3. Open Needolin door and obtain Sharpdart skill [4/6]" },
+            { "type": "step", "id": "ss_l04s4", "text": "4. Talk to alchemist Zylotol and accept Alchemist's assistant wish; equip Plasmium Phial at bench" },
+            { "type": "step", "id": "ss_l04s5", "text": "5. Use Plasmium Phial to obtain Plasmium [1/3] → Collect Plasmium [2/3] behind breakable wall → Get Memory Locket [8/20]" },
+            { "type": "step", "id": "ss_l04s6", "text": "6. Collect Plasmium [3/3] → Open shortcut to Bonegrave → Return to Zylotol for Plasmium Phial [18/51]" },
+            { "type": "step", "id": "ss_l04s7", "text": "7. Go to Moss Druid to obtain Moss stew for Great Taste of Pharloom wish, turn in mossberries for rosaries" },
+            { "type": "step", "id": "ss_l04s8", "text": "8. (optional) Go back to Bone Bottom and fight the Skull Tyrant (reload area if it doesn't spawn); travel to Bellway station and buy Spool Fragment [8/18] and Memory Locket [9/20]; Travel to Blasted steps" },
             { "type": "img", "src": "src/ss/photos/29.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 24 - Blasted steps",
+          "title": "Leg 24 - Blasted Steps",
           "content": [
-            { "type": "step", "id": "ss_l03s9", "text": "1. Rest at the Station bench, drop down and go to the left to reach the platform below the mask shard. Reaching the platform requires running, clawline, double jump, dash → complete the room and obtain Mask shard [10/20], quit out to return to the station" },
-            { "type": "step", "id": "ss_l03s10", "text": "2. Collect Magnetic Dice [19/51]" },
-            { "type": "step", "id": "ss_l03s11", "text": "3. Great Coachflies boss fight" },
-            { "type": "step", "id": "ss_l03s12", "text": "4. Speak to Pinstress to learn Needle Strike [5/6]" },
-            { "type": "step", "id": "ss_l03s13", "text": "5. Enter Sands of Karak" },
+            { "type": "step", "id": "ss_l04s9", "text": "1. Rest at the Station bench, drop down and go to the left to reach the platform below the mask shard. Reaching the platform requires running, clawline, double jump, dash → complete the room and obtain Mask shard [10/20], quit out to return to the station" },
+            { "type": "step", "id": "ss_l04s10", "text": "2. Collect Magnetic Dice [19/51]" },
+            { "type": "step", "id": "ss_l04s11", "text": "3. Great Coachflies boss fight" },
+            { "type": "step", "id": "ss_l04s12", "text": "4. Speak to Pinstress to learn Needle Strike [5/6]" },
+            { "type": "step", "id": "ss_l04s13", "text": "5. Enter Sands of Karak" },
             { "type": "img", "src": "src/ss/photos/30.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -387,14 +388,14 @@
         {
           "title": "Leg 25 - Sands of Karak",
           "content": [
-            { "type": "step", "id": "ss_l03s14", "text": "1. Collect Memory Locket [10/20]" },
-            { "type": "step", "id": "ss_l03s15", "text": "2. Drop stalagmite to open acces to Blasted Steps → Rescue lost Flea [21/30] " },
-            { "type": "step", "id": "ss_l03s16", "text": "3. Buy the Sands of Karak map from Shaka (90 Rosaries)" },
-            { "type": "step", "id": "ss_l03s17", "text": "4. Open breakable walls to collect Crestnut at the end of the room for Great Taste of Pharloom quest" },
-            { "type": "step", "id": "ss_l03s18", "text": "5. Rescue Lost Flea [22/30]" },
-            { "type": "step", "id": "ss_l03s19", "text": "6. Use elevator and open shortcut to Blasted steps → Collect Simple Key" },
-            { "type": "step", "id": "ss_l03s20", "text": "7. Drop the stalegmite to open shortcut → Use Clawline and double jump to acces Voltnest; grab Volt Filament [20/51] after Voltvyrm boss fight" },
-            { "type": "step", "id": "ss_l03s21", "text": "8. Return to Blasted steps station and travel to Greymoor" },
+            { "type": "step", "id": "ss_l04s14", "text": "1. Collect Memory Locket [10/20]" },
+            { "type": "step", "id": "ss_l04s15", "text": "2. Drop stalagmite to open access to Blasted Steps → Rescue lost Flea [21/30] " },
+            { "type": "step", "id": "ss_l04s16", "text": "3. Buy the Sands of Karak map from Shaka (90 Rosaries)" },
+            { "type": "step", "id": "ss_l04s17", "text": "4. Open breakable walls to collect Crestnut at the end of the room for Great Taste of Pharloom quest" },
+            { "type": "step", "id": "ss_l04s18", "text": "5. Rescue Lost Flea [22/30]" },
+            { "type": "step", "id": "ss_l04s19", "text": "6. Use elevator and open shortcut to Blasted steps → Collect Simple Key" },
+            { "type": "step", "id": "ss_l04s20", "text": "7. Drop the stalegmite to open shortcut → Use Clawline and double jump to access Voltnest; grab Volt Filament [20/51] after Voltvyrm boss fight" },
+            { "type": "step", "id": "ss_l04s21", "text": "8. Return to Blasted steps station and travel to Greymoor" },
             { "type": "img", "src": "src/ss/photos/31.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -402,11 +403,11 @@
         {
           "title": "Leg 26 - Sinner's Road",
           "content": [
-            { "type": "step", "id": "ss_l03s22", "text": "1. From Greywood station go to Halfway home; Complete Bugs of Pharloom wish for Tool Pouch Upgrade [2/4]; Pay 480 rosaries to access to Vintage Nectar for Great Taste of Pharloom quest; enter basement to collect it, beware of ants; collect Memory locket [11/20] at the right side of Halfway home (requieres Faydown cloak)" },
-            { "type": "step", "id": "ss_l03s23", "text": "2. Get Barbed Bracelet [21/51]" },
-            { "type": "step", "id": "ss_l03s24", "text": "3. Obtain Pickeled Muckmaggot after defeating Disgraced Chef Lugoli, open the right door for a shortcut before the fight." },
-            { "type": "step", "id": "ss_l03s25", "text": "4. If needed farm muckroaches for Roach Guts wish → Complete Roach Guts wish and obtain Tacks [22/51]" },
-            { "type": "step", "id": "ss_l03s26", "text": "5. open shortcut to Exhaust Organ → From Bilewater Station travel to Bellheart" },
+            { "type": "step", "id": "ss_l04s22", "text": "1. From Greywood station go to Halfway home; Complete Bugs of Pharloom wish for Tool Pouch Upgrade [2/4]; Pay 480 rosaries to access to Vintage Nectar for Great Taste of Pharloom quest; enter basement to collect it, beware of ants; collect Memory locket [11/20] at the right side of Halfway home (requieres Faydown cloak)" },
+            { "type": "step", "id": "ss_l04s23", "text": "2. Get Barbed Bracelet [21/51]" },
+            { "type": "step", "id": "ss_l04s24", "text": "3. Obtain Pickeled Muckmaggot after defeating Disgraced Chef Lugoli, open the right door for a shortcut before the fight." },
+            { "type": "step", "id": "ss_l04s25", "text": "4. If needed farm muckroaches for Roach Guts wish → Complete Roach Guts wish and obtain Tacks [22/51]" },
+            { "type": "step", "id": "ss_l04s26", "text": "5. open shortcut to Exhaust Organ → From Bilewater Station travel to Bellheart" },
             { "type": "img", "src": "src/ss/photos/32.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -414,22 +415,22 @@
         {
           "title": "Leg 27 - Couriers Rasher",
           "content": [
-            { "type": "step", "id": "ss_l03s27", "text": "In Bellheart, talk to the Couriers' brothers to start the delivery of the Couriers' Rasher. (This quest has a timer; when checking the route, make sure to pause the game.) Hits also take one line of the delivery for every mask lost. Falling from great heights and hitting a wall while sprinting also damages the package. Bellway and Ventrica stations will destroy the package" },
+            { "type": "step", "id": "ss_l04s27", "text": "In Bellheart, talk to the Couriers' brothers to start the delivery of the Couriers' Rasher. (This quest has a timer; when checking the route, make sure to pause the game.) Hits also take one line of the delivery for every mask lost. Falling from great heights and hitting a wall while sprinting also damages the package. Bellway and Ventrica stations will destroy the package" },
             { "type": "img", "src": "src/ss/photos/33.png" },
             { "type": "img", "src": "src/ss/photos/34.png" },
-            { "type": "step", "id": "ss_l03s28", "text": "Deliver the 5 ingredients to Loyal Mergwin and complete Great Taste of Pharloom wish to obtain Pale Oil → Return to Bellheart and talk to Pinmaster Plinney for Needle Upgrade [3/4]; Travel to Far Fields" },
+            { "type": "step", "id": "ss_l04s28", "text": "Deliver the 5 ingredients to Loyal Mergwin and complete Great Taste of Pharloom wish to obtain Pale Oil → Return to Bellheart and talk to Pinmaster Plinney for Needle Upgrade [3/4]; Travel to Far Fields" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
           "title": "Leg 28 - Far Fields",
           "content": [
-            { "type": "step", "id": "ss_l03s29", "text": "1. Enter the secret passage behind Bellway Station; Rescue Lost Flea [23/30] at the end; open door to Mott Shop" },
-            { "type": "step", "id": "ss_l03s30", "text": "2. At Mott shop, buy Weigthed Belt [23/51], Tool Pouch Upgrade [3/4] and Memory Locket [12/20] (160 + 220 + 150=530 Rosaries)" },
-            { "type": "step", "id": "ss_l03s31", "text": "3. Beat Savage Beastfly for Savage Beastfly wish" },
-            { "type": "step", "id": "ss_l03s32", "text": "4. Enter needolin door and run fast to the end of the room for Silkspeed Anklets [24/51]; (optional) equip Flee Brew and Anklets and run again to unlock a secret room with a Rune Arp" },
-            { "type": "step", "id": "ss_l03s33", "text": "5. Get Mask Shard [11/20]" },
-            { "type": "step", "id": "ss_l03s34", "text": "6. Enter Deep Docks" },
+            { "type": "step", "id": "ss_l04s29", "text": "1. Enter the secret passage behind Bellway Station; Rescue Lost Flea [23/30] at the end; open door to Mott Shop" },
+            { "type": "step", "id": "ss_l04s30", "text": "2. At Mott shop, buy Weigthed Belt [23/51], Tool Pouch Upgrade [3/4] and Memory Locket [12/20] (160 + 220 + 150=530 Rosaries)" },
+            { "type": "step", "id": "ss_l04s31", "text": "3. Beat Savage Beastfly for Savage Beastfly wish" },
+            { "type": "step", "id": "ss_l04s32", "text": "4. Enter needolin door and run fast to the end of the room for Silkspeed Anklets [24/51]; (optional) equip Flee Brew and Anklets and run again to unlock a secret room with a Rune Arp" },
+            { "type": "step", "id": "ss_l04s33", "text": "5. Get Mask Shard [11/20]" },
+            { "type": "step", "id": "ss_l04s34", "text": "6. Enter Deep Docks" },
             { "type": "img", "src": "src/ss/photos/35.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -437,15 +438,15 @@
         {
           "title": "Leg 29 - Deep Docks",
           "content": [
-            { "type": "step", "id": "ss_l03s35", "text": "1. Use Clawline to open the door → explode the glowing orb to enter the secret room with Spool Fragment [9/18]" },
-            { "type": "step", "id": "ss_l03s36", "text": "2. Complete Arena Battle → Rescue Lost Flea [24/30]" },
-            { "type": "step", "id": "ss_l03s37", "text": "3. Hit lever to open top part of room → Get Flintslate [25/51]" },
-            { "type": "step", "id": "ss_l03s38", "text": "4. Fight Signis & Gron; (optional) open door for access to forge daughter bench for easier runback from boss" },
-            { "type": "step", "id": "ss_l03s39", "text": "5. Get Memory Locket behind breakable wall [13/20]" },
-            { "type": "step", "id": "ss_l03s40", "text": "6. (optional) Buy Silkshot from Forge Daugther. At this point, you should decide on which version of the Slinkshot you prefer" },
-            { "type": "step", "id": "ss_l03s41", "text": "7. Get Fractured Mask [26/51] from Mottled Skarr corpse" },
-            { "type": "step", "id": "ss_l03s42", "text": "8. Get Curveclaw [27/51] after really short Arena Battle" },
-            { "type": "step", "id": "ss_l03s43", "text": "9. Return to Deep Docks Bellway Station and go to Bellheart; Turn in Savage Beasfly for Mask Shard [12/20]" },
+            { "type": "step", "id": "ss_l04s35", "text": "1. Use Clawline to open the door → explode the glowing orb to enter the secret room with Spool Fragment [9/18]" },
+            { "type": "step", "id": "ss_l04s36", "text": "2. Complete Arena Battle → Rescue Lost Flea [24/30]" },
+            { "type": "step", "id": "ss_l04s37", "text": "3. Hit lever to open top part of room → Get Flintslate [25/51]" },
+            { "type": "step", "id": "ss_l04s38", "text": "4. Fight Signis & Gron; (optional) open door for access to forge daughter bench for easier runback from boss" },
+            { "type": "step", "id": "ss_l04s39", "text": "5. Get Memory Locket behind breakable wall [13/20]" },
+            { "type": "step", "id": "ss_l04s40", "text": "6. (optional) Buy Silkshot from Forge Daugther. At this point, you should decide on which version of the Slinkshot you prefer" },
+            { "type": "step", "id": "ss_l04s41", "text": "7. Get Fractured Mask [26/51] from Mottled Skarr corpse" },
+            { "type": "step", "id": "ss_l04s42", "text": "8. Get Curveclaw [27/51] after really short Arena Battle" },
+            { "type": "step", "id": "ss_l04s43", "text": "9. Return to Deep Docks Bellway Station and go to Bellheart; Turn in Savage Beasfly for Mask Shard [12/20]" },
             { "type": "img", "src": "src/ss/photos/36.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -453,35 +454,34 @@
         {
           "title": "Leg 30 - Whiteward",
           "content": [
-            { "type": "step", "id": "ss_l03s44", "text": "1. Travell Back to Bellway Station and use Ventrica to Choral Chambers → Garmond and Zaza encounter → Rescue Jubliana → Use White Key to enter Whiteward" },
-            { "type": "step", "id": "ss_l03s45", "text": "2. Get Choral Commandment → Climb to the top floor, summon the elevator, then quickly slide back down the hole to intermedium level, wait for the elevator to pass and drop down to get Spool Fragment [10/18]" },
-            { "type": "step", "id": "ss_l03s46", "text": "3. Get Whiteward map (70 Rosaries)" },
-            { "type": "step", "id": "ss_l03s47", "text": "4. Injector bend [28/51]" },
-            { "type": "step", "id": "ss_l03s48", "text": "5. Get Surgeons Key" },
-            { "type": "step", "id": "ss_l03s49", "text": "6. Drop down to Underworks and buy Architects Key and Silkshot [29/51] (if not adquired at Mount Fey or Forge Daugther) (130+110=240 Rosaries and 1 craftmetal) → Enter Chapel of the Architect and get Architects Crest [4/6]" },
-            { "type": "step", "id": "ss_l03s50", "text": "7. Use Ventrica Station to the First Shrine" },
+            { "type": "step", "id": "ss_l04s44", "text": "1. Travell Back to Bellway Station and use Ventrica to Choral Chambers → Garmond and Zaza encounter → Rescue Jubliana → Use White Key to enter Whiteward" },
+            { "type": "step", "id": "ss_l04s45", "text": "2. Get Choral Commandment → Climb to the top floor, summon the elevator, then quickly slide back down the hole to intermedium level, wait for the elevator to pass and drop down to get Spool Fragment [10/18]" },
+            { "type": "step", "id": "ss_l04s46", "text": "3. Get Whiteward map (70 Rosaries)" },
+            { "type": "step", "id": "ss_l04s47", "text": "4. Injector bend [28/51]" },
+            { "type": "step", "id": "ss_l04s48", "text": "5. Get Surgeons Key" },
+            { "type": "step", "id": "ss_l04s49", "text": "6. Drop down to Underworks and buy Architects Key and Silkshot [29/51] (if not adquired at Mount Fey or Forge Daugther) (130+110=240 Rosaries and 1 craftmetal) → Enter Chapel of the Architect and get Architects Crest [4/6]" },
+            { "type": "step", "id": "ss_l04s50", "text": "7. Use Ventrica Station to the First Shrine" },
             { "type": "img", "src": "src/ss/photos/37.png" }
           ]
         }
-        
       ]
     },
     {
-      "id": "part4",
+      "id": "part5",
       "title": "Act 2 (Part 3)",
       "legs": [
         {
           "title": "Leg 31 - Memorium",
           "content": [
-            { "type": "step", "id": "ss_l04s1", "text": "1. Green Prince encounter at Cogworks Dancers arena" },
-            { "type": "step", "id": "ss_l04s2", "text": "2. Solve puzzle Cogheart Piece → Collect Memorium Map (70 Rosaries)" },
-            { "type": "step", "id": "ss_l04s3", "text": "3. (optional) get Mossberry → Open path to the bench → Get Memory Locket [14/20]" },
-            { "type": "step", "id": "ss_l04s4", "text": "4. Break floor for shortcut → Unlock Ventrica Station (80 Rosaries)" },
-            { "type": "step", "id": "ss_l04s5", "text": "5. Get Materium and break wall for Voltvessels [30/51]" },
+            { "type": "step", "id": "ss_l05s1", "text": "1. Green Prince encounter at Cogworks Dancers arena" },
+            { "type": "step", "id": "ss_l05s2", "text": "2. Solve puzzle Cogheart Piece → Collect Memorium Map (70 Rosaries)" },
+            { "type": "step", "id": "ss_l05s3", "text": "3. (optional) get Mossberry → Open path to the bench → Get Memory Locket [14/20]" },
+            { "type": "step", "id": "ss_l05s4", "text": "4. Break floor for shortcut → Unlock Ventrica Station (80 Rosaries)" },
+            { "type": "step", "id": "ss_l05s5", "text": "5. Get Materium and break wall for Voltvessels [30/51]" },
             { "type": "img", "src": "src/ss/photos/38.png" },
-            { "type": "step", "id": "ss_l04s6", "text": "1. Free Chonky Lost Flea and fight it [25/30]" },
-            { "type": "step", "id": "ss_l04s7", "text": "2. Get Spool Fragment [11/18]" },
-            { "type": "step", "id": "ss_l04s8", "text": "3. Return to the map room and reach the hidden path to the Putrified ducts the behind breakable wall" },
+            { "type": "step", "id": "ss_l05s6", "text": "1. Free Chonky Lost Flea and fight it [25/30]" },
+            { "type": "step", "id": "ss_l05s7", "text": "2. Get Spool Fragment [11/18]" },
+            { "type": "step", "id": "ss_l05s8", "text": "3. Return to the map room and reach the hidden path to the Putrified ducts the behind breakable wall" },
             { "type": "img", "src": "src/ss/photos/39.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -489,32 +489,32 @@
         {
           "title": "Leg 32 - Putrified Ducts",
           "content": [
-            { "type": "step", "id": "ss_l04s9", "text": "1. Unlock bench and Putrified Docks (60 + 80 Rosaries)" },
-            { "type": "step", "id": "ss_l04s10", "text": "2. Get Putrified Ducts Map" },
-            { "type": "step", "id": "ss_l04s11", "text": "3. Get key of the Apostate → Talk to Huntress for Broodfeast Wish*" },
-            { "type": "step", "id": "ss_l04s12", "text": "4. Play needolin on the tablet → Get craftmetal [6/8]" },
-            { "type": "step", "id": "ss_l04s13", "text": "5. Get Wreath of Purity [31/51]" },
-            { "type": "step", "id": "ss_l04s14", "text": "6. Speak to Vog [26/30] then he will move to the caravan" },
-            { "type": "step", "id": "ss_l04s15", "text": "7. Go to Bilewater Bellway Station" },
+            { "type": "step", "id": "ss_l05s9", "text": "1. Unlock bench and Putrified Docks (60 + 80 Rosaries)" },
+            { "type": "step", "id": "ss_l05s10", "text": "2. Get Putrified Ducts Map" },
+            { "type": "step", "id": "ss_l05s11", "text": "3. Get key of the Apostate → Talk to Huntress for Broodfeast Wish*" },
+            { "type": "step", "id": "ss_l05s12", "text": "4. Play needolin on the tablet → Get craftmetal [6/8]" },
+            { "type": "step", "id": "ss_l05s13", "text": "5. Get Wreath of Purity [31/51]" },
+            { "type": "step", "id": "ss_l05s14", "text": "6. Speak to Vog [26/30] then he will move to the caravan" },
+            { "type": "step", "id": "ss_l05s15", "text": "7. Go to Bilewater Bellway Station" },
             { "type": "img", "src": "src/ss/photos/40.png" },
             {
-  "type": "note",
-  "text": "*For Broodfeast Wish you need to kill enemies using certain tools. While farming try to obtain the diferent organs.:<br>• <b>Seared Organs - Harvested with:</b>: Flintslate, Pimpillo, Voltvessels, Wispfire Lantern<br>• <b>Shredded Organs- Harvested with:</b>: Conchcutter, Sawtooth Circlet, Cogwork Wheel,Delver's<br>• <b>Skewered Organs- Harvested with:</b>: Longpin, Sting Shard"
-},
+              "type": "note",
+              "text": "*For Broodfeast Wish you need to kill enemies using certain tools. While farming try to obtain the different organs:<br>• <b>Seared Organs - Harvested with:</b>: Flintslate, Pimpillo, Voltvessels, Wispfire Lantern<br>• <b>Shredded Organs- Harvested with:</b>: Conchcutter, Sawtooth Circlet, Cogwork Wheel,Delver's<br>• <b>Skewered Organs- Harvested with:</b>: Longpin, Sting Shard"
+            },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
           "title": "Leg 33 - Bilewater",
           "content": [
-            { "type": "step", "id": "ss_l04s16", "text": "1. Buy map from Shakra (90 Rosaries) → Quit out to return to the Station Bench and go to Bellheart; Get Trial's end wish; Return to Bilewater" },
-            { "type": "step", "id": "ss_l04s17", "text": "2. Break ceilings for Quick Sling [32/51]" },
-            { "type": "step", "id": "ss_l04s18", "text": "3. Get Mask Shard [13/20]" },
-            { "type": "step", "id": "ss_l04s19", "text": "4. Enter hidden passage and rescue Lost Flea [27/30]" },
-            { "type": "step", "id": "ss_l04s20", "text": "5. Break wall at parasite infected water → Discover the hidden bench → Break wall and get Memory Locket [15/20]" },
-            { "type": "step", "id": "ss_l04s21", "text": "6. Find Shakra's master and complete End of Trial wish to receive Throwing ring [33/51]" },
-            { "type": "step", "id": "ss_l04s22", "text": "7. Fight Groal the Great → Collect Seeker's Soul inside hut after Groal arena" },
-            { "type": "step", "id": "ss_l04s23", "text": "8. Open path to the lower part of the room → Go to Bellway station and travel to the Slab" },
+            { "type": "step", "id": "ss_l05s16", "text": "1. Buy map from Shakra (90 Rosaries) → Quit out to return to the Station Bench and go to Bellheart; Get Trial's end wish; Return to Bilewater" },
+            { "type": "step", "id": "ss_l05s17", "text": "2. Break ceilings for Quick Sling [32/51]" },
+            { "type": "step", "id": "ss_l05s18", "text": "3. Get Mask Shard [13/20]" },
+            { "type": "step", "id": "ss_l05s19", "text": "4. Enter hidden passage and rescue Lost Flea [27/30]" },
+            { "type": "step", "id": "ss_l05s20", "text": "5. Break wall at parasite infected water → Discover the hidden bench → Break wall and get Memory Locket [15/20]" },
+            { "type": "step", "id": "ss_l05s21", "text": "6. Find Shakra's master and complete End of Trial wish to receive Throwing ring [33/51]" },
+            { "type": "step", "id": "ss_l05s22", "text": "7. Fight Groal the Great → Collect Seeker's Soul inside hut after Groal arena" },
+            { "type": "step", "id": "ss_l05s23", "text": "8. Open path to the lower part of the room → Go to Bellway station and travel to the Slab" },
             { "type": "img", "src": "src/ss/photos/41.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -522,17 +522,17 @@
         {
           "title": "Leg 34 - The Slab",
           "content": [
-            { "type": "step", "id": "ss_l04s24", "text": "1. (optional) Weaver Effigy → Get Memory Locket [16/20] inside the cavern" },
-            { "type": "step", "id": "ss_l04s25", "text": "2. (optional) Use the Needolin for the Penitent encounter" },
-            { "type": "step", "id": "ss_l04s26", "text": "3. Enter the cage and rescue Lost Flea [28/30]" },
-            { "type": "step", "id": "ss_l04s27", "text": "4. Get The Slab map" },
-            { "type": "step", "id": "ss_l04s28", "text": "5. Use the Apostate key and complete platforming challenge to obtain Mask shard [14/20]" },
-            { "type": "step", "id": "ss_l04s29", "text": "6. Breakable ceiling → Get the Key of the Indolent" },
-            { "type": "step", "id": "ss_l04s30", "text": "7. Go to the top of The Slab → Arena Battle → Key of the Heretic" },
+            { "type": "step", "id": "ss_l05s24", "text": "1. (optional) Weaver Effigy → Get Memory Locket [16/20] inside the cavern" },
+            { "type": "step", "id": "ss_l05s25", "text": "2. (optional) Use the Needolin for the Penitent encounter" },
+            { "type": "step", "id": "ss_l05s26", "text": "3. Enter the cage and rescue Lost Flea [28/30]" },
+            { "type": "step", "id": "ss_l05s27", "text": "4. Get The Slab map" },
+            { "type": "step", "id": "ss_l05s28", "text": "5. Use the Apostate key and complete platforming challenge to obtain Mask shard [14/20]" },
+            { "type": "step", "id": "ss_l05s29", "text": "6. Breakable ceiling → Get the Key of the Indolent" },
+            { "type": "step", "id": "ss_l05s30", "text": "7. Go to the top of The Slab → Arena Battle → Key of the Heretic" },
             { "type": "img", "src": "src/ss/photos/42.png" },
-            { "type": "step", "id": "ss_l04s31", "text": "1. Obtain Spool Fragment [12/18]" },
-            { "type": "step", "id": "ss_l04s32", "text": "2. Break the cage's chains to enter and fight the First Sinner " },
-            { "type": "step", "id": "ss_l04s33", "text": "3. Return to Bellway Station and travel to Greymoor" },
+            { "type": "step", "id": "ss_l05s31", "text": "1. Obtain Spool Fragment [12/18]" },
+            { "type": "step", "id": "ss_l05s32", "text": "2. Break the cage's chains to enter and fight the First Sinner " },
+            { "type": "step", "id": "ss_l05s33", "text": "3. Return to Bellway Station and travel to Greymoor" },
             { "type": "img", "src": "src/ss/photos/43.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -540,12 +540,12 @@
         {
           "title": "Leg 35 - Wisp ticket",
           "content": [
-            { "type": "step", "id": "ss_l04s34", "text": "1. From Greymoor, enter the hidden passage to Wisp Thicket → Hit the bench to make it fall" },
-            { "type": "step", "id": "ss_l04s35", "text": "2. Collect Bone Scroll → Get Mask shard [15/20]" },
-            { "type": "step", "id": "ss_l04s36", "text": "3. Fight Father of the Flame to obtain Wispfire Lantern [34/51]" },
-            { "type": "step", "id": "ss_l04s37", "text": "4. Get Craftmetal [7/8]" },
-            { "type": "step", "id": "ss_l04s38", "text": "5. Enter Underworks and rescue Lost Flea [29/30]" },
-            { "type": "step", "id": "ss_l04s39", "text": "6. Go to Ventrica Station and travel to the First Shrine" },
+            { "type": "step", "id": "ss_l05s34", "text": "1. From Greymoor, enter the hidden passage to Wisp Thicket → Hit the bench to make it fall" },
+            { "type": "step", "id": "ss_l05s35", "text": "2. Collect Bone Scroll → Get Mask shard [15/20]" },
+            { "type": "step", "id": "ss_l05s36", "text": "3. Fight Father of the Flame to obtain Wispfire Lantern [34/51]" },
+            { "type": "step", "id": "ss_l05s37", "text": "4. Get Craftmetal [7/8]" },
+            { "type": "step", "id": "ss_l05s38", "text": "5. Enter Underworks and rescue Lost Flea [29/30]" },
+            { "type": "step", "id": "ss_l05s39", "text": "6. Go to Ventrica Station and travel to the First Shrine" },
             { "type": "img", "src": "src/ss/photos/44.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -553,16 +553,16 @@
         {
           "title": "Leg 36 - Cogwork Core",
           "content": [
-            { "type": "step", "id": "ss_l04s40", "text": "1. Enter hidden path Whispering Vaults and get Memory Locket [17/20] " },
-            { "type": "step", "id": "ss_l04s41", "text": "2. Rescue Lost Flea [30/30]" },
-            { "type": "step", "id": "ss_l04s42", "text": "3. Return to Songclave → (optional) Collect psalm cylinder next to shortcut → Accept Balm of the Wounded wish at Songclave" },
-            { "type": "step", "id": "ss_l04s43", "text": "4. Go to the Cogwork Core area" },
+            { "type": "step", "id": "ss_l05s40", "text": "1. Enter hidden path Whispering Vaults and get Memory Locket [17/20] " },
+            { "type": "step", "id": "ss_l05s41", "text": "2. Rescue Lost Flea [30/30]" },
+            { "type": "step", "id": "ss_l05s42", "text": "3. Return to Songclave → (optional) Collect psalm cylinder next to shortcut → Accept Balm of the Wounded wish at Songclave" },
+            { "type": "step", "id": "ss_l05s43", "text": "4. Go to the Cogwork Core area" },
             { "type": "img", "src": "src/ss/photos/45.png" },
-            { "type": "step", "id": "ss_l04s44", "text": "1. Break wall and restore Second Centinel" },
-            { "type": "step", "id": "ss_l04s45", "text": "2. Get Spool Fragment [13/18]" },
-            { "type": "step", "id": "ss_l04s46", "text": "3. Enter the upper part of cogwork Core → Open shortcut → Complete puzzle by finding drawings that conect the lines; learn the Architects Melody" },
-            { "type": "step", "id": "ss_l04s47", "text": "4. Second Centinel second enconter, at highwall to Songclave" },
-            { "type": "step", "id": "ss_l04s48", "text": "5. Return to Cogwork Core" },
+            { "type": "step", "id": "ss_l05s44", "text": "1. Break wall and restore Second Centinel" },
+            { "type": "step", "id": "ss_l05s45", "text": "2. Get Spool Fragment [13/18]" },
+            { "type": "step", "id": "ss_l05s46", "text": "3. Enter the upper part of cogwork Core → Open shortcut → Complete puzzle by finding drawings that conect the lines; learn the Architects Melody" },
+            { "type": "step", "id": "ss_l05s47", "text": "4. Second Centinel second enconter, at highwall to Songclave" },
+            { "type": "step", "id": "ss_l05s48", "text": "5. Return to Cogwork Core" },
             { "type": "img", "src": "src/ss/photos/46.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -570,102 +570,375 @@
         {
           "title": "Leg 37 - High Halls",
           "content": [
-            { "type": "step", "id": "ss_l04s49", "text": "1. Enter High Halls → Spool Fragment [14/18]" },
-            { "type": "step", "id": "ss_l04s50", "text": "2. Use craftmetal to craft CogFly [35/51]" },
-            { "type": "step", "id": "ss_l04s51", "text": "3. (optional) break wall to obtain Psalm Cylinder → Unlock Ventrica Station (80 Rosaries)" },
-            { "type": "step", "id": "ss_l04s52", "text": "4. (optional) push cart to the right until reaching water droping; Jump there to enter secret area; Use another cart to reach breakable ceiling, enter the room and cut the string" },
-            { "type": "step", "id": "ss_l04s53", "text": "5. Fight THE arena battle (Shakra or Garmond and Gaza may aid you if you completed their quests); Obtain Conductor's Melody " },
+            { "type": "step", "id": "ss_l05s49", "text": "1. Enter High Halls → Spool Fragment [14/18]" },
+            { "type": "step", "id": "ss_l05s50", "text": "2. Use craftmetal to craft CogFly [35/51]" },
+            { "type": "step", "id": "ss_l05s51", "text": "3. (optional) break wall to obtain Psalm Cylinder → Unlock Ventrica Station (80 Rosaries)" },
+            { "type": "step", "id": "ss_l05s52", "text": "4. (optional) push cart to the right until reaching water droping; Jump there to enter secret area; Use another cart to reach breakable ceiling, enter the room and cut the string" },
+            { "type": "step", "id": "ss_l05s53", "text": "5. Fight THE arena battle (Shakra or Garmond and Gaza may aid you if you completed their quests); Obtain Conductor's Melody " },
             { "type": "img", "src": "src/ss/photos/47.png" }
           ]
         }
       ]
     },
     {
-      "id": "part5",
+      "id": "part6",
       "title": "Act 2 (Part 4)",
       "legs": [
         {
-  "title": "Leg 38 - Shopping Spree",
-  "content": [
-    { 
-      "type": "note", 
-      "text": "In this section we are going to buy everithing from the different vendors and complete the remaining Songclave and Bellheart wishes (except <u>Balm of the Wounded</u> that will be completed at L38)" 
-    },
-    { 
-      "type": "step", 
-      "id": "ss_l38s1", 
-      "text": "<b>Final Audience</b><br>• First find Second sentinel (at Choral chamber's hallway below Cogwork Core) → Accept the wish at Songclave<br>• Use Simple Key to enter rosary room; Collect <b>Rosary cannon</b> [36/51]<br>• Fight second Centinel to obtain <b>Reserve bind</b> [37/51]" 
-    },
-    { 
-      "type": "step", 
-      "id": "ss_l38s2", 
-      "text": "<b>The wailing mother</b><br>Fight Brossmother at the room where Heretic Key is collected" 
-    },
-    { 
-      "type": "step", 
-      "id": "ss_l38s3", 
-      "text": "<b>Lost Merchant</b><br>Rescue Jubliana at memorium area connected to Putrified Ducts" 
-    },
-    { 
-      "type": "step", 
-      "id": "ss_l38s4", 
-      "text": "<b>Donation wishes</b><br>Strengthening Sonclave (500 Rosaries), Bellhearts Glory (400 Rosaries) → Speak to Pavo to receive <u>Bellhome Key</u>; enter your home at the top of the city and install the Materium" 
-    },
-    { 
-      "type": "step", 
-      "id": "ss_l38s5", 
-      "text": "<b>Fleatopia</b><br>From Choral Chamberts Ventrica Station travel to the Flea caravan and move them to their final location; receive <b>Spool Fragment</b> [15/18]; <b>Tool Pouch Upgrade</b> [4/4] and <b>Egg of Flealia</b> [38/51]" 
-    },
-    { 
-      "type": "step", 
-      "id": "ss_l38s6", 
-      "text": "<b>Broodfest</b><br>When all the organs are conecccted speak to the huntress to complete the wish and receive <b>Longclaw</b> [39/51]" 
-    },
-    { 
-      "type": "note", 
-      "text": "To obtain rosaries for this section sell cylinders and relics and farm from enemies, at this point in the game the best area is farming Grand Reeds at the top highway on Choral Chambers. While farming collect the organs for Huntress wish." 
-    },
-    { 
-      "type": "step", 
-      "id": "ss_l38s7", 
-      "text": "<b>Shopping List:</b><br>• At Gridle's shop in Blasted Steps buy <b>Thief's Mark</b> [40/51] (useful for farming), <b>Snitch Pick</b> [41/51], <b>Spool Fragment</b> [16/18], <b>Crafting Kit Upgrade</b> [3/4] (350+740+680+700)<br>• Buy <b>Multibinder</b> [42/51] from Frey at Bellheart<br>• At songclave buy from Jubliana: <b>Spool extender</b> [43/51], <b>Spider Strings</b> [44/51], <b>Ascendant's Grip</b> [45/51], <b>Mask shard</b> [16/20], <b>Spool Fragment</b> [17/18], Craftmetal [8/8] and Simple key (if used in Deep Docks) (720+320+350+750+500+180=2820 and 650 Rosaries for key)" 
-    }
-  ]
-}
+          "title": "Leg 38 - Shopping Spree",
+          "content": [
+            { 
+              "type": "note", 
+              "text": "In this section we are going to buy everything from the different vendors and complete the remaining Songclave and Bellheart wishes (except <u>Balm of the Wounded</u> that will be completed at L38)" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_l38s1", 
+              "text": "<b>Final Audience</b><br>• First find Second sentinel (at Choral chamber's hallway below Cogwork Core) → Accept the wish at Songclave<br>• Use Simple Key to enter rosary room; Collect <b>Rosary cannon</b> [36/51]<br>• Fight second Centinel to obtain <b>Reserve bind</b> [37/51]" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_l38s2", 
+              "text": "<b>The wailing mother</b><br>Fight Brossmother at the room where Heretic Key is collected" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_l38s3", 
+              "text": "<b>Lost Merchant</b><br>Rescue Jubliana at memorium area connected to Putrified Ducts" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_l38s4", 
+              "text": "<b>Donation wishes</b><br>Strengthening Sonclave (500 Rosaries), Bellhearts Glory (400 Rosaries) → Speak to Pavo to receive <u>Bellhome Key</u>; enter your home at the top of the city and install the Materium" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_l38s5", 
+              "text": "<b>Fleatopia</b><br>From Choral Chamberts Ventrica Station travel to the Flea caravan and move them to their final location; receive <b>Spool Fragment</b> [15/18]; <b>Tool Pouch Upgrade</b> [4/4] and <b>Egg of Flealia</b> [38/51]" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_l38s6", 
+              "text": "<b>Broodfest</b><br>When all the organs are connected speak to the huntress to complete the wish and receive <b>Longclaw</b> [39/51]" 
+            },
+            { 
+              "type": "note", 
+              "text": "To obtain rosaries for this section sell cylinders and relics and farm from enemies, at this point in the game the best area is farming Grand Reeds at the top highway on Choral Chambers. While farming collect the organs for Huntress wish." 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_l38s7", 
+              "text": "<b>Shopping List:</b><br>• At Gridle's shop in Blasted Steps buy <b>Thief's Mark</b> [40/51] (useful for farming), <b>Snitch Pick</b> [41/51], <b>Spool Fragment</b> [16/18], <b>Crafting Kit Upgrade</b> [3/4] (350+740+680+700)<br>• Buy <b>Multibinder</b> [42/51] from Frey at Bellheart<br>• At songclave buy from Jubliana: <b>Spool extender</b> [43/51], <b>Spider Strings</b> [44/51], <b>Ascendant's Grip</b> [45/51], <b>Mask shard</b> [16/20], <b>Spool Fragment</b> [17/18], Craftmetal [8/8] and Simple key (if used in Deep Docks) (720+320+350+750+500+180=2820 and 650 Rosaries for key)" 
+            }
+          ]
+        },
+        {
+          "title": "Leg 39 - Whiteward",
+          "content": [
+            { "type": "step", "id": "ss_l06s1", "text": "1. From Choral Chambers Ventrica Station go to Whiteguard" },
+            { "type": "step", "id": "ss_l06s2", "text": "2. Rescue Sherma and obtain Spool Fragment [18/18]" },
+            { "type": "step", "id": "ss_l06s3", "text": "3. Use Surgeon Key to access The Unravellled boss fight and obtain Silkheart [2/3]" },
+            { "type": "step", "id": "ss_l06s4", "text": "4. Enter the Underworks and go to the Twelfth Architect; Buy Scuttlebrace [46/51], Sawtooth circle [47/51], Cogwork wheel [48/51] and Crafting Kit Upgrade [4/4] (140+230+360+450=1180 + 3 craftmetal)" },
+            { "type": "step", "id": "ss_l06s5", "text": "5. Use the Ventrica station to travel to High Halls" },
+            { "type": "img", "src": "src/ss/photos/48.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 40 - The Cradle",
+          "content": [
+            { "type": "step", "id": "ss_l06s6", "text": "1. Go to the Cogwork Dancers arena and play the needolin to enter the elevator to the Cradle" },
+            { "type": "step", "id": "ss_l06s7", "text": "2. Fight Lace and obtain Silkheart [3/3]" },
+            { "type": "step", "id": "ss_l06s8", "text": "3. Activate lever to access Terminus ventrica Station" },
+            { "type": "step", "id": "ss_l06s9", "text": "4. Obtain The Cradle map [70 Rosaries]" },
+            { "type": "step", "id": "ss_l06s10", "text": "5. Open shortcut to Terminus Ventrica Station --> (optional) Fight Silkmother for Weaver Queen ending" },
+            { "type": "step", "id": "ss_l06s11", "text": "6. Go to Ventrica Station and travel to songclave " },
+            { "type": "img", "src": "src/ss/photos/49.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 41 - Rite of Rebirth",
+          "content": [
+            { "type": "step", "id": "ss_l06s12", "text": "1. From Songclave descend to Bilewater" },
+            { "type": "step", "id": "ss_l06s13", "text": "2. Collect Twisted Bud behind breakable walls" },
+            { "type": "step", "id": "ss_l06s14", "text": "3. Collect Memory Locket [18/20]" },
+            { "type": "step", "id": "ss_l06s15", "text": "4. Go to Bilewater Bellway Station and travel to Bellheart" },
+            { "type": "img", "src": "src/ss/photos/50.png" },
+            { "type": "step", "id": "ss_l06s16", "text": "1. Talk to Greyroot and get infected; you will wake up at the Chapel of the witch" },
+            { "type": "step", "id": "ss_l06s17", "text": "2. (optional) collect Weaver Effigy at the right side of the Chapel of the Witch; break the ceiling to return to Shellwood " },
+            { "type": "step", "id": "ss_l06s18", "text": "3. Talk to Yarnaby to get Infestation Operation wish " },
+            { "type": "step", "id": "ss_l06s19", "text": "4. Buy Steel Spines from Crull and Benjin for 260 Rosaries " },
+            { "type": "step", "id": "ss_l06s20", "text": "5. (optional) Defeat Silk Mother again while infected for the Twisted Child ending " },
+            { "type": "step", "id": "ss_l06s21", "text": "6. Return to Yarnaby to get Crest of the witch [5/6] " },
+            { "type": "step", "id": "ss_l06s22", "text": "7. Go to Greymoor Bellway Station and travel to Songclave " },
+            { "type": "img", "src": "src/ss/photos/51.png" }
+          ]
+        }
       ]
     },
     {
-      "id": "act3_part1",
+      "id": "part7",
       "title": "Act 3 (Part 1)",
       "legs": [
         {
-          "title": "Leg 01 - [INSERT TITLE HERE]",
+          "title": "Leg 42 - Silk and Soul",
           "content": [
-            { "type": "step", "id": "ss_a3p1_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+            { "type": "step", "id": "ss_l07s1", "text": "1. Travel to Weavenest Atla, at the bench, use all the Memory Lockets (all tool pockets of the 6 crests should be unlocked) → Speak to Eva and obtain Vesticrst Upgrade, Hunter's Crest Upgrade and Sylphsong" },
+            { "type": "step", "id": "ss_l07s2", "text": "2. (optional) Collect mossberry → Fight the double Mossmother fight and get Weaverlight [49/51]" },
+            { "type": "step", "id": "ss_l07s3", "text": "3. Collect Snare Setter" },
+            { "type": "step", "id": "ss_l07s4", "text": "4. Get Maiden's Soul from Chapel Maid" },
+            { "type": "step", "id": "ss_l07s5", "text": "5. Travel to Bellheart and obtain Hermit's Soul from the Bell Hermit, located below Bellheart → Use Bellway to return to Songclave and complete the wish → use First Shine Ventrica station and travel to Terminus Station" },
+            { "type": "img", "src": "src/ss/photos/52.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 43 - The Cradle",
+          "content": [
+            { "type": "step", "id": "ss_l07s6", "text": "1. Caretaker encounter" },
+            { "type": "step", "id": "ss_l07s7", "text": "2. Fight Silk Mother and play the needolin to activate the trap; Snare Silk ending; Beginning of Act 3" },
+            { "type": "step", "id": "ss_l07s8", "text": "3. Wake up Lace's Arena" },
+            { "type": "step", "id": "ss_l07s9", "text": "4. Descend The Cradle and reach the exit after an Arena Battle " },
+            { "type": "step", "id": "ss_l07s10", "text": "5. Descend to Choral Chambers" },
+            { "type": "img", "src": "src/ss/photos/53.png" },
+            { "type": "step", "id": "ss_l07s11", "text": "1. Regain consciousness at Songclave; Sherma encounter" },
+            { "type": "step", "id": "ss_l07s12", "text": "2. Continue until Grand Bellway Station" },
+            { "type": "step", "id": "ss_l07s13", "text": "3. Defeat Beast in the bells and obtain Beasting call; Travel to Bone Bottom" },
+            { "type": "img", "src": "src/ss/photos/54.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 44 - Moss Grotto",
+          "content": [
+            { "type": "step", "id": "ss_l07s14", "text": "1. Speak to snail chamans for The Dark Below objective" },
+            { "type": "step", "id": "ss_l07s15", "text": "2. Use Beasting Call to return to Bellway station and travel to Deep Docks" },
+            { "type": "img", "src": "src/ss/photos/55.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 45 - The Abyss",
+          "content": [
+            { "type": "step", "id": "ss_l07s16", "text": "1. Talk to Ballow to progress gain access to the diving bell" },
+            { "type": "step", "id": "ss_l07s17", "text": "2. Talk to Ballow above the diving bell to get Diving Bell Key, Enter the bell to descend to the abyss" },
+            { "type": "img", "src": "src/ss/photos/56.png" },
+            { "type": "step", "id": "ss_l07s18", "text": "1. (optional) Get Arcane Egg " },
+            { "type": "step", "id": "ss_l07s19", "text": "2. Get Abyss Map in the room above" },
+            { "type": "step", "id": "ss_l07s20", "text": "3. Enter Needolin door and obtain Farsight" },
+            { "type": "step", "id": "ss_l07s21", "text": "4. Obtain Silk Soar [6/6]" },
+            { "type": "step", "id": "ss_l07s22", "text": "5. Scape the abyss using Silk Soar and travel to Bone Bottom" },
+            { "type": "img", "src": "src/ss/photos/57.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 46 - Elegy of the Deep",
+          "content": [
+            { "type": "step", "id": "ss_l07s23", "text": "1. Speak to shamans at Ruined Chapel" },
+            { "type": "step", "id": "ss_l07s24", "text": "2. Inside the Ruined Chapel, use Silk Soar above the lore tablet on the right side → Obtain Crest of Shaman [6/6]" },
+            { "type": "step", "id": "ss_l07s25", "text": "3. Travel to Bellheart and accept all wishes; Install Farsight at Bellhome" },
+            { "type": "img", "src": "src/ss/photos/58.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 47 - The Cradle",
+          "content": [
+            { "type": "step", "id": "ss_l07s26", "text": "1. Use Silk Soar to enter the vertical path to the Cradle" },
+            { "type": "step", "id": "ss_l07s27", "text": "2. Keep ascendint to the Silk Mother boss arena; Obtain Pale Nails skill [6/6]" },
+            { "type": "step", "id": "ss_l07s28", "text": "3. Return to Bellway Station and travel to Putrified Ducts" },
+            { "type": "img", "src": "src/ss/photos/59.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 48 - Ecstasy of the End",
+          "content": [
+            { "type": "step", "id": "ss_l07s29", "text": "1. Participate in the festival and obtain the highest score in all three categories to obtain Pale oil" },
+            { "type": "step", "id": "ss_l07s30", "text": "2. Return to Bellway Station and travel to Shellwood" },
+            { "type": "img", "src": "src/ss/photos/60.png" },
+            { "type": "step", "id": "ss_l07s31", "text": "1. Find Pinmaster Plinney and rescue him" },
+            { "type": "step", "id": "ss_l07s32", "text": "2. Travel to bellheart and obtain final Needle Upgrade [4/4] (680 Rosaries)" },
+            { "type": "img", "src": "src/ss/photos/61.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         }
       ]
     },
     {
-      "id": "act3_part2",
+      "id": "part8",
       "title": "Act 3 (Part 2)",
       "legs": [
         {
-          "title": "Leg 01 - [INSERT TITLE HERE]",
+          "title": "Leg 49 - Sands of Karak",
           "content": [
-            { "type": "step", "id": "ss_a3p2_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+            { "type": "step", "id": "ss_l08s1", "text": "1. Travel to Blasted Steps → go to Pintress home for Fatal Resolve wish" },
+            { "type": "step", "id": "ss_l08s2", "text": "2. Enter Sands of Karak and defeat Raging Conchfly" },
+            { "type": "step", "id": "ss_l08s3", "text": "3. Access Coral tower and obtain Conchcutter [50/51]" },
+            { "type": "step", "id": "ss_l08s4", "text": "4. Use Elegy of the deep to access coral Tower; After thrid arena battle unlock shortcut by breaking stalagmite → Beat Crust King Khann for Encrusted Heart [1/3]" },
+            { "type": "step", "id": "ss_l08s5", "text": "5. Return to Bellway station and travel to The Slab" },
+            { "type": "img", "src": "src/ss/photos/62.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 50 - Mount Fay",
+          "content": [
+            { "type": "step", "id": "ss_l08s6", "text": "1. Pintress fight for Pin Badge [51/51]" },
+            { "type": "step", "id": "ss_l08s7", "text": "2. Use Silk Soar to enter a secret room to get Mask Shard [17/20]" },
+            { "type": "step", "id": "ss_l08s8", "text": "3. Return to a Bellway Station" },
+            { "type": "img", "src": "src/ss/photos/63.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 51 - Grand Gate",
+          "content": [
+            { "type": "step", "id": "ss_l08s9", "text": "1. From Great Bellway Station, take Ventrica to Choral Chambers" },
+            { "type": "step", "id": "ss_l08s10", "text": "2. Use Silk Soar at the Grand Gate elevator to access hidden path" },
+            { "type": "step", "id": "ss_l08s11", "text": "3. Open path back to the bench → Break wall to access hidden area → Fight Shrine Guardian Seth" },
+            { "type": "step", "id": "ss_l08s12", "text": "4. Enter Shrine and fight Nyleth for Pollen Heart [2/3]" },
+            { "type": "step", "id": "ss_l08s13", "text": "5. Return to a Bellway station " },
+            { "type": "img", "src": "src/ss/photos/64.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 52 - Far Fields",
+          "content": [
+            { "type": "step", "id": "ss_l08s14", "text": "1. From The Marrow station and go to the Hunter's March → Complete Arena Battle" },
+            { "type": "step", "id": "ss_l08s15", "text": "2. Open shortcut to Deep Docks → Use Silk Soar at the statue; if not spoken to Gilly, speak to her here or near the bench in the room on the left." },
+            { "type": "step", "id": "ss_l08s16", "text": "3. Use the lever to open the path to the hidden area of Far Fields " },
+            { "type": "img", "src": "src/ss/photos/65.png" },
+            { "type": "step", "id": "ss_l08s17", "text": "1. Open shortcut to Pilgrim's Rest → (optional) Gilly encounter" },
+            { "type": "step", "id": "ss_l08s18", "text": "2. Beat Sprintmaster three times to receive Mask Shard [18/20] as a reward" },
+            { "type": "step", "id": "ss_l08s19", "text": "3. Open shortcut → Beat Skarrgard for Memory Locket [19/20]" },
+            { "type": "step", "id": "ss_l08s20", "text": "4. Use Elegy of the Deep to access Karmelita boss fight and obtain Hunter's Heart [3/3]" },
+            { "type": "step", "id": "ss_l08s21", "text": "5. Return to Bellway Station and travel to Bellheart " },
+            { "type": "img", "src": "src/ss/photos/66.png" },
+            { "type": "step", "id": "ss_l08s22", "text": "1. Accept Hidden Hunter wish; Use Silk Soar at the top of Bellheart to reach Memory locket [20/20] " },
+            { "type": "step", "id": "ss_l08s23", "text": "2. Travel back to Far Fields → Fight Gurr the Outcast to obtain Grass doll" },
+            { "type": "step", "id": "ss_l08s24", "text": "3. Return to Bellway Station and turn in Grass Doll the notice board to get Mask Shard [19/20] " },
+            { "type": "img", "src": "src/ss/photos/67.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 53 - Verdania",
+          "content": [
+            { "type": "step", "id": "ss_l08s25", "text": "1. Travel to Far Fields and ascend the vertical shaft to arrive at Craw Lake → Green Prince encounter" },
+            { "type": "step", "id": "ss_l08s26", "text": "2. Get Verdenia map" },
+            { "type": "step", "id": "ss_l08s27", "text": "3. Use Elegy of the Deep on Green Prince to enter the rest of the area." },
+            { "type": "img", "src": "src/ss/photos/68.png" },
+            { "type": "step", "id": "ss_l08s28", "text": "1. Break the statue and pick all the Essence in time" },
+            { "type": "step", "id": "ss_l08s29", "text": "2. Press the buttons to unlock the three Fountains → Activate the Sacred Shrine and pick the Essence" },
+            { "type": "step", "id": "ss_l08s30", "text": "3. Break Essence Statue" },
+            { "type": "step", "id": "ss_l08s31", "text": "4. Break the Cocoon for Essence" },
+            { "type": "step", "id": "ss_l08s32", "text": "5. Complete Arena Battle → Break floor for shortcut → Break the Statue" },
+            { "type": "step", "id": "ss_l08s33", "text": "6. Break the statue inside a secret passage" },
+            { "type": "step", "id": "ss_l08s34", "text": "7. Breakable wall to access Flower Essence; (optional) Green Prince encounter" },
+            { "type": "step", "id": "ss_l08s35", "text": "8. Defeat Palestag boss" },
+            { "type": "step", "id": "ss_l08s36", "text": "9. Fight Clover dancers and obtain Conjoined Heart [4/3]" },
+            { "type": "img", "src": "src/ss/photos/69.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 54 - The Abyss",
+          "content": [
+            { "type": "step", "id": "ss_l08s37", "text": "1. If Dark Hearts wish hasn't been completed, explore and destroy the remaining void masses and complete the wish at Bellheart for Mask shard [20/20] → Travel to Bone Bottom" },
+            { "type": "step", "id": "ss_l08s38", "text": "2. Go to the Ruined Chapel and speak with the Chamans to obtain the Everbloom" },
+            { "type": "step", "id": "ss_l08s39", "text": "3. Return to Bellway Station and travel to Deep Docks" },
+            { "type": "img", "src": "src/ss/photos/70.png" },
+            { "type": "step", "id": "ss_l08s40", "text": "1. Return to the diving Bell; talk to Barrow above to descend to the abyss" },
+            { "type": "step", "id": "ss_l08s41", "text": "2. Defeat Lost Lace for Sister of the Void ending" },
+            { "type": "img", "src": "src/ss/photos/71.png" }
           ]
         }
       ]
     },
     {
-      "id": "completion",
+      "id": "part9",
       "title": "Completion",
       "legs": [
         {
-          "title": "Leg 01 - Final Cleanup",
+          "title": "Leg 55 - Endgame & Upgrades",
           "content": [
-            { "type": "step", "id": "ss_comp_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+            { 
+              "type": "note", 
+              "text": "After completing the game there's optional content not required to completion. This section will list the different content in the endgame and upgrades to some tools." 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s1", 
+              "text": "<b>Upgrade tools</b><br>• <u>Druid's eyes</u>: Collect all seven mossberries and give them to Moss Druid at Mosshome<br>• <u>Claw Mirrors</u>: Accept <u>Pain, Anguish and Misery</u> at Songclave and beat Tormented Trobbio at the stage in Whispering vaults" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s2", 
+              "text": "• <u>Curvesickle</u>: Hit each of the four targets with one thrown Curveclaw and give the Curveclaw to the Skarr Rogue that appears. Upon resting at a bench and returning to the area, the Curvesickle will be on the ground in the same room" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s3", 
+              "text": "<b>Missing relics</b><br>Gridle and jubliana cylinders" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s4", 
+              "text": "<b>[Mushroom ending]</b><br>Use silksoar at right side of fleatopia<br>[rest of locations]" 
+            }
+          ]
+        },
+        {
+          "title": "Mementos",
+          "content": [
+            { 
+              "type": "step", 
+              "id": "ss_comp_s5", 
+              "text": "<b>Craw Memento</b>: (mirar com se pilla claw) defeat crawfather" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s6", 
+              "text": "<b>Grey Memento</b>: Defeat grey soldier at sands of karak" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s7", 
+              "text": "<b>Surface memento</b>: Reach top of cradle" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s8", 
+              "text": "<b>Guardian memento</b>: move seth to fleetopia --> Beat his scores at festival" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s9", 
+              "text": "<b>Hero's memento</b>: Encounter Garmond a few times to unlock quest --> defeat him at blasted steps" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s10", 
+              "text": "<b>Sprintmaster memento</b>: Defeat the final race of sprint master Swift" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s11", 
+              "text": "<b>Hunter memento</b>: Complete 234 journal entries" 
+            },
+            { 
+              "type": "step", 
+              "id": "ss_comp_s12", 
+              "text": "<b>Heart memento</b>: obtain the forth heart (unlocked during route)" 
+            },
+            { 
+              "type": "note", 
+              "text": "<b>[Materials for memorium]</b><br>(revisar si se poden pillar durant ruta)" 
+            }
           ]
         }
       ]
