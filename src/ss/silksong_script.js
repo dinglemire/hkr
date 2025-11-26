@@ -47,33 +47,38 @@ async function loadRouteData() {
     }
 }
 
-// 2. Theme Manager (Updated for Pharloom/Light toggle)
 function setupTheme() {
     const btnTheme = document.getElementById('btnThemeToggle');
     if(!btnTheme) return;
 
-    // CHANGED: Use 'ssTheme' key
+    // Default is Pharloom (Red), Alternate is Steam (Blue/Black)
     const savedTheme = localStorage.getItem('ssTheme') || 'theme-pharloom';
     updateThemeUI(savedTheme);
 
     btnTheme.addEventListener('click', () => {
-        const current = document.body.classList.contains('theme-light') ? 'theme-light' : 'theme-pharloom';
-        const newTheme = (current === 'theme-pharloom') ? 'theme-light' : 'theme-pharloom';
+        // Toggle between 'theme-steam' and 'theme-pharloom'
+        const current = document.body.classList.contains('theme-steam') ? 'theme-steam' : 'theme-pharloom';
+        const newTheme = (current === 'theme-pharloom') ? 'theme-steam' : 'theme-pharloom';
         updateThemeUI(newTheme);
     });
 
     function updateThemeUI(themeName) {
         const isHidden = document.body.classList.contains('hide-completed');
-        document.body.className = themeName;
+        
+        // Remove old classes just in case
+        document.body.classList.remove('theme-pharloom', 'theme-light', 'theme-steam');
+        document.body.classList.add(themeName);
+
         if(isHidden) document.body.classList.add('hide-completed');
 
         localStorage.setItem('ssTheme', themeName);
 
+        // Update Icon/Tooltip
         if (themeName === 'theme-pharloom') {
-            btnTheme.textContent = '🧶'; 
-            btnTheme.title = "Switch to Light Theme";
+            btnTheme.textContent = '🎮'; 
+            btnTheme.title = "Switch to Steam Theme";
         } else {
-            btnTheme.textContent = '🌑';
+            btnTheme.textContent = '🧶';
             btnTheme.title = "Switch to Pharloom Theme";
         }
     }
