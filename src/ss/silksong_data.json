@@ -310,57 +310,51 @@
           ]
         },
         {
-          "title": "Leg 13 - Underworks",
+          "title": "Leg 20 - Whispering Vaults",
           "content": [
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "img", "src": "src/ss/photos/19.png" },
+            { "type": "step", "id": "ss_l02s50", "text": "1. (optional) Play Needolin to interact with Pious Isamor" },
+            { "type": "step", "id": "ss_l02s51", "text": "2. Obtain Sacred Cylinder" },
+            { "type": "step", "id": "ss_l02s52", "text": "3. Talk to Cardinius to learn Vaultkeeper's Melody [1/3]" },
+            { "type": "step", "id": "ss_l02s53", "text": "4. Go to Songclave to collect wishes from the notice board" },
+            { "type": "img", "src": "src/ss/photos/26.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 13 - Underworks",
+          "title": "Leg 21 - Choral Chambers",
           "content": [
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "img", "src": "src/ss/photos/19.png" },
+            { "type": "step", "id": "ss_l02s54", "text": "1. Mask shard [8/20] in Cogwork Core" },
+            { "type": "step", "id": "ss_l02s55", "text": "2. Speak to Loyal Mergwin to receive Great Taste of Pharloom wish" },
+            { "type": "step", "id": "ss_l02s56", "text": "3. Activate fan to rescue Lost Flea [17/30]" },
+            { "type": "step", "id": "ss_l02s57", "text": "4. Rescue another Flea [18/30] at the end of platforming challenge" },
+            { "type": "step", "id": "ss_l02s58", "text": "5. Obtain Cogheart piece after bell puzzle" },
+            { "type": "step", "id": "ss_l02s59", "text": "6. Save Grindle from the Reeds" },
+            { "type": "step", "id": "ss_l02s60", "text": "7. Enter the spa for Sherma encounter" },
+            { "type": "step", "id": "ss_l02s61", "text": "8. Open shortcut to right room → Arena battle → Unlock Choral chambers Ventrica Station (80 Rosaries)" },
+            { "type": "step", "id": "ss_l02s62", "text": "9. (optional) reload the area for Green Prince encounter → Enter the Slab" },
+            { "type": "img", "src": "src/ss/photos/27.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 13 - Underworks",
+          "title": "Leg 22 - Mount Fey",
           "content": [
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "step", "id": "ss_l02s1", "text": "1. Buy the Grand Gate map (40 Rosaries)" },
-            { "type": "img", "src": "src/ss/photos/19.png" },
-            { "type": "img", "src": "src/ss/photos/0.png" }
+            { "type": "step", "id": "ss_l02s63", "text": "1. Enter and unlock the bench and the Slab Bellway station" },
+            { "type": "step", "id": "ss_l02s64", "text": "2. Enter Mount Fay and buy the map from Shaka (40 Rosaries)" },
+            { "type": "step", "id": "ss_l02s65", "text": "3. Unlock the bench (60 rosaries) → Get Memory Crystal [17/51] after platforming" },
+            { "type": "step", "id": "ss_l02s66", "text": "4. Climb the wall and rescue Lost Flea [19/30] in secret room" },
+            { "type": "step", "id": "ss_l02s67", "text": "5. Get the bench → keep ascending and obtain Faydown Cloak [4/6] at the top of the mountain" },
+            { "type": "step", "id": "ss_l02s68", "text": "6. Find the bench; (optional) Obtain Silkshot repairing the broken tool (Note: there are three locations to repair the broken tool: At this location, Silkshot (Hornet) is crafted, there's also Silkshot(Forge Daughter) and Silkshot (Twelfth Architect). Everyone is a little different, look up which version is preferred)" },
+            { "type": "step", "id": "ss_l02s69", "text": "7. (optional) Mask Maker encounter" },
+            { "type": "step", "id": "ss_l02s70", "text": "8. DON'T REST AT BENCH → Get Mask Shard [9/20] and quit out to return at the top of the mountain for a safer return." },
+            { "type": "step", "id": "ss_l02s71", "text": "9. Rescue Lost Flea [20/30] above the Slab Bellway Station Bench → Travel to Bone Bottom" },
+            { "type": "img", "src": "src/ss/photos/28.png" }
           ]
         }
               ]
     },
     {
-      "id": "act2_part2",
+      "id": "part4",
       "title": "Act 2 (Part 2)",
       "legs": [
         {
