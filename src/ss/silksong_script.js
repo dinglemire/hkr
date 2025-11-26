@@ -1,4 +1,4 @@
-// silksong_script.js
+// silksong_script.js 
 
 let routeData = [];
 const contentArea = document.getElementById('route-content');
@@ -43,21 +43,18 @@ async function loadRouteData() {
     }
 }
 
-// 2. Theme Manager (Pharloom vs Steam)
+// 2. Theme Manager
 function setupTheme() {
     const btnTheme = document.getElementById('btnThemeToggle');
     if(!btnTheme) return;
 
-    // Check saved theme. If it was 'theme-light' (old), force 'theme-steam'
     let savedTheme = localStorage.getItem('ssTheme');
     if (savedTheme === 'theme-light' || !savedTheme) {
-        savedTheme = 'theme-pharloom'; // Default
+        savedTheme = 'theme-pharloom';
     }
-    
     updateThemeUI(savedTheme);
 
     btnTheme.addEventListener('click', () => {
-        // Toggle logic
         const current = document.body.classList.contains('theme-steam') ? 'theme-steam' : 'theme-pharloom';
         const newTheme = (current === 'theme-pharloom') ? 'theme-steam' : 'theme-pharloom';
         updateThemeUI(newTheme);
@@ -65,21 +62,17 @@ function setupTheme() {
 
     function updateThemeUI(themeName) {
         const isHidden = document.body.classList.contains('hide-completed');
-        
-        // Clean all potential theme classes
         document.body.classList.remove('theme-pharloom', 'theme-steam', 'theme-light');
         document.body.classList.add(themeName);
-
         if(isHidden) document.body.classList.add('hide-completed');
-
         localStorage.setItem('ssTheme', themeName);
 
         if (themeName === 'theme-pharloom') {
             btnTheme.textContent = '🎮'; 
-            btnTheme.title = "Switch to Steam Theme (Blue/Black)";
+            btnTheme.title = "Switch to Steam Theme";
         } else {
             btnTheme.textContent = '🧶';
-            btnTheme.title = "Switch to Pharloom Theme (Red/Black)";
+            btnTheme.title = "Switch to Pharloom Theme";
         }
     }
 }
@@ -104,7 +97,6 @@ function setupEyeToggle() {
             document.body.classList.remove('hide-completed');
             checkAndCollapseLegs(false);
         }
-        
         localStorage.setItem('ssHideCompleted', newState);
         updateEyeIcon(newState);
     });
@@ -130,7 +122,7 @@ function checkAndCollapseLegs(shouldCollapse) {
     });
 }
 
-// 4. Navigation Render
+// 4. Navigation
 function renderNavigation() {
     const existingLinks = document.getElementById('dynamic-links');
     if (existingLinks) existingLinks.remove();
@@ -230,78 +222,87 @@ function updateProgressBar() {
     progressText.textContent = `${percent}% Completed`;
 }
 
-// 7. Map Modal
+// 7. Simple Map Logic (Reverted)
 function setupMapModal() {
     const modal = document.getElementById("mapModal");
     const openBtn = document.getElementById("btnMapIcon");
     const closeBtn = document.getElementById("closeMapBtn");
     const viewport = document.getElementById("mapViewport");
-    
-    const wrapper = document.getElementById("mapWrapper"); 
-    const mapImg = document.getElementById("mapImage");
-    
-    // Example Map Data (You can expand this later)
-    const mapMarkers = [
-        { x: 45.5, y: 30.2, title: "Moss Grotto Bench", type: "bench" },
-        { x: 12.5, y: 60.1, title: "Moss Mother", type: "boss" }
-    ];
+    const img = document.getElementById("mapImage"); // Targeting Image directly
+    const slider = document.getElementById("zoomSlider");
+    const zoomLabel = document.getElementById("zoomLabel");
+    const zoomIn = document.getElementById("zoomInBtn");
+    const zoomOut = document.getElementById("zoomOutBtn");
+
+    if (!modal || !img) return;
 
     let scale = 0.5, pointX = 0, pointY = 0;
     let isDragging = false, startX = 0, startY = 0;
 
-    function renderPins() {
-        const container = document.getElementById('mapWrapper'); 
-        // Note: We append to wrapper, but we need to clear OLD pins first.
-        // Since wrapper contains IMG, we select only elements with class .map-pin
-        const oldPins = wrapper.querySelectorAll('.map-pin');
-        oldPins.forEach(p => p.remove());
-
-        mapMarkers.forEach(marker => {
-            const pin = document.createElement('div');
-            pin.className = `map-pin pin-${marker.type}`;
-            pin.style.left = `${marker.x}%`;
-            pin.style.top = `${marker.y}%`;
-
-            const tip = document.createElement('div');
-            tip.className = 'map-tooltip';
-            tip.innerText = marker.title;
-            pin.appendChild(tip);
-
-            wrapper.appendChild(pin);
-        });
-    }
-
     function updateTransform() {
-        if(wrapper) wrapper.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        scale = Math.min(Math.max(0.1, scale), 3);
+        img.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        if(slider) slider.value = scale;
+        if(zoomLabel) zoomLabel.textContent = Math.round(scale * 100) + "%";
     }
 
     if (openBtn) openBtn.addEventListener("click", () => {
         modal.style.display = "block";
-        renderPins();
+        document.body.style.overflow = "hidden";
         updateTransform();
     });
-    if (closeBtn) closeBtn.addEventListener("click", () => modal.style.display = "none");
+
+    const closeMap = () => {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    };
+
+    if (closeBtn) closeBtn.addEventListener("click", closeMap);
 
     if (viewport) {
+        viewport.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            const delta = -Math.sign(e.deltaY) * 0.2;
+            scale = Math.min(Math.max(0.1, scale + delta), 3);
+            updateTransform();
+        }, { passive: false });
+
         viewport.addEventListener("mousedown", (e) => {
             e.preventDefault(); isDragging = true;
             startX = e.clientX - pointX; startY = e.clientY - pointY;
             viewport.style.cursor = "grabbing";
         });
-        window.addEventListener("mouseup", () => { isDragging = false; if(viewport) viewport.style.cursor = "grab"; });
+        window.addEventListener("mouseup", () => {
+            isDragging = false; if(viewport) viewport.style.cursor = "grab";
+        });
         window.addEventListener("mousemove", (e) => {
             if (!isDragging) return; e.preventDefault();
             pointX = e.clientX - startX; pointY = e.clientY - startY;
             updateTransform();
         });
         
-        viewport.addEventListener("wheel", (e) => {
-            e.preventDefault();
-            const delta = -Math.sign(e.deltaY) * 0.1;
-            scale = Math.min(Math.max(0.1, scale + delta), 4);
-            updateTransform();
-        });
+        // Touch support
+        viewport.addEventListener("touchstart", (e) => {
+            if (e.touches.length === 1) {
+                isDragging = true;
+                startX = e.touches[0].clientX - pointX; startY = e.touches[0].clientY - pointY;
+            }
+        }, { passive: false });
+
+        window.addEventListener("touchmove", (e) => {
+            if (isDragging && e.touches.length === 1) {
+                e.preventDefault();
+                pointX = e.touches[0].clientX - startX; pointY = e.touches[0].clientY - startY;
+                updateTransform();
+            }
+        }, { passive: false });
+
+        window.addEventListener("touchend", () => isDragging = false);
     }
+
+    if(slider) slider.addEventListener("input", (e) => { scale = parseFloat(e.target.value); updateTransform(); });
+    if(zoomIn) zoomIn.addEventListener("click", () => { scale += 0.1; updateTransform(); });
+    if(zoomOut) zoomOut.addEventListener("click", () => { scale -= 0.1; updateTransform(); });
 }
 
 // 8. Resume
