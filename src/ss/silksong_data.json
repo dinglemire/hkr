@@ -2,10 +2,10 @@
   "route": [
     {
       "id": "part1",
-      "title": "Act 1 (Part 1) ",
+      "title": "Act 1 (Part 1)",
       "legs": [
         {
-          "title": "Leg 01 - Moss Groto:",
+          "title": "Leg 01 - Moss Grotto",
           "content": [
             { "type": "step", "id": "ss_l01s1", "text": "1. Collect Mossberry → Pogo on top of the Mossmir enemy to reach Mossberry → Defeat Moss Mother boss" },
             { "type": "step", "id": "ss_l01s2", "text": "2. Chapel Maid encounter" },
@@ -15,14 +15,14 @@
           ]
         },
         {
-          "title": "Leg 02 - The Marrow:",
+          "title": "Leg 02 - The Marrow",
           "content": [
             { "type": "step", "id": "ss_l01s4", "text": "1. [Optional] Sherma encounter" },
             { "type": "step", "id": "ss_l01s5", "text": "2. Continue through the room for Skull Brute Arena Battle" },
             { "type": "step", "id": "ss_l01s6", "text": "3. Hit the lever to unlock the door to Bone Bottom → Unlock the bench [30 Rosaries] " },
             { "type": "step", "id": "ss_l01s7", "text": "4. Collect Shard Pendant [1/51]" },
-            { "type": "step", "id": "ss_l01s8", "text": "5. hit the two levers in the long room for shortcuts → Buy Quill and Compass [2/51] from Shakra (50+70=120 Rosaries)" },
-            { "type": "step", "id": "ss_l01s9", "text": "6. Unlock trapdor at Mosshome and collect the Choral Commandment → Obtain Silkspear Skill [1/6]" },
+            { "type": "step", "id": "ss_l01s8", "text": "5. Hit the two levers in the long room for shortcuts → Buy Quill and Compass [2/51] from Shakra (50+70=120 Rosaries)" },
+            { "type": "step", "id": "ss_l01s9", "text": "6. Unlock trapdoor at Mosshome and collect the Choral Commandment → Obtain Silkspear Skill [1/6]" },
             { "type": "step", "id": "ss_l01s10", "text": "7. Use Silkspear to unlock Druid's home → collect the third Mossberry at the secret room below Moss Druid → Go up again for Moss Druid encounter; Complete Berry picking Wish, Get Druid's eye [3/51] as reward" },
             { "type": "step", "id": "ss_l01s11", "text": "8. Open the door, buy The Marrow and Mosslands maps (50+40 Rosaries) from Shakra" },
             { "type": "img", "src": "src/ss/photos/2.png" },
@@ -36,7 +36,7 @@
           ]
         },
         {
-          "title": "Leg 03 - Deep Docks:",
+          "title": "Leg 03 - Deep Docks",
           "content": [
             { "type": "step", "id": "ss_l01s17", "text": "1. Buy Deep Docks Map (50 Rosaries) from Shakra" },
             { "type": "step", "id": "ss_l01s18", "text": "2. Unlock Deep Docks Bellway (40 Rosaries) → travel to Bone Bottom and accept all wishes at the Objective Board and complete Bone Bottom Repairs wish" },
@@ -54,7 +54,7 @@
           ]
         },
         {
-          "title": "Leg 04 - Far Fields:",
+          "title": "Leg 04 - Far Fields",
           "content": [
             { "type": "step", "id": "ss_l01s27", "text": "1. Rescue Lost Flea [3/30] behind breakable wall" },
             { "type": "step", "id": "ss_l01s28", "text": "2. Hit glowing orb for access to lower part of the room → Unlock Bench and Far Fields Bellway (30+50 Rosaries)" },
@@ -71,9 +71,8 @@
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
-
         {
-          "title": "Leg 05 - Greymoor:",
+          "title": "Leg 05 - Greymoor",
           "content": [
             { "type": "step", "id": "ss_l01s37", "text": "1. Buy the greymoor map from Shakra (70 Rosaries)" },
             { "type": "step", "id": "ss_l01s38", "text": "2. Enter the craw nest and beat the craw arena; activate the mechanism inside" },
@@ -94,9 +93,8 @@
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
-
         {
-          "title": "Leg 06 - Shellwood:",
+          "title": "Leg 06 - Shellwood",
           "content": [
             { "type": "step", "id": "ss_l01s51", "text": "1. In Bellheart, go to the left and you will arrive at Shellwood → Break Purple nest and get Longpin [8/51]" },
             { "type": "step", "id": "ss_l01s52", "text": "2. Ascend until you reach the Arena Battle → rest at bench (40 Rosaries)" },
@@ -114,16 +112,16 @@
             { "type": "step", "id": "ss_l01s63", "text": "5. Ring the Bell and rest at the bench" },
             { "type": "step", "id": "ss_l01s64", "text": "6. Go to the left until you reach the vertical section in Mosslands " },
             { "type": "img", "src": "src/ss/photos/11.png" }
-           ]
+          ]
         }
-        
       ]
     },
+    {
       "id": "part2",
       "title": "Act 1 (Part 2)",
       "legs": [
         {
-          "title": "Leg 07 - Mosslands:",
+          "title": "Leg 07 - Mosslands",
           "content": [
             { "type": "step", "id": "ss_l02s1", "text": "1. Little detour to Wormways, pick Dead bug's Purse or Shell Satchel (Steelsoul) [10/51]" },
             { "type": "step", "id": "ss_l02s2", "text": "2. Buy the Wormways map from Shakra (70 Rosaries)" },
@@ -137,9 +135,8 @@
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
-        
         {
-          "title": "Leg 08 - The Marrow:",
+          "title": "Leg 08 - The Marrow",
           "content": [
             { "type": "step", "id": "ss_l02s9", "text": "1. Enter the Marrow from Bone Bottom and fight the Flintbeetle at the top [1/3] → Continue and fight the Flintbeetle [2/3], rescue the Lost Flea [8/30] next to it," },
             { "type": "step", "id": "ss_l02s10", "text": "2. Obtain Memory Locket [2/20] after Arena Battle → Fight the final Flintbeetle [3/3]" },
@@ -150,9 +147,8 @@
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
-
         {
-          "title": "Leg 09 - Bellheart:",
+          "title": "Leg 09 - Bellheart",
           "content": [
             { "type": "step", "id": "ss_l02s14", "text": "1. From the Flea caravan, go to the Bellway station and travel to Bone Bottom → Complete Volatile Flintbeetles to obtain Memory Locket [3/20] and The Terrible Tyrant; Travel back to Bellheart" },
             { "type": "step", "id": "ss_l02s15", "text": "2. (optional) Go to the right for Bell Hermit encounter after secret passage" },
@@ -164,7 +160,7 @@
           ]
         },
         {
-          "title": "Leg 10 - Hunters March:",
+          "title": "Leg 10 - Hunters March",
           "content": [
             { "type": "step", "id": "ss_l02s19", "text": "1. Accept Loddie challenge near the bench (25 Rosaries for round), win the challenge to obtain Tool Pouch Upgrade [1/4], optional accept second challenge for Heavy Rosary necklace (220 Rosaries)" },
             { "type": "step", "id": "ss_l02s20", "text": "2. Enter Hunter's March, rescue Lost Flea [9/30] at the top of the first room" },
@@ -181,9 +177,8 @@
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
-
         {
-          "title": "Leg 10 - Hunters March: (My Missing Courier wish)",
+          "title": "Leg 11 - Weavenest Atla (My Missing Courier wish)",
           "content": [
             { "type": "step", "id": "ss_l02s30", "text": "1. From shellwood station go left and drop down at mosslands vertical room. Find Tipp, he will then move to Bellheart." },
             { "type": "step", "id": "ss_l02s31", "text": "2. Keep descending to Bone Bottom" },
@@ -198,5 +193,103 @@
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
+        {
+          "title": "Leg 12 - Blasted Steps",
+          "content": [
+            { "type": "step", "id": "ss_l02s38", "text": "1. From Shellwood Station go to the left until you reach the Blasted steps area, (optional) Nuu encounter at Splinter Sister boss fight arena, unlock bench at Blasted Steps (60 Rosaries)" },
+            { "type": "step", "id": "ss_l02s39", "text": "2. Continue and fall to the platform containing a Memory Locket [5/20]" },
+            { "type": "step", "id": "ss_l02s40", "text": "3. Buy the Blasted Steps map from Shakra (70 Rosaries)" },
+            { "type": "step", "id": "ss_l02s41", "text": "4. Unlock Blasted steps Bellway and bench (60+40 Rosaries), (optional) Sherma encounter after reloading area" },
+            { "type": "step", "id": "ss_l02s42", "text": "5. Descend to reach secret area with Craftmetal [4/8]" },
+            { "type": "step", "id": "ss_l02s43", "text": "6. Use the Needolin at the Grand Gate and fight the Last Judge → Enter the Citadel and begin Act 2 (Note: The first part of The Citadel is really scarce in rosaries, make sure you have about 300-400 rosaries saved up. It's better to have them saved in rosary strings just in case)" },
+            { "type": "img", "src": "src/ss/photos/18.png" }
+          ]
+        }
       ]
+    },
+    {
+      "id": "part3",
+      "title": "Act 2 (Part 1)",
+      "legs": [
+        {
+          "title": "Leg 13 - [INSERT TITLE HERE]",
+          "content": [
+            { "type": "step", "id": "ss_a2p1_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act2_part2",
+      "title": "Act 2 (Part 2)",
+      "legs": [
+        {
+          "title": "Leg 01 - [INSERT TITLE HERE]",
+          "content": [
+            { "type": "step", "id": "ss_a2p2_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act2_part3",
+      "title": "Act 2 (Part 3)",
+      "legs": [
+        {
+          "title": "Leg 01 - [INSERT TITLE HERE]",
+          "content": [
+            { "type": "step", "id": "ss_a2p3_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act2_part4",
+      "title": "Act 2 (Part 4)",
+      "legs": [
+        {
+          "title": "Leg 01 - [INSERT TITLE HERE]",
+          "content": [
+            { "type": "step", "id": "ss_a2p4_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act3_part1",
+      "title": "Act 3 (Part 1)",
+      "legs": [
+        {
+          "title": "Leg 01 - [INSERT TITLE HERE]",
+          "content": [
+            { "type": "step", "id": "ss_a3p1_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act3_part2",
+      "title": "Act 3 (Part 2)",
+      "legs": [
+        {
+          "title": "Leg 01 - [INSERT TITLE HERE]",
+          "content": [
+            { "type": "step", "id": "ss_a3p2_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "completion",
+      "title": "Completion",
+      "legs": [
+        {
+          "title": "Leg 01 - Final Cleanup",
+          "content": [
+            { "type": "step", "id": "ss_comp_l1_s1", "text": "1. [INSERT TEXT HERE]" }
+          ]
+        }
+      ]
+    }
+  ]
 }
