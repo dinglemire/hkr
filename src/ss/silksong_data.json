@@ -87,9 +87,9 @@
             { "type": "step", "id": "ss_l01s45", "text": "2. Go to the bottom left room and get Memory Locket [1/20]" },
             { "type": "step", "id": "ss_l01s46", "text": "3. Garmond and Gaza encounter" },
             { "type": "step", "id": "ss_l01s47", "text": "4. Proceed to next room and enter the Chapel of the reaper, get Reaper Crest [1/6] after arena battle" },
-            { "type": "step", "id": "ss_l01s47", "text": "5. Hit the lever to unlock the shortcut to Halfway Home; Garmond and Gaza's second encounter (Note: Garmond only appears after discovering Moorwing and reloading the area or dying to the boss. (Optional) Garmond can be asked for assistance in the fight)" },
-            { "type": "step", "id": "ss_l01s47", "text": "6. Break the rope for shortcut → Proceed to Moorwing boss fight" },
-            { "type": "step", "id": "ss_l01s47", "text": "7. Enter Bellheart and unlock the Bellway Station (60 Rosaries)" },
+            { "type": "step", "id": "ss_l01s48", "text": "5. Hit the lever to unlock the shortcut to Halfway Home; Garmond and Gaza's second encounter (Note: Garmond only appears after discovering Moorwing and reloading the area or dying to the boss. (Optional) Garmond can be asked for assistance in the fight)" },
+            { "type": "step", "id": "ss_l01s49", "text": "6. Break the rope for shortcut → Proceed to Moorwing boss fight" },
+            { "type": "step", "id": "ss_l01s50", "text": "7. Enter Bellheart and unlock the Bellway Station (60 Rosaries)" },
             { "type": "img", "src": "src/ss/photos/9.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
@@ -98,40 +98,108 @@
         {
           "title": "Leg 06 - Shellwood:",
           "content": [
-            { "type": "step", "id": "ss_l01s48", "text": "1. In Bellheart, go to the left and you will arrive at Shellwood → Break Purple nest and get Longpin [8/51]" },
-            { "type": "step", "id": "ss_l01s49", "text": "2. Ascend until you reach the Arena Battle → rest at bench (40 Rosaries)" },
-            { "type": "step", "id": "ss_l01s50", "text": "3. Take the elevator and descend → Press the button to open shortcut → Talk to Greyroot to obtain Rite of the Pollip wish" },
-            { "type": "step", "id": "ss_l01s51", "text": "4. Buy Bellheart and Shellwood maps from Shakra (40 + 70 Rosaries)" },
-            { "type": "step", "id": "ss_l01s52", "text": "5. Rescue Lost Flea [5/30]" },
-            { "type": "step", "id": "ss_l01s53", "text": "6. Unlock Shellwood Bellway Station (40 Rosaries)" },
-            { "type": "step", "id": "ss_l01s54", "text": "7. Get Mask shard after flower jumping challenge [2/20] → (Optional) Quit out to avoid Phacia trap" },
-            { "type": "step", "id": "ss_l01s55", "text": "8. Pogo the flower to reach the first Pollip heart [1/6] → Take the elevator and rest at the bench" },
+            { "type": "step", "id": "ss_l01s51", "text": "1. In Bellheart, go to the left and you will arrive at Shellwood → Break Purple nest and get Longpin [8/51]" },
+            { "type": "step", "id": "ss_l01s52", "text": "2. Ascend until you reach the Arena Battle → rest at bench (40 Rosaries)" },
+            { "type": "step", "id": "ss_l01s53", "text": "3. Take the elevator and descend → Press the button to open shortcut → Talk to Greyroot to obtain Rite of the Pollip wish" },
+            { "type": "step", "id": "ss_l01s54", "text": "4. Buy Bellheart and Shellwood maps from Shakra (40 + 70 Rosaries)" },
+            { "type": "step", "id": "ss_l01s55", "text": "5. Rescue Lost Flea [5/30]" },
+            { "type": "step", "id": "ss_l01s56", "text": "6. Unlock Shellwood Bellway Station (40 Rosaries)" },
+            { "type": "step", "id": "ss_l01s57", "text": "7. Get Mask shard after flower jumping challenge [2/20] → (Optional) Quit out to avoid Phacia trap" },
+            { "type": "step", "id": "ss_l01s58", "text": "8. Pogo the flower to reach the first Pollip heart [1/6] → Take the elevator and rest at the bench" },
             { "type": "img", "src": "src/ss/photos/10.png" },
-            { "type": "step", "id": "ss_l01s56", "text": "1. Sister splinter boss fight" },
-            { "type": "step", "id": "ss_l01s57", "text": "2. get Pollip Heart [2/6] at the left side of the room → Obtain Cling grip [2/6]" },
-            { "type": "step", "id": "ss_l01s58", "text": "3. Collect Pollip Heart [3/6] at top of the room → Break wall to acces te upper part of Bellheart → Free the Lost Flea [6/30] at the top part of the first room" },
-            { "type": "step", "id": "ss_l01s59", "text": "4. Break the wall and return to Shellwood to pick the Pollip Heart [4/6] behind breakable roots → Pick the Pollip Heart [5/6] in the room to the right of the bench room → Pick the last Pollip Heart [6/6] → Return to Greyroot to turn in the Pollip Hearts to obtain Pollip Pouch [9/51]" },
-            { "type": "step", "id": "ss_l01s60", "text": "5. Ring the Bell and rest at the bench" },
-            { "type": "step", "id": "ss_l01s61", "text": "6. Go to the left until you reach the vertical section in Mosslands " },
+            { "type": "step", "id": "ss_l01s59", "text": "1. Sister splinter boss fight" },
+            { "type": "step", "id": "ss_l01s60", "text": "2. get Pollip Heart [2/6] at the left side of the room → Obtain Cling grip [2/6]" },
+            { "type": "step", "id": "ss_l01s61", "text": "3. Collect Pollip Heart [3/6] at top of the room → Break wall to acces te upper part of Bellheart → Free the Lost Flea [6/30] at the top part of the first room" },
+            { "type": "step", "id": "ss_l01s62", "text": "4. Break the wall and return to Shellwood to pick the Pollip Heart [4/6] behind breakable roots → Pick the Pollip Heart [5/6] in the room to the right of the bench room → Pick the last Pollip Heart [6/6] → Return to Greyroot to turn in the Pollip Hearts to obtain Pollip Pouch [9/51]" },
+            { "type": "step", "id": "ss_l01s63", "text": "5. Ring the Bell and rest at the bench" },
+            { "type": "step", "id": "ss_l01s64", "text": "6. Go to the left until you reach the vertical section in Mosslands " },
             { "type": "img", "src": "src/ss/photos/11.png" }
            ]
-        },
+        }
         
       ]
     },
     {
-      "id": "Act 1 (Part 2)",
-      "title": "Act 1: Deep Docks",
+      "id": "part2",
+      "title": "Act 1 (Part 2)",
       "legs": [
         {
-          "title": "Leg 03 – To the Citadel",
+          "title": "Leg 07 - Mosslands:",
           "content": [
-            { "type": "step", "id": "ss_l02s1", "text": "1. Enter Deep Docks elevator." },
-            { "type": "step", "id": "ss_l02s2", "text": "2. Bench [150 Rosaries] -> Talk to Lace." },
-            { "type": "img", "src": "src/silksong_photos/3.jpg" }
+            { "type": "step", "id": "ss_l02s1", "text": "1. Little detour to Wormways, pick Dead bug's Purse or Shell Satchel (Steelsoul) [10/51]" },
+            { "type": "step", "id": "ss_l02s2", "text": "2. Buy the Wormways map from Shakra (70 Rosaries)" },
+            { "type": "step", "id": "ss_l02s3", "text": "3. Rescue Lost Flea [7/30] behind breakable wall" },
+            { "type": "step", "id": "ss_l02s4", "text": "4. Pick Mask Shard [3/20] behind breakable wall" },
+            { "type": "step", "id": "ss_l02s5", "text": "5. Run from the Craggler (or fight it) and activate the elevator to Bone Bottom" },
+            { "type": "step", "id": "ss_l02s6", "text": "6. (optional) pick Mossberry from Aknid enemy → obtain Spool Fragment [2/18] behind breakable wall" },
+            { "type": "step", "id": "ss_l02s7", "text": "7. (optional) Pick up Weaver Effigy and Mossberry along the way → open door to Bone Bottom→ Enter the Chapel of the Wanderer and obtain the Crest of the Wanderer [2/6] after Arena Battle" },
+            { "type": "step", "id": "ss_l02s8", "text": "8. Go to Bone Bottom; At the wish board, complete Garb of the Pilgrims wish and A Life Saving Bridge. Accept Volatile Flintbeetles and The Terrible Tyrant wishes; At Pebb shop buy Magnetite Brooch [11/51] and Mask Shard [4/20] (120+300 Rosaries)" },
+            { "type": "img", "src": "src/ss/photos/12.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
           ]
-        }
+        },
+        
+        {
+          "title": "Leg 08 - The Marrow:",
+          "content": [
+            { "type": "step", "id": "ss_l02s9", "text": "1. Enter the Marrow from Bone Bottom and fight the Flintbeetle at the top [1/3] → Continue and fight the Flintbeetle [2/3], rescue the Lost Flea [8/30] next to it," },
+            { "type": "step", "id": "ss_l02s10", "text": "2. Obtain Memory Locket [2/20] after Arena Battle → Fight the final Flintbeetle [3/3]" },
+            { "type": "step", "id": "ss_l02s11", "text": "3. Jump to reach Arena battle inside Deep Docks and obtain Mask shard [5/20]" },
+            { "type": "step", "id": "ss_l02s12", "text": "4. Climb the wall near the moving platform and fight Skull Tyrant" },
+            { "type": "step", "id": "ss_l02s13", "text": "5. Open the door to the left, go to the Flea Caravan and accept and complete The Lost Fleas wish, travel with them to Greymoor → Talk to Grishkin for Flea Brew [12/51]" },
+            { "type": "img", "src": "src/ss/photos/13.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+
+        {
+          "title": "Leg 09 - Bellheart:",
+          "content": [
+            { "type": "step", "id": "ss_l02s14", "text": "1. From the Flea caravan, go to the Bellway station and travel to Bone Bottom → Complete Volatile Flintbeetles to obtain Memory Locket [3/20] and The Terrible Tyrant; Travel back to Bellheart" },
+            { "type": "step", "id": "ss_l02s15", "text": "2. (optional) Go to the right for Bell Hermit encounter after secret passage" },
+            { "type": "step", "id": "ss_l02s16", "text": "3. Access the upper part of Bellheart through Shellwood to access Widow boss fight; After defeating her, obtain Needolin [3/6]; Ring the bell afterwards." },
+            { "type": "step", "id": "ss_l02s17", "text": "4. Unlock trapdoor and return to Bellheart city, talk to Relic Seeker Scrounge and give him all the acquired relics; talk to Pinmaster Plinney for Pin Upgrade [1/4]; Accept Silver Bells, My Missing Courier and Crawbug Clearing wishes. Complete Silver Bells wish picking up silver bells from the top and bottom sections of Bellheart (Note: Silver Bells spawn randomly, reenter the aereas for new ones to spawn) → Travel to Bone Bottom and buy craftmetal [3/8] and Simple Key from Pebb (60+500 Rosaries) → Return to Bellheart" },
+            { "type": "step", "id": "ss_l02s18", "text": "5. Descend through the lower Bellheart room and enter The Marrow." },
+            { "type": "img", "src": "src/ss/photos/14.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+        {
+          "title": "Leg 10 - Hunters March:",
+          "content": [
+            { "type": "step", "id": "ss_l02s19", "text": "1. Accept Loddie challenge near the bench (25 Rosaries for round), win the challenge to obtain Tool Pouch Upgrade [1/4], optional accept second challenge for Heavy Rosary necklace (220 Rosaries)" },
+            { "type": "step", "id": "ss_l02s20", "text": "2. Enter Hunter's March, rescue Lost Flea [9/30] at the top of the first room" },
+            { "type": "step", "id": "ss_l02s21", "text": "3. Continue until you reach the Arena Battle → Rest at the bench (Note: The trap can be deactivated by hitting the lever on the left side of the room)" },
+            { "type": "step", "id": "ss_l02s22", "text": "4. (optional) Gilly encounter" },
+            { "type": "step", "id": "ss_l02s23", "text": "5. (optional) Arena battle for 375 Rosaries" },
+            { "type": "step", "id": "ss_l02s24", "text": "6. (optional) If in Steel mode buy Fractured Mask from Mottled Skarr (260 Rosaries), it will ease things a bit" },
+            { "type": "step", "id": "ss_l02s25", "text": "7. Buy the Hunter's March map from Shakra (70 Rosaries)" },
+            { "type": "step", "id": "ss_l02s26", "text": "8. Pick up Memory Locket [4/20]" },
+            { "type": "step", "id": "ss_l02s27", "text": "9. Enter Chapel of the Beast and obtain Crest of the Beast [3/6] after Salvage Beastfly boss fight" },
+            { "type": "step", "id": "ss_l02s28", "text": "10. Buy Sting Shard and Crafting kit Upgrade [1/4] from Forge Daugther (140 Rosaries+ craftmetal, 180 Rosaries)" },
+            { "type": "step", "id": "ss_l02s29", "text": "11. Go to the Deep Docks Bellway station and travel to Shellwood" },
+            { "type": "img", "src": "src/ss/photos/15.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
+
+        {
+          "title": "Leg 10 - Hunters March: (My Missing Courier wish)",
+          "content": [
+            { "type": "step", "id": "ss_l02s30", "text": "1. From shellwood station go left and drop down at mosslands vertical room. Find Tipp, he will then move to Bellheart." },
+            { "type": "step", "id": "ss_l02s31", "text": "2. Keep descending to Bone Bottom" },
+            { "type": "img", "src": "src/ss/photos/16.png" },
+            { "type": "step", "id": "ss_l02s32", "text": "1. Play the Needolin at the door to access Weavenest Atla" },
+            { "type": "step", "id": "ss_l02s33", "text": "2. Get the Weavenest Atla Map" },
+            { "type": "step", "id": "ss_l02s34", "text": "3. Climb the wall and enter the next room, pick up Rune Harp, complete the platforming challenge to get Mask shard [6/20]" },
+            { "type": "step", "id": "ss_l02s35", "text": "4. Reach the room with a Spool Fragment [3/18]" },
+            { "type": "step", "id": "ss_l02s36", "text": "5. Rest at the bench and use 4 Memory Lockets, open the breakable walls and talk to Eva to get the first upgrade for Hunter's Crest and the Vesticrest for an extra Yellow tool" },
+            { "type": "step", "id": "ss_l02s37", "text": "6. Go to Beone Bottom Bellway Station and travel to Shellwood Station" },
+            { "type": "img", "src": "src/ss/photos/17.png" },
+            { "type": "img", "src": "src/ss/photos/0.png" }
+          ]
+        },
       ]
-    }
+    },
   ]
 }
