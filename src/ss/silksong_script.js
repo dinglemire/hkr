@@ -1,4 +1,4 @@
-// silksong_script.js 
+// silksong_script.js
 
 let routeData = [];
 const contentArea = document.getElementById('route-content');
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadRouteData() {
-    // CHANGED: Point to Silksong JSON
     const jsonPath = 'src/ss/silksong_data.json'; 
 
     try {
@@ -33,30 +32,32 @@ async function loadRouteData() {
         setupScrollSpy();
         updateProgressBar();
         
-        // Use SS specific key for collapse state
         if (localStorage.getItem('ssHideCompleted') === 'true') {
             checkAndCollapseLegs(true);
         }
 
-        setTimeout(() => {
-            jumpToProgress();
-        }, 100);
+        setTimeout(() => { jumpToProgress(); }, 100);
 
     } catch (error) {
         contentArea.innerHTML = `<h2 style="color:red; text-align:center">Error: ${error.message}</h2>`;
     }
 }
 
+// 2. Theme Manager (Pharloom vs Steam)
 function setupTheme() {
     const btnTheme = document.getElementById('btnThemeToggle');
     if(!btnTheme) return;
 
-    // Default is Pharloom (Red), Alternate is Steam (Blue/Black)
-    const savedTheme = localStorage.getItem('ssTheme') || 'theme-pharloom';
+    // Check saved theme. If it was 'theme-light' (old), force 'theme-steam'
+    let savedTheme = localStorage.getItem('ssTheme');
+    if (savedTheme === 'theme-light' || !savedTheme) {
+        savedTheme = 'theme-pharloom'; // Default
+    }
+    
     updateThemeUI(savedTheme);
 
     btnTheme.addEventListener('click', () => {
-        // Toggle between 'theme-steam' and 'theme-pharloom'
+        // Toggle logic
         const current = document.body.classList.contains('theme-steam') ? 'theme-steam' : 'theme-pharloom';
         const newTheme = (current === 'theme-pharloom') ? 'theme-steam' : 'theme-pharloom';
         updateThemeUI(newTheme);
@@ -65,21 +66,20 @@ function setupTheme() {
     function updateThemeUI(themeName) {
         const isHidden = document.body.classList.contains('hide-completed');
         
-        // Remove old classes just in case
-        document.body.classList.remove('theme-pharloom', 'theme-light', 'theme-steam');
+        // Clean all potential theme classes
+        document.body.classList.remove('theme-pharloom', 'theme-steam', 'theme-light');
         document.body.classList.add(themeName);
 
         if(isHidden) document.body.classList.add('hide-completed');
 
         localStorage.setItem('ssTheme', themeName);
 
-        // Update Icon/Tooltip
         if (themeName === 'theme-pharloom') {
             btnTheme.textContent = '🎮'; 
-            btnTheme.title = "Switch to Steam Theme";
+            btnTheme.title = "Switch to Steam Theme (Blue/Black)";
         } else {
             btnTheme.textContent = '🧶';
-            btnTheme.title = "Switch to Pharloom Theme";
+            btnTheme.title = "Switch to Pharloom Theme (Red/Black)";
         }
     }
 }
@@ -89,7 +89,6 @@ function setupEyeToggle() {
     const btnEye = document.getElementById('btnEyeToggle');
     if(!btnEye) return;
 
-    // CHANGED: Use 'ssHideCompleted' key
     const isHidden = localStorage.getItem('ssHideCompleted') === 'true';
     if(isHidden) document.body.classList.add('hide-completed');
     updateEyeIcon(isHidden);
@@ -176,7 +175,6 @@ function renderFullRoute() {
                         <div class="checklist">`;
             leg.content.forEach(item => {
                 if (item.type === 'step') {
-                    // CHANGED: No change needed here, ID comes from JSON
                     const isChecked = localStorage.getItem(item.id) === 'true';
                     html += `
                         <div class="checklist-item ${isChecked ? 'completed' : ''}" id="row-${item.id}">
@@ -187,10 +185,9 @@ function renderFullRoute() {
                 } else if (item.type === 'img') {
                     if (item.src.includes('hr.png')) html += `<div class="hr-divider"></div>`;
                     else html += `<div class="image-gallery"><img src="${item.src}" loading="lazy"></div>`;
-                
                 } else if (item.type === 'note') {
-    html += `<div style="padding:10px; color:#aaa;">${item.text}</div>`;
-}
+                    html += `<div class="route-note">${item.text}</div>`;
+                }
             });
             html += `</div></div>`;
         });
@@ -233,71 +230,78 @@ function updateProgressBar() {
     progressText.textContent = `${percent}% Completed`;
 }
 
-// 7. Map Modal (Same logic)
+// 7. Map Modal
 function setupMapModal() {
     const modal = document.getElementById("mapModal");
     const openBtn = document.getElementById("btnMapIcon");
     const closeBtn = document.getElementById("closeMapBtn");
     const viewport = document.getElementById("mapViewport");
-    const img = document.getElementById("mapImage");
-    const slider = document.getElementById("zoomSlider");
-    const zoomLabel = document.getElementById("zoomLabel");
-    const zoomIn = document.getElementById("zoomInBtn");
-    const zoomOut = document.getElementById("zoomOutBtn");
-
-    if (!modal || !img) return;
+    
+    const wrapper = document.getElementById("mapWrapper"); 
+    const mapImg = document.getElementById("mapImage");
+    
+    // Example Map Data (You can expand this later)
+    const mapMarkers = [
+        { x: 45.5, y: 30.2, title: "Moss Grotto Bench", type: "bench" },
+        { x: 12.5, y: 60.1, title: "Moss Mother", type: "boss" }
+    ];
 
     let scale = 0.5, pointX = 0, pointY = 0;
     let isDragging = false, startX = 0, startY = 0;
-    let startPinchDist = 0, startScale = 0;
+
+    function renderPins() {
+        const container = document.getElementById('mapWrapper'); 
+        // Note: We append to wrapper, but we need to clear OLD pins first.
+        // Since wrapper contains IMG, we select only elements with class .map-pin
+        const oldPins = wrapper.querySelectorAll('.map-pin');
+        oldPins.forEach(p => p.remove());
+
+        mapMarkers.forEach(marker => {
+            const pin = document.createElement('div');
+            pin.className = `map-pin pin-${marker.type}`;
+            pin.style.left = `${marker.x}%`;
+            pin.style.top = `${marker.y}%`;
+
+            const tip = document.createElement('div');
+            tip.className = 'map-tooltip';
+            tip.innerText = marker.title;
+            pin.appendChild(tip);
+
+            wrapper.appendChild(pin);
+        });
+    }
 
     function updateTransform() {
-        scale = Math.min(Math.max(0.1, scale), 3);
-        img.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
-        if(slider) slider.value = scale;
-        if(zoomLabel) zoomLabel.textContent = Math.round(scale * 100) + "%";
+        if(wrapper) wrapper.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
     }
 
     if (openBtn) openBtn.addEventListener("click", () => {
         modal.style.display = "block";
-        document.body.style.overflow = "hidden";
+        renderPins();
         updateTransform();
     });
-
-    const closeMap = () => {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    };
-
-    if (closeBtn) closeBtn.addEventListener("click", closeMap);
+    if (closeBtn) closeBtn.addEventListener("click", () => modal.style.display = "none");
 
     if (viewport) {
-        viewport.addEventListener("wheel", (e) => {
-            e.preventDefault();
-            const delta = -Math.sign(e.deltaY) * 0.2;
-            scale = Math.min(Math.max(0.1, scale + delta), 3);
-            updateTransform();
-        }, { passive: false });
-
         viewport.addEventListener("mousedown", (e) => {
             e.preventDefault(); isDragging = true;
             startX = e.clientX - pointX; startY = e.clientY - pointY;
             viewport.style.cursor = "grabbing";
         });
-        window.addEventListener("mouseup", () => {
-            isDragging = false; if(viewport) viewport.style.cursor = "grab";
-        });
+        window.addEventListener("mouseup", () => { isDragging = false; if(viewport) viewport.style.cursor = "grab"; });
         window.addEventListener("mousemove", (e) => {
             if (!isDragging) return; e.preventDefault();
             pointX = e.clientX - startX; pointY = e.clientY - startY;
             updateTransform();
         });
-        // Touch events omitted for brevity, identical to your original code
+        
+        viewport.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            const delta = -Math.sign(e.deltaY) * 0.1;
+            scale = Math.min(Math.max(0.1, scale + delta), 4);
+            updateTransform();
+        });
     }
-
-    if(slider) slider.addEventListener("input", (e) => { scale = parseFloat(e.target.value); updateTransform(); });
-    if(zoomIn) zoomIn.addEventListener("click", () => { scale += 0.1; updateTransform(); });
-    if(zoomOut) zoomOut.addEventListener("click", () => { scale -= 0.1; updateTransform(); });
 }
 
 // 8. Resume
@@ -338,7 +342,6 @@ function setupResetButton() {
     if (!btn) return;
     btn.addEventListener('click', () => {
         if (confirm('Reset ALL Silksong progress?')) {
-            // Only clear keys starting with ss_ or ssTheme
             Object.keys(localStorage).forEach(key => {
                 if (key.startsWith('ss_') || key.startsWith('ssTheme') || key.startsWith('ssHide')) {
                     localStorage.removeItem(key);
