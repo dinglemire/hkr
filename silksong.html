@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Silksong 100% Route</title>
+    <!-- Silksong Style -->
+    <link rel="stylesheet" href="src/silksong_style.css" />
+</head>
+<body class="theme-pharloom">
+
+    <!-- Main Content -->
+    <div id="app-container">
+        <!-- Header Image or Title -->
+        <div style="text-align:center; margin-bottom: 20px;">
+            <h1 style="color:var(--color-accent); font-size: 2.5rem;">HOLLOW KNIGHT: SILKSONG</h1>
+            <p style="color:var(--color-text-muted);">100% Completion Guide - Act 1</p>
+        </div>
+
+        <main id="route-content">
+            <!-- JS injects content here -->
+        </main>
+    </div>
+    
+    <!-- Navigation -->
+    <nav id="navigation">
+        <h3>Navigation</h3>
+
+        <div class="top-icons">
+            <button id="btnThemeToggle" class="icon-btn" title="Switch Theme">🧶</button>
+            <button id="btnMapIcon" class="icon-btn" title="Open Map">🗺️</button>
+            <button id="btnEyeToggle" class="icon-btn" title="Auto-Collapse Completed Legs">👁️</button>
+        </div>
+
+        <div class="nav-actions">
+            <button id="resumeBtn" class="resume-btn" title="Jump to progress">Resume ⏩</button>
+            <button id="resetBtn" class="reset-btn" title="Reset checklist">Reset</button>
+        </div>
+
+        <div class="progress-container" title="Checklist Progress">
+            <div id="progressBar" class="progress-fill"></div>
+            <span id="progressText">0%</span>
+        </div>
+    </nav>
+
+    <!-- Map Modal -->
+    <div id="mapModal" class="map-modal">
+        <button id="closeMapBtn" class="close-map-btn">← Back</button>
+        <div id="mapViewport" class="map-viewport">
+            <!-- Place your Pharloom map image in src/silksong_map.jpg -->
+            <img id="mapImage" src="src/silksong_map.jpg" alt="Pharloom Map">
+        </div>
+        <div class="map-controls">
+            <button id="zoomOutBtn">−</button>
+            <input type="range" id="zoomSlider" min="0.1" max="3" step="0.1" value="0.5">
+            <button id="zoomInBtn">+</button>
+            <span id="zoomLabel">50%</span>
+        </div>
+    </div>
+    
+    <!-- Silksong Script -->
+    <script src="src/silksong_script.js"></script>
+</body>
+</html>
