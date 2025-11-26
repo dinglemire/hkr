@@ -499,89 +499,83 @@
             { "type": "img", "src": "src/ss/photos/40.png" },
             {
   "type": "note",
-  "text": "*For Broodfeast Wish you need to kill enemies using certain tools:<br>• <b>Seared Organs</b>: Flintslate, Pimpillo, Voltvessels<br>• <b>Shredded Organs</b>: Conchcutter, Sawtooth Circlet<br>• <b>Skewered Organs</b>: Longpin, Sting Shard"
+  "text": "*For Broodfeast Wish you need to kill enemies using certain tools. While farming try to obtain the diferent organs.:<br>• <b>Seared Organs - Harvested with:</b>: Flintslate, Pimpillo, Voltvessels, Wispfire Lantern<br>• <b>Shredded Organs- Harvested with:</b>: Conchcutter, Sawtooth Circlet, Cogwork Wheel,Delver's<br>• <b>Skewered Organs- Harvested with:</b>: Longpin, Sting Shard"
 },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 31 - Memorium",
+          "title": "Leg 33 - Bilewater",
           "content": [
-            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
-            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "step", "id": "ss_l04s16", "text": "1. Buy map from Shakra (90 Rosaries) → Quit out to return to the Station Bench and go to Bellheart; Get Trial's end wish; Return to Bilewater" },
+            { "type": "step", "id": "ss_l04s17", "text": "2. Break ceilings for Quick Sling [32/51]" },
+            { "type": "step", "id": "ss_l04s18", "text": "3. Get Mask Shard [13/20]" },
+            { "type": "step", "id": "ss_l04s19", "text": "4. Enter hidden passage and rescue Lost Flea [27/30]" },
+            { "type": "step", "id": "ss_l04s20", "text": "5. Break wall at parasite infected water → Discover the hidden bench → Break wall and get Memory Locket [15/20]" },
+            { "type": "step", "id": "ss_l04s21", "text": "6. Find Shakra's master and complete End of Trial wish to receive Throwing ring [33/51]" },
+            { "type": "step", "id": "ss_l04s22", "text": "7. Fight Groal the Great → Collect Seeker's Soul inside hut after Groal arena" },
+            { "type": "step", "id": "ss_l04s23", "text": "8. Open path to the lower part of the room → Go to Bellway station and travel to the Slab" },
+            { "type": "img", "src": "src/ss/photos/41.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 31 - Memorium",
+          "title": "Leg 34 - The Slab",
           "content": [
-            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
-            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "step", "id": "ss_l04s24", "text": "1. (optional) Weaver Effigy → Get Memory Locket [16/20] inside the cavern" },
+            { "type": "step", "id": "ss_l04s25", "text": "2. (optional) Use the Needolin for the Penitent encounter" },
+            { "type": "step", "id": "ss_l04s26", "text": "3. Enter the cage and rescue Lost Flea [28/30]" },
+            { "type": "step", "id": "ss_l04s27", "text": "4. Get The Slab map" },
+            { "type": "step", "id": "ss_l04s28", "text": "5. Use the Apostate key and complete platforming challenge to obtain Mask shard [14/20]" },
+            { "type": "step", "id": "ss_l04s29", "text": "6. Breakable ceiling → Get the Key of the Indolent" },
+            { "type": "step", "id": "ss_l04s30", "text": "7. Go to the top of The Slab → Arena Battle → Key of the Heretic" },
+            { "type": "img", "src": "src/ss/photos/42.png" },
+            { "type": "step", "id": "ss_l04s31", "text": "1. Obtain Spool Fragment [12/18]" },
+            { "type": "step", "id": "ss_l04s32", "text": "2. Break the cage's chains to enter and fight the First Sinner " },
+            { "type": "step", "id": "ss_l04s33", "text": "3. Return to Bellway Station and travel to Greymoor" },
+            { "type": "img", "src": "src/ss/photos/43.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 31 - Memorium",
+          "title": "Leg 35 - Wisp ticket",
           "content": [
-            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
-            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "step", "id": "ss_l04s34", "text": "1. From Greymoor, enter the hidden passage to Wisp Thicket → Hit the bench to make it fall" },
+            { "type": "step", "id": "ss_l04s35", "text": "2. Collect Bone Scroll → Get Mask shard [15/20]" },
+            { "type": "step", "id": "ss_l04s36", "text": "3. Fight Father of the Flame to obtain Wispfire Lantern [34/51]" },
+            { "type": "step", "id": "ss_l04s37", "text": "4. Get Craftmetal [7/8]" },
+            { "type": "step", "id": "ss_l04s38", "text": "5. Enter Underworks and rescue Lost Flea [29/30]" },
+            { "type": "step", "id": "ss_l04s39", "text": "6. Go to Ventrica Station and travel to the First Shrine" },
+            { "type": "img", "src": "src/ss/photos/44.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 31 - Memorium",
+          "title": "Leg 36 - Cogwork Core",
           "content": [
-            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
-            { "type": "img", "src": "src/ss/photos/36.png" },
+            { "type": "step", "id": "ss_l04s40", "text": "1. Enter hidden path Whispering Vaults and get Memory Locket [17/20] " },
+            { "type": "step", "id": "ss_l04s41", "text": "2. Rescue Lost Flea [30/30]" },
+            { "type": "step", "id": "ss_l04s42", "text": "3. Return to Songclave → (optional) Collect psalm cylinder next to shortcut → Accept Balm of the Wounded wish at Songclave" },
+            { "type": "step", "id": "ss_l04s43", "text": "4. Go to the Cogwork Core area" },
+            { "type": "img", "src": "src/ss/photos/45.png" },
+            { "type": "step", "id": "ss_l04s44", "text": "1. Break wall and restore Second Centinel" },
+            { "type": "step", "id": "ss_l04s45", "text": "2. Get Spool Fragment [13/18]" },
+            { "type": "step", "id": "ss_l04s46", "text": "3. Enter the upper part of cogwork Core → Open shortcut → Complete puzzle by finding drawings that conect the lines; learn the Architects Melody" },
+            { "type": "step", "id": "ss_l04s47", "text": "4. Second Centinel second enconter, at highwall to Songclave" },
+            { "type": "step", "id": "ss_l04s48", "text": "5. Return to Cogwork Core" },
+            { "type": "img", "src": "src/ss/photos/46.png" },
             { "type": "img", "src": "src/ss/photos/0.png" }
           ]
         },
         {
-          "title": "Leg 31 - Memorium",
+          "title": "Leg 37 - High Halls",
           "content": [
-            { "type": "step", "id": "ss_l04s1", "text": "1. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "2. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "3. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "4. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "5. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "6. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "7. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "8. [INSERT TEXT HERE]" },
-            { "type": "step", "id": "ss_l04s1", "text": "9. [INSERT TEXT HERE]" },
-            { "type": "img", "src": "src/ss/photos/36.png" },
-            { "type": "img", "src": "src/ss/photos/0.png" }
+            { "type": "step", "id": "ss_l04s49", "text": "1. Enter High Halls → Spool Fragment [14/18]" },
+            { "type": "step", "id": "ss_l04s50", "text": "2. Use craftmetal to craft CogFly [35/51]" },
+            { "type": "step", "id": "ss_l04s51", "text": "3. (optional) break wall to obtain Psalm Cylinder → Unlock Ventrica Station (80 Rosaries)" },
+            { "type": "step", "id": "ss_l04s52", "text": "4. (optional) push cart to the right until reaching water droping; Jump there to enter secret area; Use another cart to reach breakable ceiling, enter the room and cut the string" },
+            { "type": "step", "id": "ss_l04s53", "text": "5. Fight THE arena battle (Shakra or Garmond and Gaza may aid you if you completed their quests); Obtain Conductor's Melody " },
+            { "type": "img", "src": "src/ss/photos/47.png" }
           ]
         }
       ]
@@ -591,11 +585,53 @@
       "title": "Act 2 (Part 4)",
       "legs": [
         {
-          "title": "Leg 01 - [INSERT TITLE HERE]",
-          "content": [
-            { "type": "step", "id": "ss_a2p4_l1_s1", "text": "1. [INSERT TEXT HERE]" }
-          ]
-        }
+  "title": "Leg 38 - Shopping Spree",
+  "content": [
+    { 
+      "type": "note", 
+      "text": "In this section we are going to buy everithing from the different vendors and complete the remaining Songclave and Bellheart wishes (except <u>Balm of the Wounded</u> that will be completed at L38)" 
+    },
+    { 
+      "type": "step", 
+      "id": "ss_l38s1", 
+      "text": "<b>Final Audience</b><br>• First find Second sentinel (at Choral chamber's hallway below Cogwork Core) → Accept the wish at Songclave<br>• Use Simple Key to enter rosary room; Collect <b>Rosary cannon</b> [36/51]<br>• Fight second Centinel to obtain <b>Reserve bind</b> [37/51]" 
+    },
+    { 
+      "type": "step", 
+      "id": "ss_l38s2", 
+      "text": "<b>The wailing mother</b><br>Fight Brossmother at the room where Heretic Key is collected" 
+    },
+    { 
+      "type": "step", 
+      "id": "ss_l38s3", 
+      "text": "<b>Lost Merchant</b><br>Rescue Jubliana at memorium area connected to Putrified Ducts" 
+    },
+    { 
+      "type": "step", 
+      "id": "ss_l38s4", 
+      "text": "<b>Donation wishes</b><br>Strengthening Sonclave (500 Rosaries), Bellhearts Glory (400 Rosaries) → Speak to Pavo to receive <u>Bellhome Key</u>; enter your home at the top of the city and install the Materium" 
+    },
+    { 
+      "type": "step", 
+      "id": "ss_l38s5", 
+      "text": "<b>Fleatopia</b><br>From Choral Chamberts Ventrica Station travel to the Flea caravan and move them to their final location; receive <b>Spool Fragment</b> [15/18]; <b>Tool Pouch Upgrade</b> [4/4] and <b>Egg of Flealia</b> [38/51]" 
+    },
+    { 
+      "type": "step", 
+      "id": "ss_l38s6", 
+      "text": "<b>Broodfest</b><br>When all the organs are conecccted speak to the huntress to complete the wish and receive <b>Longclaw</b> [39/51]" 
+    },
+    { 
+      "type": "note", 
+      "text": "To obtain rosaries for this section sell cylinders and relics and farm from enemies, at this point in the game the best area is farming Grand Reeds at the top highway on Choral Chambers. While farming collect the organs for Huntress wish." 
+    },
+    { 
+      "type": "step", 
+      "id": "ss_l38s7", 
+      "text": "<b>Shopping List:</b><br>• At Gridle's shop in Blasted Steps buy <b>Thief's Mark</b> [40/51] (useful for farming), <b>Snitch Pick</b> [41/51], <b>Spool Fragment</b> [16/18], <b>Crafting Kit Upgrade</b> [3/4] (350+740+680+700)<br>• Buy <b>Multibinder</b> [42/51] from Frey at Bellheart<br>• At songclave buy from Jubliana: <b>Spool extender</b> [43/51], <b>Spider Strings</b> [44/51], <b>Ascendant's Grip</b> [45/51], <b>Mask shard</b> [16/20], <b>Spool Fragment</b> [17/18], Craftmetal [8/8] and Simple key (if used in Deep Docks) (720+320+350+750+500+180=2820 and 650 Rosaries for key)" 
+    }
+  ]
+}
       ]
     },
     {
