@@ -223,104 +223,46 @@ function updateProgressBar() {
     progressText.textContent = `${percent}% Completed`;
 }
 
-// 7. Map Modal
+// ... existing code ...
+
+// 7. Map Modal (Optimized for Interactive Iframe)
 function setupMapModal() {
     const modal = document.getElementById("mapModal");
     const openBtn = document.getElementById("btnMapIcon");
     const closeBtn = document.getElementById("closeMapBtn");
-    const viewport = document.getElementById("mapViewport");
-    const img = document.getElementById("mapImage");
-    const slider = document.getElementById("zoomSlider");
-    const zoomLabel = document.getElementById("zoomLabel");
-    const zoomIn = document.getElementById("zoomInBtn");
-    const zoomOut = document.getElementById("zoomOutBtn");
+    const iframe = document.getElementById("mapFrame");
 
-    if (!modal || !img) return;
+    if (!modal || !openBtn) return;
 
-    let scale = 0.5, pointX = 0, pointY = 0;
-    let isDragging = false, startX = 0, startY = 0;
-    let startPinchDist = 0, startScale = 0;
-
-    function updateTransform() {
-        scale = Math.min(Math.max(0.1, scale), 3);
-        img.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
-        if(slider) slider.value = scale;
-        if(zoomLabel) zoomLabel.textContent = Math.round(scale * 100) + "%";
-    }
-
-    if (openBtn) openBtn.addEventListener("click", () => {
+    // Open Modal
+    openBtn.addEventListener("click", () => {
         modal.style.display = "block";
-        document.body.style.overflow = "hidden";
-        updateTransform();
+        document.body.style.overflow = "hidden"; // Stop background scrolling
+        
+        // Lazy Load: Only load the map URL the first time we open it
+        // This saves massive amounts of memory/data on initial load
+        if (iframe && !iframe.getAttribute('src')) {
+            iframe.setAttribute('src', iframe.getAttribute('data-src'));
+        }
     });
 
+    // Close Modal Function
     const closeMap = () => {
         modal.style.display = "none";
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = ""; // Restore background scrolling
     };
 
     if (closeBtn) closeBtn.addEventListener("click", closeMap);
 
-    if (viewport) {
-        viewport.addEventListener("wheel", (e) => {
-            e.preventDefault();
-            const delta = -Math.sign(e.deltaY) * 0.2;
-            scale = Math.min(Math.max(0.1, scale + delta), 3);
-            updateTransform();
-        }, { passive: false });
-
-        viewport.addEventListener("mousedown", (e) => {
-            e.preventDefault(); isDragging = true;
-            startX = e.clientX - pointX; startY = e.clientY - pointY;
-            viewport.style.cursor = "grabbing";
-        });
-        window.addEventListener("mouseup", () => {
-            isDragging = false; if(viewport) viewport.style.cursor = "grab";
-        });
-        window.addEventListener("mousemove", (e) => {
-            if (!isDragging) return; e.preventDefault();
-            pointX = e.clientX - startX; pointY = e.clientY - startY;
-            updateTransform();
-        });
-
-        viewport.addEventListener("touchstart", (e) => {
-            if (e.touches.length === 2) {
-                e.preventDefault(); isDragging = false;
-                startPinchDist = Math.hypot(
-                    e.touches[0].pageX - e.touches[1].pageX,
-                    e.touches[0].pageY - e.touches[1].pageY
-                );
-                startScale = scale;
-            } else if (e.touches.length === 1) {
-                isDragging = true;
-                startX = e.touches[0].clientX - pointX; startY = e.touches[0].clientY - pointY;
-            }
-        }, { passive: false });
-
-        window.addEventListener("touchmove", (e) => {
-            if (e.touches.length === 2) {
-                e.preventDefault();
-                const dist = Math.hypot(
-                    e.touches[0].pageX - e.touches[1].pageX,
-                    e.touches[0].pageY - e.touches[1].pageY
-                );
-                scale = startScale * (dist / startPinchDist);
-                updateTransform();
-            } else if (isDragging && e.touches.length === 1) {
-                e.preventDefault();
-                pointX = e.touches[0].clientX - startX; pointY = e.touches[0].clientY - startY;
-                updateTransform();
-            }
-        }, { passive: false });
-
-        window.addEventListener("touchend", () => isDragging = false);
-    }
-
-    if(slider) slider.addEventListener("input", (e) => { scale = parseFloat(e.target.value); updateTransform(); });
-    if(zoomIn) zoomIn.addEventListener("click", () => { scale += 0.1; updateTransform(); });
-    if(zoomOut) zoomOut.addEventListener("click", () => { scale -= 0.1; updateTransform(); });
+    // Close if clicking outside (optional, usually not needed for full screen maps)
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "block") {
+            closeMap();
+        }
+    });
 }
 
+// ... rest of existing code ...
 // 8. Resume
 function jumpToProgress() {
     const unchecked = document.querySelector('.checkbox:not(:checked)');
